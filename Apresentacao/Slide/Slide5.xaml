@@ -1,0 +1,28 @@
+﻿<UserControl x:Class="Apresentacao.Slide.Slide5"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Apresentacao.Slide"
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1024">
+    <Canvas>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="COMO TRABALHA" VerticalAlignment="Top" Height="49" Foreground="Black" FontSize="40" Width="341" Canvas.Left="108" Canvas.Top="65"/>
+        <Image HorizontalAlignment="Left" Height="177" VerticalAlignment="Top" Width="307" Source="Slide5/Perfis_Aluminio_Hyspex_Slide5.jpg" Stretch="Fill" Canvas.Left="108" Canvas.Top="173"/>
+        <Label x:Name="label" Content="Perfis de Alumínio" HorizontalContentAlignment="Center" Canvas.Left="108" Canvas.Top="355" Width="307" FontStyle="Italic" FontSize="18"/>
+        <TextBlock FontSize="22" Foreground="Black" HorizontalAlignment="Right" Canvas.Left="447" Canvas.Top="168">
+            •Atua diretamente com o consumidor final <LineBreak />
+            •Fabricação, Instalação e Manutenção de Esquadrias
+            <LineBreak></LineBreak>de Alumínio <LineBreak />
+            •Trabalham com Perfis de Alumínio das linhas: <LineBreak />
+            <Run Text="    "/>•Gold; <LineBreak />
+            <Run Text="    "/>•CL; <LineBreak />
+            <Run Text="    "/>•Inova; <LineBreak />
+            <Run Text="    "/>•Suprema.
+        </TextBlock>
+        <Image x:Name="image" Height="211" Canvas.Left="185" Canvas.Top="407" Width="230" Source="Slide5/CL006 Real.png" Stretch="Fill"/>
+        <Image x:Name="image1" Height="211" Canvas.Left="484" Canvas.Top="407" Width="230" Source="Slide5/CL006.jpg" Stretch="Fill"/>
+        <Label x:Name="label1" Content="Perfil CL-006" HorizontalContentAlignment="Center" Canvas.Left="185" Canvas.Top="623" Width="230" FontStyle="Italic" FontSize="18"/>
+        <Label x:Name="label2" Content="Perfil CL-006 - Catálogo" HorizontalContentAlignment="Center" Canvas.Left="484" Canvas.Top="623" Width="230" FontStyle="Italic" FontSize="18"/>
+    </Canvas>
+</UserControl>

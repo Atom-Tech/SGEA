@@ -1,0 +1,98 @@
+
+
+Mensagem do Erro: System.Data.SqlClient.SqlException
+Código do Erro:   -2146232060
+Linha do Erro:    0
+Janela:           Login
+
+
+Mensagem do Erro: System.Data.SqlClient.SqlException
+Código do Erro:   -2146232060
+Linha do Erro:    0
+Janela:           Login
+
+
+Mensagem do Erro: System.Data.SqlClient.SqlException
+Código do Erro:   -2146232060
+Linha do Erro:    1
+Janela:           Projeto
+
+
+Mensagem do Erro: unable to open database file
+Código do Erro:   14
+Dados do Erro:    System.Collections.ListDictionaryInternal
+Janela:           Sistema de Gerenciamento de Esquadria de Aluminio
+
+
+Mensagem do Erro: unable to open database file
+Código do Erro:   14
+Dados do Erro:    System.Collections.ListDictionaryInternal
+Janela:           Sistema de Gerenciamento de Esquadria de Aluminios
+
+
+Mensagem do Erro: unable to open database file
+Código do Erro:   14
+Dados do Erro:    System.Collections.ListDictionaryInternal
+Janela:           Sistema de Gerenciamento de Esquadria de Aluminios
+
+
+Mensagem do Erro: unable to open database file
+Código do Erro:   14
+Dados do Erro:    System.Collections.ListDictionaryInternal
+Janela:           Sistema de Gerenciamento de Esquadria de Aluminios
+
+
+Mensagem do Erro: SQL logic error or missing database
+no such function: getdate
+Código do Erro:   1
+Dados do Erro:    System.Collections.ListDictionaryInternal
+Janela:           Sistema de Gerenciamento de Esquadria de Aluminio
+
+
+Mensagem do Erro: constraint failed
+UNIQUE constraint failed: tbTipo.nmTipo
+Código do Erro:   19
+Dados do Erro:    System.Collections.ListDictionaryInternal
+Janela:           Tipo de Produto
+
+
+Mensagem do Erro: SQL logic error or missing database
+table tbCliente has 7 columns but 6 values were supplied
+Código do Erro:   1
+Dados do Erro:    System.Collections.ListDictionaryInternal
+Janela:           Cliente
+
+
+Mensagem do Erro: constraint failed
+UNIQUE constraint failed: tbCliente.email
+Código do Erro:   19
+Dados do Erro:    System.Collections.ListDictionaryInternal
+Janela:           Cliente
+
+
+Mensagem do Erro: constraint failed
+FOREIGN KEY constraint failed
+Código do Erro:   19
+Dados do Erro:    System.Collections.ListDictionaryInternal
+Janela:           Cliente
+
+
+Mensagem do Erro: constraint failed
+FOREIGN KEY constraint failed
+Código do Erro:   19
+Dados do Erro:    System.Collections.ListDictionaryInternal
+Janela:           Cliente
+
+
+Mensagem do Erro: constraint failed
+FOREIGN KEY constraint failed
+Código do Erro:   19
+Dados do Erro:    System.Collections.ListDictionaryInternal
+Janela:           Cliente
+
+
+Mensagem do Erro: constraint failed
+FOREIGN KEY constraint failed
+Código do Erro:   19
+Dados do Erro:    System.Collections.ListDictionaryInternal
+Janela:           Cliente

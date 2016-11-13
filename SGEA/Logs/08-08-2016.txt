@@ -1,0 +1,7 @@
+
+
+Mensagem do Erro: Tentativa de divisão por zero.
+Janela:           C:\Users\Thiago\Documents\Etec\Informatica\Modulo 3\DTCC\SGEA\SGEA\Janelas\Login.xaml.cs
+Linha:            41
+Coluna:           17
+Método:           button_Click

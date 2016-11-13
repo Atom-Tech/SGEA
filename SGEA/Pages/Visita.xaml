@@ -1,0 +1,139 @@
+﻿<Page x:Class="SGEA.Pages.Visita"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SGEA.Pages"
+      xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+      mc:Ignorable="d"
+      Title="Visita" Height="575" Width="1024">
+    <Page.Resources>
+        <ResourceDictionary>
+            <Style TargetType="{x:Type Rectangle}" />
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/WindowStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="294*"/>
+            <RowDefinition Height="28*"/>
+            <RowDefinition Height="253*"/>
+        </Grid.RowDefinitions>
+        <GroupBox Header="Agendar" Style="{DynamicResource GroupBoxStyle}" Margin="10,10,10,10" Grid.ColumnSpan="5">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="221*"/>
+                    <ColumnDefinition Width="67*"/>
+                    <ColumnDefinition Width="172*"/>
+                    <ColumnDefinition Width="240*"/>
+                    <ColumnDefinition Width="292*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="27*"/>
+                    <RowDefinition Height="30*"/>
+                    <RowDefinition Height="28*"/>
+                    <RowDefinition Height="118*"/>
+                    <RowDefinition Height="49*"/>
+                </Grid.RowDefinitions>
+                <Label x:Name="label" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1" Height="26" Width="49" Margin="0,0,0,1">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Foreground="Red" Text="*"/>
+                        <TextBlock Text="Data: "/>
+                    </StackPanel>
+                </Label>
+                <Label x:Name="label2" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="0" Grid.Column="3" Height="26" Margin="0,0,0,1">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Foreground="Red" Text="*"/>
+                        <TextBlock Text="Horário: "/>
+                    </StackPanel>
+                </Label>
+                <DockPanel Grid.Column="2" Margin="0,3,0,0">
+                    <ComboBox x:Name="comboData" Width="50" Height="22" Visibility="Collapsed" Margin="0,0,10,0">
+                        <ComboBoxItem Content=""/>
+                        <ComboBoxItem Content="="/>
+                        <ComboBoxItem Content="&lt;"/>
+                        <ComboBoxItem Content="&lt;="/>
+                        <ComboBoxItem Content=">"/>
+                        <ComboBoxItem Content=">="/>
+                    </ComboBox>
+                    <DatePicker x:Name="campoData" IsEnabled="False" VerticalAlignment="Center" TabIndex="0" SelectedDateFormat="Short" ToolTip="Data da Visita" Grid.Column="2" Height="24" Width="Auto"/>
+                </DockPanel>
+                <DockPanel Grid.Column="3" Margin="60,3,0,0">
+                    <ComboBox x:Name="comboHora" Width="50" HorizontalAlignment="Center" VerticalAlignment="Center" Height="22" Margin="0,0,10,0" Visibility="Collapsed">
+                        <ComboBoxItem Content=""/>
+                        <ComboBoxItem Content="="/>
+                        <ComboBoxItem Content="&lt;"/>
+                        <ComboBoxItem Content="&lt;="/>
+                        <ComboBoxItem Content=">"/>
+                        <ComboBoxItem Content=">="/>
+                    </ComboBox>
+                    <xctk:TimePicker x:Name="campoHora" IsEnabled="False" AllowTextInput="False" CultureInfo="pt-BR" TabIndex="2" VerticalAlignment="Center" ToolTip="Horário da Visita" Grid.Column="3" Width="Auto" Height="24"/>
+                </DockPanel>
+                <Label x:Name="label1" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" Height="26">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Foreground="Red" Text="*"/>
+                        <TextBlock Text="Cliente: "/>
+                    </StackPanel>
+                </Label>
+                <DockPanel Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2">
+                    <CheckBox x:Name="checkCliente" DockPanel.Dock="Left" VerticalAlignment="Center" HorizontalAlignment="Right" Height="16" Margin="0,0,5,0" Visibility="Collapsed"/>
+                    <ComboBox x:Name="campoCliente" IsEnabled="False" Style="{DynamicResource ComboStyle}" VerticalAlignment="Center" TabIndex="3" ToolTip="Nome do Cliente" Grid.Row="1"  Grid.Column="2" Margin="0,4"/>
+                </DockPanel>
+                <Label x:Name="label3" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" Height="26" Width="49">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Foreground="Red" Text="*"/>
+                        <TextBlock Text="Local: "/>
+                    </StackPanel>
+                </Label>
+                <Label x:Name="label4" Content="Descrição:" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1" Height="26" Margin="0,46" Width="64"/>
+                <TextBox x:Name="campoLocal" IsEnabled="False" Style="{DynamicResource TextBoxStyle}" MaxLength="100" TextWrapping="Wrap" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="2" Height="Auto" Margin="0,3" TabIndex="4"/>
+                <TextBox x:Name="campoDesc" IsEnabled="False" Style="{DynamicResource TextBoxStyle}" MaxLength="200" TextWrapping="Wrap" Grid.Row="3" Grid.Column="2" Height="Auto" Margin="0,5,0,0" TabIndex="5"/>
+                <Button x:Name="botaoAgendar" Style="{DynamicResource ButtonStyle}" IsEnabled="False" Content="Salvar" HorizontalAlignment="Center" Width="76" VerticalAlignment="Center" Click="botaoAgendar_Click" Grid.Row="4" Grid.ColumnSpan="2" Grid.Column="2" Margin="156,15,160,14" TabIndex="7"/>
+                <Label Content="Observações:" Grid.Row="3" Grid.Column="3" VerticalAlignment="Center"/>
+                <TextBox x:Name="campoObs" IsEnabled="False" Style="{DynamicResource TextBoxStyle}" MaxLength="200" TextWrapping="Wrap" Grid.Row="3" Grid.Column="3" Height="Auto" Margin="0,5,0,0" HorizontalAlignment="Right" Width="150" TabIndex="6"/>
+            </Grid>
+        </GroupBox>
+        <DataGrid x:Name="listaVisita" Style="{DynamicResource DataGridStyle}" Margin="10,30,10,10" SelectionChanged="listaVisita_SelectionChanged" Grid.Row="2" Grid.ColumnSpan="5"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="5" HorizontalAlignment="Center">
+            <Button x:Name="botaoNovo" Style="{DynamicResource ButtonStyle}" Content="Novo" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Click="botaoNovo_Click" Height="20" Template="{DynamicResource ButtonLeft}"/>
+            <Button x:Name="botaoAlterar" Style="{DynamicResource ButtonStyle}" Content="Alterar" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Click="botaoAlterar_Click" Height="20" Template="{DynamicResource ButtonCenter}"/>
+            <Button x:Name="botaoDeletar" Style="{DynamicResource ButtonStyle}" Content="Deletar" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Click="botaoDeletar_Click" Height="20" Template="{DynamicResource ButtonCenter}"/>
+            <Button x:Name="botaoPesquisar" Style="{DynamicResource ButtonStyle}" Content="Pesquisar" HorizontalAlignment="Center" VerticalAlignment="Center" Width="74" Click="botaoPesquisar_Click" Template="{DynamicResource ButtonCenter}"/>
+            <Button x:Name="botaoAtualizar" Style="{DynamicResource ButtonStyle}" Content="Atualizar" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Click="botaoAtualizar_Click" Template="{DynamicResource ButtonCenter}"/>
+            <Button x:Name="botaoConfirmar" Style="{DynamicResource ButtonStyle}" Content="Concluir" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Click="botaoConfirmar_Click" Template="{DynamicResource ButtonRight}"/>
+        </StackPanel>
+        <TextBlock Margin="10" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <StackPanel Orientation="Horizontal">
+                <Border BorderBrush="Black" BorderThickness="2" Background="Black">
+                    <Rectangle Fill="Red" Height="10" Width="10" Margin="1"/>
+                </Border>
+                <TextBlock Text="Visita Atrasada" Margin="3,0,0,0"/>
+            </StackPanel>
+        </TextBlock>
+        <TextBlock Margin="10,10,10,10" Grid.Row="2" Grid.ColumnSpan="2" TextWrapping="Wrap" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <Border BorderBrush="Black" BorderThickness="2" Background="Black">
+                    <Rectangle Fill="Yellow" Height="10" Width="10" Margin="1"/>
+                </Border>
+                <TextBlock Text="Visita Pendente" Margin="3,0,0,0"/>
+            </StackPanel>
+        </TextBlock>
+        <TextBlock Margin="10,10,10,10" Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" HorizontalAlignment="Right">
+            <StackPanel Orientation="Horizontal">
+                <Border BorderBrush="Black" BorderThickness="2" Background="Black">
+                    <Rectangle Fill="Green" Height="10" Width="10" Margin="1"/>
+                </Border>
+                <TextBlock Text="Visita Concluída" Margin="3,0,0,0"/>
+            </StackPanel>
+        </TextBlock>
+    </Grid>
+</Page>

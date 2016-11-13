@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:theme="@android:style/Theme.Holo.Light.NoActionBar"
+    android:background="@color/fundo">
+    <Toolbar
+        android:minHeight="?android:attr/actionBarSize"
+        android:background="@color/topo"
+        android:minWidth="25px"
+        android:layout_width="match_parent"
+        android:layout_height="70.5dp"
+        android:id="@+id/toolbar1">
+        <ImageView
+            android:src="@drawable/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView1" />
+        <TextView
+            android:text="SGEA"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView1"
+            android:textColor="@android:color/black"
+            android:layout_marginLeft="29.5dp" />
+    </Toolbar>
+    <RelativeLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/relativeLayout1">
+        <ImageView
+            android:src="@drawable/Icone500PX"
+            android:layout_width="match_parent"
+            android:layout_height="292.0dp"
+            android:id="@+id/imageView2"
+            android:layout_marginTop="18.7dp" />
+        <TextView
+            android:text="Login:"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            android:textColor="@android:color/black"
+            android:layout_below="@id/imageView2"
+            android:layout_marginLeft="33.3dp"
+            android:layout_marginTop="17.3dp" />
+        <EditText
+            android:layout_width="213.3dp"
+            android:layout_height="29.3dp"
+            android:id="@+id/campoLogin"
+            android:layout_below="@id/imageView2"
+            android:layout_toRightOf="@id/textView2"
+            android:layout_marginTop="13.3dp"
+            android:layout_marginLeft="29.3dp"
+            android:background="@android:color/background_light"
+            android:capitalize="none" />
+        <TextView
+            android:text="Senha:"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView3"
+            android:textColor="@android:color/black"
+            android:layout_below="@id/textView2"
+            android:layout_marginLeft="33.3dp"
+            android:layout_marginTop="17.3dp" />
+        <EditText
+            android:inputType="textPassword"
+            android:layout_width="213.3dp"
+            android:layout_height="29.3dp"
+            android:layout_below="@id/campoLogin"
+            android:id="@+id/campoSenha"
+            android:layout_toRightOf="@id/textView3"
+            android:layout_marginTop="13.3dp"
+            android:background="@android:color/background_light"
+            android:layout_marginLeft="23.9dp" />
+        <Button
+            android:text="Entrar"
+            android:id="@+id/botaoEntrar"
+            android:layout_below="@id/campoSenha"
+            android:layout_marginTop="13.3dp"
+            android:textColor="@android:color/background_light"
+            style="@style/Botao"
+            android:layout_centerHorizontal="true"
+            android:layout_width="134.7dp"
+            android:layout_height="52.7dp" />
+        <TextView
+            android:text="Mensagem"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_below="@id/botaoEntrar"
+            android:id="@+id/labelMensagem"
+            android:textColor="@color/vermelho"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="6.7dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible" />
+    </RelativeLayout>
+</LinearLayout>

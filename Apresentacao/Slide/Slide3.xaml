@@ -1,0 +1,132 @@
+﻿<UserControl x:Class="Apresentacao.Slide.Slide3"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Apresentacao.Slide"
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1024">
+    <UserControl.Resources>
+        <Storyboard x:Key="Missao">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="missao">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="65"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="missao">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="textBlock2">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="148"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="textBlock2">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="-3"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="textBlock3">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="162"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="textBlock3">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="-5"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Visao">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="visao">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="67"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="visao">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="textBlock3">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="98"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="textBlock3">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="-1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Valores">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="valores">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="74"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="valores">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="valores">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="-32"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="UIElement.MouseLeftButtonUp" SourceName="textBlock3">
+            <StopStoryboard BeginStoryboardName="Visao_BeginStoryboard1"/>
+            <StopStoryboard BeginStoryboardName="Missao_BeginStoryboard1"/>
+            <BeginStoryboard x:Name="Missao_BeginStoryboard" Storyboard="{StaticResource Valores}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseLeftButtonUp" SourceName="textBlock2">
+            <StopStoryboard BeginStoryboardName="Missao_BeginStoryboard1"/>
+            <StopStoryboard BeginStoryboardName="Missao_BeginStoryboard"/>
+            <BeginStoryboard x:Name="Visao_BeginStoryboard1" Storyboard="{StaticResource Visao}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseLeftButtonUp" SourceName="textBlock">
+            <StopStoryboard BeginStoryboardName="Missao_BeginStoryboard"/>
+            <StopStoryboard BeginStoryboardName="Visao_BeginStoryboard1"/>
+            <BeginStoryboard x:Name="Missao_BeginStoryboard1" Storyboard="{StaticResource Missao}"/>
+        </EventTrigger>
+    </UserControl.Triggers>
+    <Canvas>
+        <TextBlock x:Name="textBlock" Cursor="Hand" HorizontalAlignment="Left" TextWrapping="Wrap" Text="MISSÃO" VerticalAlignment="Top" Height="49" Foreground="Black" FontSize="36" Width="135" Canvas.Left="108" Canvas.Top="78"/>
+        <TextBlock x:Name="missao" HorizontalAlignment="Left" Opacity="0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" FontSize="28" Canvas.Left="243" Canvas.Top="78" RenderTransformOrigin="0.5,0.5" Width="771">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+            •Trazer aos seus clientes os produtos com qualidade e garantia; <LineBreak/>
+            •Levar o conhecimento em forma de <LineBreak/> entretenimento aos seus clientes.
+        </TextBlock>
+        <TextBlock x:Name="textBlock2" Cursor="Hand" HorizontalAlignment="Left" TextWrapping="Wrap" Text="VISÃO" VerticalAlignment="Top" Height="49" Foreground="Black" FontSize="36" Width="135" Canvas.Left="108" Canvas.Top="154" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock x:Name="visao" HorizontalAlignment="Left" Opacity="0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" FontSize="28" Canvas.Left="243" Canvas.Top="143" RenderTransformOrigin="0.5,0.5" Width="781">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform><Run Text="•Ser a maior produtora de software e games do Brasil,"/><LineBreak /><Run Text="sempre nos lembrando de levar o conhecimento através de nossos produtos."/></TextBlock>
+        <TextBlock x:Name="textBlock3" Cursor="Hand" HorizontalAlignment="Left" TextWrapping="Wrap" Text="VALORES" VerticalAlignment="Top" Height="49" Foreground="Black" FontSize="36" Width="157" Canvas.Left="108" Canvas.Top="230" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock x:Name="valores" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" FontSize="28" Canvas.Left="243" Canvas.Top="230" Opacity="0" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+            <Run Text="•Comprometimento com o trabalho;"/> <LineBreak />
+            <Run Text="•Comprometimento com o cliente;"/> <LineBreak />
+            <Run Text="•Desejo de novos desafios;"/> <LineBreak />
+            <Run Text="•Buscar atualizações do conhecimento sobre novas tecnologias;"/> <LineBreak />
+            <Run Text="•Buscar sempre distribuir conhecimento aos usuários."/>
+        </TextBlock>
+    </Canvas>
+</UserControl>

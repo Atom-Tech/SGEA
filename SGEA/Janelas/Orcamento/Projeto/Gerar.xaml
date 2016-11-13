@@ -1,0 +1,38 @@
+﻿<Window x:Class="SGEA.Janelas.Orcamento.Projeto.Gerar"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SGEA.Janelas.Orcamento.Projeto"
+        mc:Ignorable="d"
+        Title="Gerar" Style="{DynamicResource WindowStyle}" Height="167.827" Width="300" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <ResourceDictionary>
+            <Style TargetType="{x:Type Rectangle}" />
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/WindowStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <DockPanel Style="{DynamicResource DockStyle}">
+        <Border x:Name="TitleBar"  Style="{DynamicResource BorderStyle}"  MouseLeftButtonUp="TitleBar_MouseLeftButtonUp" MouseLeftButtonDown="TitleBar_MouseLeftButtonDown" MouseMove="TitleBar_MouseMove" >
+            <StackPanel Orientation="Horizontal" Height="28">
+                <Image Style="{DynamicResource ImageStyle}"/>
+                <Label Content="Gerar Projeto" Style="{DynamicResource labelTop}" Width="236" Foreground="White" VerticalAlignment="Center" Margin="0,2"/>
+                <Button x:Name="minimizar" Style="{DynamicResource TopButton_}" Click="minimizar_Click" >
+                    <Image Source="/SGEA;component/img/_.png"/>
+                </Button>
+            </StackPanel>
+        </Border>
+        <Border BorderBrush="#006564" BorderThickness="2,1,2,2" DockPanel.Dock="Bottom">
+            <Grid>
+                <Label x:Name="label" Content="Data Prevista:" HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top"/>
+                <DatePicker x:Name="campoData" HorizontalAlignment="Left" Margin="117,64,0,0" VerticalAlignment="Top" TabIndex="0" Width="146" SelectedDateFormat="Short" Text="A" ToolTip="Data da Visita" Height="24"/>
+                <Button x:Name="botaoConfirmar" Style="{DynamicResource ButtonStyle}" Content="Confirmar" HorizontalAlignment="Left" Margin="117,103,0,0" VerticalAlignment="Top" Width="75" Click="botaoConfirmar_Click" RenderTransformOrigin="0.467,2.2"/>
+                <Label x:Name="label1" Content="Nome:" HorizontalAlignment="Left" Margin="10,24,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="campoNome" MaxLength="100" Style="{DynamicResource TextBoxStyle}" HorizontalAlignment="Left" Height="23" Margin="117,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146"/>
+
+            </Grid>
+        </Border>
+    </DockPanel>
+</Window>

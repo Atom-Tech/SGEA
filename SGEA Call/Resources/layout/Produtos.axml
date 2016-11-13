@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:theme="@android:style/Theme.Holo.Light.NoActionBar"
+    android:background="@color/fundo">
+    <Toolbar
+        android:minHeight="?android:attr/actionBarSize"
+        android:background="@color/topo"
+        android:minWidth="25px"
+        android:layout_width="match_parent"
+        android:layout_height="70.5dp"
+        android:id="@+id/toolbar1">
+        <ImageView
+            android:src="@drawable/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView1" />
+        <TextView
+            android:text="Produtos"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView1"
+            android:textColor="@android:color/black"
+            android:layout_marginLeft="29.5dp" />
+        <TextView
+            android:text="0/0"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/quant"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="right"
+            android:layout_marginRight="30dp" />
+    </Toolbar>
+    <LinearLayout
+        android:id="@+id/root"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:src="@drawable/icone500px"
+            android:id="@+id/imagem"
+            android:layout_gravity="center"
+            android:layout_width="178.7dp"
+            android:layout_height="172.7dp"
+            android:scaleType="fitCenter"
+            android:background="@drawable/border"
+            android:layout_marginTop="10dp" />
+        <TextView
+            android:text="Sem Produto"
+            android:id="@+id/campoNome"
+            android:layout_gravity="center"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/background_dark"
+            android:gravity="center"
+            android:layout_marginTop="3dp" />
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10.0dp"
+            android:shrinkColumns="1">
+            <TableRow>
+                <TextView
+                    android:text="Tipo:"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/background_dark" />
+                <TextView
+                    android:text="Sem Produto"
+                    android:id="@+id/campoTipo"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/background_dark" />
+            </TableRow>
+            <TableRow
+                android:layout_marginTop="10.0dp"
+                android:layout_height="120dp">
+                <TextView
+                    android:text="Descrição:"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/background_dark" />
+                <TextView
+                    android:text="Sem Produto"
+                    android:id="@+id/campoDesc"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/background_dark"
+                    android:maxLines="5"
+                    android:ellipsize="none"
+                    android:singleLine="false"
+                    android:lines="5"
+                    android:layout_width="match_parent"
+                    android:inputType="textMultiLine" />
+            </TableRow>
+            <TableRow
+                android:layout_marginTop="10.0dp">
+                <TextView
+                    android:text="Medidas:"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/background_dark" />
+                <TextView
+                    android:text="00x00m²"
+                    android:id="@+id/campoMedidas"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/background_dark" />
+            </TableRow>
+            <TableRow
+                android:layout_marginTop="10.0dp">
+                <TextView
+                    android:text="Quantidade:"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/background_dark" />
+                <TextView
+                    android:text="0"
+                    android:id="@+id/campoQuant"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/background_dark" />
+            </TableRow>
+            <TableRow
+                android:layout_marginTop="10.0dp">
+                <TextView
+                    android:text="Preço Unitário:"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/background_dark" />
+                <TextView
+                    android:text="R$00,00"
+                    android:id="@+id/campoPrecoU"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/background_dark" />
+            </TableRow>
+            <TableRow
+                android:layout_marginTop="10.0dp">
+                <TextView
+                    android:text="Preço Total:"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/background_dark" />
+                <TextView
+                    android:text="R$00,00"
+                    android:id="@+id/campoPrecoT"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/background_dark" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+</LinearLayout>

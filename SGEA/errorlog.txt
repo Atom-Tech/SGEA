@@ -1,0 +1,97 @@
+Mensagem do Erro 	 Código do Erro
+System.DivideByZeroException	-2147352558
+System.DivideByZeroException	-2147352558
+System.DivideByZeroException	-2147352558	SGEA
+System.DivideByZeroException	-2147352558	Login
+-------------------------------------------
+
+Mensagem do Erro: 	System.DivideByZeroException
+Código do Erro: 	-2147352558
+Janela: 	Login
+-------------------------------------------
+
+
+
+Mensagem do Erro: System.DivideByZeroException
+Código do Erro:   -2147352558
+Janela:           Login
+
+
+Mensagem do Erro: System.DivideByZeroException
+Código do Erro:   -2147352558
+Janela:           Login
+
+
+Mensagem do Erro: System.DivideByZeroException
+Código do Erro:   -2147352558
+Janela:           Login
+
+
+Mensagem do Erro: System.IndexOutOfRangeException
+Código do Erro:   -2146233080
+Janela:           Sistema de Gerenciamento de Esquadria de Aluminios - Visita
+
+
+Mensagem do Erro: System.IndexOutOfRangeException
+Código do Erro:   -2146233080
+Janela:           Sistema de Gerenciamento de Esquadria de Aluminios - Visita
+
+
+Mensagem do Erro: System.NullReferenceException
+Código do Erro:   -2147467261
+Janela:           Sistema de Gerenciamento de Esquadria de Aluminios - Fornecedor
+
+
+Mensagem do Erro: System.NullReferenceException
+Código do Erro:   -2147467261
+Janela:           Sistema de Gerenciamento de Esquadria de Aluminios - Fornecedor
+
+
+Mensagem do Erro: System.NullReferenceException
+Código do Erro:   -2147467261
+Janela:           Sistema de Gerenciamento de Esquadria de Aluminios - Fornecedor
+
+
+Mensagem do Erro: System.IndexOutOfRangeException
+Código do Erro:   -2146233080
+Janela:           Sistema de Gerenciamento de Esquadria de Aluminios - Usuário
+
+
+Mensagem do Erro: System.IndexOutOfRangeException
+Código do Erro:   -2146233080
+Janela:           Sistema de Gerenciamento de Esquadria de Aluminios - Usuário
+
+
+Mensagem do Erro: System.IndexOutOfRangeException
+Código do Erro:   -2146233080
+Janela:           Sistema de Gerenciamento de Esquadria de Aluminios - Serviço
+
+
+Mensagem do Erro: System.InvalidCastException
+Código do Erro:   -2147467262
+Janela:           Login
+
+
+Mensagem do Erro: System.InvalidCastException
+Código do Erro:   -2147467262
+Janela:           Login
+
+
+Mensagem do Erro: System.InvalidCastException
+Código do Erro:   -2147467262
+Janela:           Login
+
+
+Mensagem do Erro: System.InvalidCastException
+Código do Erro:   -2147467262
+Janela:           Login
+
+
+Mensagem do Erro: System.IndexOutOfRangeException
+Código do Erro:   -2146233080
+Janela:           Sistema de Gerenciamento de Esquadria de Aluminios - Cliente
+
+
+Mensagem do Erro: System.IndexOutOfRangeException
+Código do Erro:   -2146233080
+Janela:           Sistema de Gerenciamento de Esquadria de Aluminios - Cliente

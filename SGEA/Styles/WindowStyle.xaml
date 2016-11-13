@@ -1,0 +1,329 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:SGEA">
+    <Style x:Key="LinkLabel" TargetType="TextBlock">
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Foreground" Value="Blue"/>
+        <Setter Property="TextDecorations" Value="Underline"/>
+    </Style>
+    <Style x:Key="labelTop" TargetType="Label">
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect ShadowDepth="0" Color="Black" Opacity="1" BlurRadius="5"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="WindowStyle" TargetType="Window">
+        <!-- Estilo da Janela -->
+        <Setter Property="WindowStyle" Value="None"/>
+        <!-- Fundo Padrão -->
+        <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" />
+        <!-- Janela não pode ser redimensionada, mas pode ser minimizada -->
+        <Setter Property="ResizeMode" Value="CanMinimize"/>
+        <!-- Tamanho normal da janela -->
+        <Setter Property="SizeToContent" Value="Manual"/>
+        <Setter Property="Foreground" Value="White"/>
+        <!-- Fonte padrão da janela -->
+        <Setter Property="FontFamily" Value="Segoi UI"/>
+        <!-- Tamanho da fonte em pixels -->
+        <Setter Property="FontSize" Value="12"/>
+    </Style>
+    <Style x:Key="ImageStyle" TargetType="Image">
+        <Setter Property="Source" Value="/SGEA;component/icon.ico"/>
+        <Setter Property="Width" Value="24"/>
+        <Setter Property="Height" Value="24"/>
+        <Setter Property="Margin" Value="3,0,3,0" />
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect Opacity="0.3"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="DockStyle" TargetType="DockPanel">
+        <Setter Property="Background" Value="#FF9EA8E6"/>
+    </Style>
+    <Style x:Key="ComboStyle" TargetType="ComboBox">
+        <Setter Property="ItemsSource" Value="{Binding}"/>
+        <Setter Property="Height" Value="22"/>
+    </Style>
+    <Style x:Key="BorderStyle" TargetType="Border">
+        <Setter Property="Background" Value="#0083CE"/>
+        <Setter Property="BorderThickness" Value="2,2,2,1"/>
+        <Setter Property="BorderBrush" Value="#006564"/>
+        <Setter Property="DockPanel.Dock" Value="Top"/>
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect Opacity="0.3" Direction="270"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="MenuButton" TargetType="Button">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Cursor" Value="Hand"/>
+    </Style>
+    <Style x:Key="ButtonStyle" TargetType="Button">
+        <Setter Property="Height" Value="20"/>
+        <Setter Property="MinWidth" Value="75"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template" Value="{DynamicResource ButtonTemplate}"/>
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="/SGEA;component/img/BotaoEstiloRet.png"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Underline" TargetType="Image">
+        <!-- Estilo do botão Underline -->
+        <Setter Property="Source" Value="/SGEA;component/_.png"/>
+    </Style>
+    <Style x:Key="TopButton" TargetType="Button">
+        <Setter Property="FontWeight" Value="Black"/>
+        <Setter Property="Width" Value="23"/>
+        <Setter Property="Margin" Value="0,4,0,4"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderBrush" Value="{x:Null}"/>
+        <Setter Property="Background" Value="#0083CE"/>
+        <Setter Property="IsTabStop" Value="False"/>
+        <Setter Property="Height" Value="20"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template" Value="{DynamicResource ButtonTemplate}" />
+    </Style>
+    <Style x:Key="TopButton_" BasedOn="{StaticResource TopButton}"  TargetType="Button">
+        <Setter Property="Content">
+            <Setter.Value>
+                <Image Source="/SGEA;component/img/_.png"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="TopHome" BasedOn="{StaticResource TopButton}"  TargetType="Button">
+        <Setter Property="Content">
+            <Setter.Value>
+                <Image Source="/SGEA;component/img/Home.png"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="TopMenu" BasedOn="{StaticResource TopButton}"  TargetType="Button">
+        <Setter Property="Content">
+            <Setter.Value>
+                <Image Source="/SGEA;component/img/U.png"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="TopButtonX" TargetType="Button" BasedOn="{StaticResource TopButton}">
+        <Setter Property="Content">
+            <Setter.Value>
+                <Image Source="/SGEA;component/img/X.png"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="TopButtonU" TargetType="Button" BasedOn="{StaticResource TopButton}">
+        <Setter Property="Content">
+            <Setter.Value>
+                <Image Source="/SGEA;component/img/U.png"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="TopButtonS" TargetType="Button" BasedOn="{StaticResource TopButton}">
+        <Setter Property="Content">
+            <Setter.Value>
+                <Image Source="/SGEA;component/img/porta_abrindo.png"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="TextBoxStyle" TargetType="TextBox">
+        <!-- Estilo da TextBox -->
+        <Setter Property="Template" Value="{DynamicResource TextBoxBaseControlTemplate1}" />
+        <Setter Property="Height" Value="23"/>
+        <!-- Altura da TextBox -->
+        <Setter Property="TextOptions.TextFormattingMode" Value="Display"/>
+        <!-- Estilo de Texto -->
+        <Setter Property="Padding" Value="0,4,0,0"/>
+        <!-- Margem Interna -->
+        <Setter Property="RenderOptions.ClearTypeHint" Value="Enabled"/>
+        <!-- Tipo de Renderização -->
+        <Setter Property="TextWrapping" Value="Wrap" />
+    </Style>
+    <Style x:Key="PasswordStyle" TargetType="PasswordBox">
+        <!-- Estilo da Senha -->
+        <Setter Property="TextOptions.TextFormattingMode" Value="Display"/>
+        <!-- Estilo de Texto -->
+        <Setter Property="Padding" Value="0,4,0,0"/>
+        <!-- Margem Interna -->
+    </Style>
+    <Style x:Key="GroupBoxStyle" TargetType="GroupBox">
+        <Setter Property="BorderBrush" Value="Black" />
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="Template" Value="{DynamicResource GroupBoxBorda}"/>
+    </Style>
+    <Style x:Key="DataGridStyle" TargetType="DataGrid">
+        <!-- Estilo da Tabela -->
+        <Setter Property="ItemsSource" Value="{Binding}"/>
+        <!-- Conexão com MySql (Não altere) -->
+        <Setter Property="RowHeaderWidth" Value="0"/>
+        <!-- Remove a linha extra (Não altere) -->
+        <Setter Property="IsReadOnly" Value="True"/>
+        <!-- Somente leitura (Não altere) -->
+        <Setter Property="CanUserReorderColumns" Value="False"/>
+        <!-- Usuário não pode reoordenar as colunas-->
+        <Setter Property="CanUserResizeRows" Value="False"/>
+        <!-- Usuário não pode redimensionar as linhas-->
+        <Setter Property="Background" Value="WhiteSmoke"/>
+        <!-- Fundo padrão cinza-->
+        <Setter Property="EnableRowVirtualization" Value="False"/>
+        <!-- Não remova -->
+        <Setter Property="AlternationCount" Value="1"/>
+        <!-- Cada linha par terá uma cor diferente -->
+        <Setter Property="AlternatingRowBackground" Value="GhostWhite"/>
+        <!-- E essa cor é Branco Fumaça-->
+        <Setter Property="SelectionMode" Value="Single"/>
+        <!-- Só uma linha pode ser selecionada -->
+        <Setter Property="SelectionUnit" Value="FullRow"/>
+        <!-- A linha inteira é selecionada -->
+        <Setter Property="ColumnHeaderStyle" Value="{DynamicResource ColumnStyle}"/>
+    </Style>
+    <Style x:Name="ColumnStyle" TargetType="DataGridColumnHeader">
+        <Setter Property="Width" Value="Auto"/>
+    </Style>
+    <ControlTemplate x:Key="ButtonTemplate" TargetType="{x:Type ButtonBase}">
+        <Border x:Name="border" CornerRadius="10" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+            <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="Button.IsDefaulted" Value="True">
+                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+            </Trigger>
+            <Trigger Property="ToggleButton.IsChecked" Value="True">
+                <Setter Property="Background" TargetName="border" Value="#FFBCDDEE"/>
+                <Setter Property="BorderBrush" TargetName="border" Value="#FF245A83"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="Black" />
+                <Setter Property="Background" TargetName="border">
+                    <Setter.Value>
+                        <ImageBrush ImageSource="/SGEA;component/img/botaodesativado.png"/>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="ButtonCenter" TargetType="{x:Type ButtonBase}">
+        <Border x:Name="border" BorderBrush="DarkGreen" BorderThickness="1" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+            <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="Button.IsDefaulted" Value="True">
+                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+            </Trigger>
+            <Trigger Property="ToggleButton.IsChecked" Value="True">
+                <Setter Property="Background" TargetName="border" Value="#FFBCDDEE"/>
+                <Setter Property="BorderBrush" TargetName="border" Value="#FF245A83"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="Black" />
+                <Setter Property="Background" TargetName="border">
+                    <Setter.Value>
+                        <ImageBrush ImageSource="/SGEA;component/img/botaodesativado.png"/>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="ButtonRight" TargetType="{x:Type ButtonBase}">
+        <Border x:Name="border" CornerRadius="0,10,10,0" BorderBrush="DarkGreen" BorderThickness="1" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+            <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="Button.IsDefaulted" Value="True">
+                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+            </Trigger>
+            <Trigger Property="ToggleButton.IsChecked" Value="True">
+                <Setter Property="Background" TargetName="border" Value="#FFBCDDEE"/>
+                <Setter Property="BorderBrush" TargetName="border" Value="#FF245A83"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="Black" />
+                <Setter Property="Background" TargetName="border">
+                    <Setter.Value>
+                        <ImageBrush ImageSource="/SGEA;component/img/botaodesativado.png"/>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="ButtonLeft" TargetType="{x:Type ButtonBase}">
+        <Border x:Name="border" CornerRadius="10,0,0,10" BorderBrush="DarkGreen" BorderThickness="1" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+            <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="Button.IsDefaulted" Value="True">
+                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+            </Trigger>
+            <Trigger Property="ToggleButton.IsChecked" Value="True">
+                <Setter Property="Background" TargetName="border" Value="#FFBCDDEE"/>
+                <Setter Property="BorderBrush" TargetName="border" Value="#FF245A83"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="Black" />
+                <Setter Property="Background" TargetName="border">
+                    <Setter.Value>
+                        <ImageBrush ImageSource="/SGEA;component/img/botaodesativado.png"/>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="GroupBoxBorda" TargetType="{x:Type GroupBox}">
+        <Grid SnapsToDevicePixels="True">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="6"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="6"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="6"/>
+            </Grid.RowDefinitions>
+            <Border BorderBrush="#FF9EA8E6" BorderThickness="{TemplateBinding BorderThickness}" Grid.ColumnSpan="4" CornerRadius="4" Grid.Row="1" Grid.RowSpan="3">
+                <Border.OpacityMask>
+                    <MultiBinding ConverterParameter="7" UpdateSourceTrigger="Default">
+                        <MultiBinding.Converter>
+                            <BorderGapMaskConverter/>
+                        </MultiBinding.Converter>
+                        <Binding ElementName="Header" Path="ActualWidth"/>
+                        <Binding Path="ActualWidth" RelativeSource="{RelativeSource Self}"/>
+                        <Binding Path="ActualHeight" RelativeSource="{RelativeSource Self}"/>
+                    </MultiBinding>
+                </Border.OpacityMask>
+                <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3">
+                    <Border BorderBrush="#FF9EA8E6" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="2"/>
+                </Border>
+            </Border>
+            <Border x:Name="Header" Grid.Column="1" Padding="3,1,3,0" Grid.Row="0" Grid.RowSpan="2">
+                <ContentPresenter ContentTemplate="{TemplateBinding HeaderTemplate}" Content="{TemplateBinding Header}" ContentStringFormat="{TemplateBinding HeaderStringFormat}" ContentSource="Header" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+            </Border>
+            <ContentPresenter Grid.ColumnSpan="2" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" Grid.Column="1" ContentStringFormat="{TemplateBinding ContentStringFormat}" Margin="{TemplateBinding Padding}" Grid.Row="2" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate x:Key="TextBoxBaseControlTemplate1" TargetType="{x:Type TextBoxBase}">
+        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+            <ScrollViewer x:Name="PART_ContentHost" Focusable="False" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="BorderBrush" TargetName="border" Value="#FF7EB4EA"/>
+            </Trigger>
+            <Trigger Property="IsKeyboardFocused" Value="True">
+                <Setter Property="BorderBrush" TargetName="border" Value="#FF569DE5"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+</ResourceDictionary>

@@ -1,0 +1,74 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SGEA.Pages"
+      xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Class="SGEA.Pages.Main"
+      mc:Ignorable="d"
+      Title="Main" Height="575" Width="1024">
+    <Page.Resources>
+        <ResourceDictionary>
+            <Style TargetType="{x:Type Rectangle}" />
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/WindowStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid x:Name="grid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <GroupBox x:Name="groupBox2" Header="Visitas para Hoje" Style="{DynamicResource GroupBoxStyle}" Margin="10" BorderThickness="1" Grid.Row="1" Grid.ColumnSpan="2">
+            <Grid>
+                <TextBlock Margin="10" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left">
+                    <StackPanel Orientation="Horizontal">
+                        <Border BorderBrush="Black" BorderThickness="2" Background="Black">
+                            <Rectangle Fill="Red" Height="10" Width="10" Margin="1"/>
+                        </Border>
+                        <TextBlock Text="Visita Atrasada" Margin="3,0,0,0"/>
+                    </StackPanel>
+                </TextBlock>
+                <TextBlock Margin="150,10,10,10" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left">
+                    <StackPanel Orientation="Horizontal">
+                        <Border BorderBrush="Black" BorderThickness="2" Background="Black">
+                            <Rectangle Fill="Yellow" Height="10" Width="10" Margin="1"/>
+                        </Border>
+                        <TextBlock Text="Visita Pendente" Margin="3,0,0,0"/>
+                    </StackPanel>
+                </TextBlock>
+                <DataGrid x:Name="listaAgenda" Style="{DynamicResource DataGridStyle}" ToolTip="Visitas Agendadas para Hoje" Margin="0,30,0,0" />
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="groupBox1" Style="{DynamicResource GroupBoxStyle}" Header="Projetos em Execução" Margin="10">
+            <Grid>
+                <TextBlock Margin="10" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left">
+                    <StackPanel Orientation="Horizontal">
+                        <Border BorderBrush="Black" BorderThickness="2" Background="Black">
+                            <Rectangle Fill="Red" Height="10" Width="10" Margin="1"/>
+                        </Border>
+                        <TextBlock Text="Projeto Atrasado" Margin="3,0,0,0"/>
+                    </StackPanel>
+                </TextBlock>
+                <TextBlock Margin="150,10,10,10" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left">
+                    <StackPanel Orientation="Horizontal">
+                        <Border BorderBrush="Black" BorderThickness="2" Background="Black">
+                            <Rectangle Fill="Green" Height="10" Width="10" Margin="1"/>
+                        </Border>
+                        <TextBlock Text="Projeto em Execução" Margin="3,0,0,0"/>
+                    </StackPanel>
+                </TextBlock>
+                <DataGrid x:Name="listaProjetos" ToolTip="Clique em um projeto para verificar" MouseDoubleClick="listaProjetos_MouseDoubleClick" Style="{DynamicResource DataGridStyle}" ColumnWidth="Auto" Margin="0,30,0,0"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="groupBox" Header="Histórico de Hoje" Style="{DynamicResource GroupBoxStyle}" Margin="10" Grid.Column="1">
+            <DataGrid x:Name="listaHistorico" Style="{DynamicResource DataGridStyle}" Margin="0,0,0,0"/>
+        </GroupBox>
+    </Grid>
+</Page>

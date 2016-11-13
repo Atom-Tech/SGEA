@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:theme="@android:style/Theme.Holo.Light.NoActionBar"
+    android:background="@color/fundo">
+    <Toolbar
+        android:minHeight="?android:attr/actionBarSize"
+        android:background="@color/topo"
+        android:minWidth="25px"
+        android:layout_width="match_parent"
+        android:layout_height="70.5dp"
+        android:id="@+id/toolbar1">
+        <ImageView
+            android:src="@drawable/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView1" />
+        <TextView
+            android:text="Orçamentos"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView1"
+            android:textColor="@android:color/black"
+            android:layout_marginLeft="29.5dp" />
+    </Toolbar>
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="10dp" />
+</LinearLayout>

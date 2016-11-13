@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:theme="@android:style/Theme.Holo.Light.NoActionBar"
+    android:background="@color/fundo">
+    <Toolbar
+        android:minHeight="?android:attr/actionBarSize"
+        android:background="@color/topo"
+        android:minWidth="25px"
+        android:layout_width="match_parent"
+        android:layout_height="70.5dp"
+        android:id="@+id/toolbar1">
+        <ImageView
+            android:src="@drawable/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView1" />
+        <TextView
+            android:text="Orçamentos"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView1"
+            android:textColor="@android:color/black"
+            android:layout_marginLeft="29.5dp" />
+    </Toolbar>
+    <TextView
+        android:text="Produtos"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/menuProdutos"
+        android:clickable="true"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp" />
+    <TextView
+        android:text="Serviços"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:id="@+id/menuServicos"
+        android:layout_marginLeft="10dp"
+        android:textColor="@android:color/background_dark"
+        android:layout_marginTop="26.7dp" />
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:stretchColumns="1">
+        <TableRow>
+            <TextView
+                android:text="Validade do Orçamento:"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/background_dark"
+                android:layout_marginTop="26.7dp" />
+            <TextView
+                android:text="00/00/00"
+                android:id="@+id/campoValidade"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/background_dark"
+                android:layout_marginLeft="12.7dp"
+                android:layout_marginTop="26.7dp" />
+        </TableRow>
+        <TableRow
+            android:layout_marginTop="10.0dp">
+            <TextView
+                android:text="Confirmado?"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/background_dark" />
+            <TextView
+                android:text="Não"
+                android:id="@+id/campoConfirmado"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/background_dark"
+                android:layout_marginLeft="12.7dp" />
+        </TableRow>
+    </TableLayout>
+    <Button
+        android:text="Verificar Cliente"
+        android:layout_width="150dp"
+        android:layout_height="52.7dp"
+        android:id="@+id/verCliente"
+        style="@style/Botao"
+        android:layout_gravity="center"
+        android:layout_marginTop="26.7dp" />
+    <TextView
+        android:text="Observações:"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="26.7dp"
+        android:textColor="@android:color/black" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp">
+      <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Não há observações para esse orçamento"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/campoObs"
+            android:maxLines="50"
+            android:textColor="@android:color/background_dark"
+            android:ellipsize="none" />
+    </ScrollView>
+</LinearLayout>

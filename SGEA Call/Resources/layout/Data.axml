@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:theme="@android:style/Theme.Holo.Light.NoActionBar"
+    android:background="@color/fundo">
+  <Toolbar
+      android:minHeight="?android:attr/actionBarSize"
+      android:background="@color/topo"
+      android:minWidth="25px"
+      android:layout_width="match_parent"
+      android:layout_height="70.5dp"
+      android:id="@+id/toolbar1">
+    <ImageView
+        android:src="@drawable/icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView1" />
+    <TextView
+        android:text="Selecionar Data"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1"
+        android:textColor="@android:color/black"
+        android:layout_marginLeft="29.5dp" />
+  </Toolbar>
+  <TableLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/tableLayout1"
+        android:stretchColumns="0"
+        android:shrinkColumns="1"
+        android:layout_gravity="left"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp">
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:id="@+id/tableRow1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mês:"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/textView2"
+                android:textColor="@android:color/background_dark"
+                android:layout_gravity="left"
+                android:layout_column="0" />
+            <Spinner
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:id="@+id/listaMes"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/border" />
+        </TableRow>
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:id="@+id/tableRow2">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ano:"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/textView3"
+                android:textColor="@android:color/background_dark"
+                android:layout_gravity="left"
+                android:layout_column="0" />
+            <Spinner
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:id="@+id/listaAno"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/border" />
+        </TableRow>
+        <TableRow
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp">
+            <Button
+                android:id="@+id/botaoOK"
+                android:layout_gravity="center_horizontal"
+                android:text="Selecionar"
+                style="@style/Botao"
+                android:layout_span="2"
+                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_marginTop="10dp" />
+        </TableRow>
+    </TableLayout>
+</LinearLayout>

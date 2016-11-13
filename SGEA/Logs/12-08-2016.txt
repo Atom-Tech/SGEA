@@ -1,0 +1,23 @@
+
+
+Mensagem do Erro: Conversão especificada não é válida.
+Janela:           C:\Users\Thiago\Documents\Etec\Informatica\Modulo 3\DTCC\SGEA\SGEA\Pages\Fornecedor.xaml.cs
+Linha:            210
+Coluna:           21
+Método:           botaoAdd_Click
+
+
+Mensagem do Erro: SQL logic error or missing database
+no such table: tbTransacao
+Janela:           
+Linha:            0
+Coluna:           0
+Método:           Prepare
+
+
+Mensagem do Erro: SQL logic error or missing database
+no such table: tbTransacao
+Janela:           
+Linha:            0
+Coluna:           0
+Método:           Prepare

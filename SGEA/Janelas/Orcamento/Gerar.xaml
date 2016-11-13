@@ -1,0 +1,103 @@
+﻿<Window x:Class="SGEA.Janelas.Orcamento.Gerar"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SGEA.Janelas.Orcamento"
+        mc:Ignorable="d"
+        Title="Gerar Orçamento" Style="{DynamicResource WindowStyle}" Height="644.869" Width="803.109" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <ResourceDictionary>
+            <Style TargetType="{x:Type Rectangle}" />
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/WindowStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <DockPanel Style="{DynamicResource DockStyle}">
+        <Border x:Name="TitleBar"  Style="{DynamicResource BorderStyle}"  MouseLeftButtonUp="TitleBar_MouseLeftButtonUp" MouseLeftButtonDown="TitleBar_MouseLeftButtonDown" MouseMove="TitleBar_MouseMove" >
+            <DockPanel Height="28">
+                <StackPanel DockPanel.Dock="Left" Orientation="Horizontal">
+                    <Image Style="{DynamicResource ImageStyle}"/>
+                    <Label x:Name="titulo" Style="{DynamicResource labelTop}" Content="Gerar Orçamento" Foreground="White" VerticalAlignment="Center" Margin="0,2" Width="475"/>
+                </StackPanel>
+                <StackPanel DockPanel.Dock="Right" HorizontalAlignment="Right" Orientation="Horizontal">
+                    <Button x:Name="minimizar" Style="{DynamicResource TopButton_}" Click="minimizar_Click" />
+                    <Button x:Name="fechar" Style="{DynamicResource TopButtonX}" Click="fechar_Click" />
+                    <DataGrid x:Name="dataGrid" Style="{DynamicResource DataGridStyle}" Visibility="Collapsed" HorizontalAlignment="Left" Margin="442,104,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+                    <DataGrid x:Name="dataGrid1" Style="{DynamicResource DataGridStyle}" Visibility="Collapsed" HorizontalAlignment="Left" Margin="442,104,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+                </StackPanel>
+            </DockPanel>
+        </Border>
+        <Border BorderBrush="#006564" BorderThickness="2,1,2,2" DockPanel.Dock="Bottom">
+            <Grid>
+                <GroupBox x:Name="groupBox" Header="Produto/Serviço" Style="{DynamicResource GroupBoxStyle}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="134" Width="774">
+                    <Grid>
+                        <Label x:Name="label" Content="Produto/Serviço:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                        <ComboBox x:Name="listaPS" HorizontalAlignment="Left" Margin="123,11,0,0" VerticalAlignment="Top" Width="120" Height="23" SelectionChanged="listaPS_SelectionChanged">
+                            <ComboBoxItem Content="Produto" HorizontalAlignment="Left" Width="120"/>
+                            <ComboBoxItem Content="Serviço" HorizontalAlignment="Left" Width="120"/>
+                        </ComboBox>
+                        <Label x:Name="label1" Content="Tipo:" HorizontalAlignment="Left" Margin="10,43,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.532,1.186"/>
+                        <ComboBox x:Name="listaTipo" Style="{DynamicResource ComboStyle}" HorizontalAlignment="Left" Margin="123,43,0,0" VerticalAlignment="Top" Width="120" Height="23" SelectionChanged="listaTipo_SelectionChanged"/>
+                        <DataGrid x:Name="listaProduto" Style="{DynamicResource DataGridStyle}" HorizontalAlignment="Left" Margin="266,11,0,0" VerticalAlignment="Top" Height="90" Width="480"/>
+                        <Button x:Name="botaoAdd" Style="{DynamicResource ButtonStyle}" Content="Adicionar" HorizontalAlignment="Left" Margin="146,71,0,0" VerticalAlignment="Top" Width="75" Click="botaoAdd_Click"/>
+                    </Grid>
+                </GroupBox>
+                <GroupBox x:Name="groupBox1" Header="Orçamento" Style="{DynamicResource GroupBoxStyle}" HorizontalAlignment="Left" Margin="10,149,0,0" VerticalAlignment="Top" Height="428" Width="774">
+                    <Grid>
+                        <ListBox x:Name="listaOrc" HorizontalAlignment="Left" Height="372" Margin="10,0,0,0" VerticalAlignment="Top" Width="134" RenderTransformOrigin="1.414,0.325" SelectionChanged="listaOrc_SelectionChanged"/>
+                        <Button x:Name="botaoDel" Style="{DynamicResource ButtonStyle}" Content="Remover" HorizontalAlignment="Left" Margin="35,376,0,10" Width="75" Click="botaoDel_Click"/>
+                        <Label x:Name="label2" Content="Cliente:" HorizontalAlignment="Left" Margin="159,1,0,0" VerticalAlignment="Top"/>
+                        <ComboBox x:Name="listaCliente" Style="{DynamicResource ComboStyle}" Height="23" HorizontalAlignment="Left" Margin="217,2,0,0" VerticalAlignment="Top" Width="146"/>
+                        <Label x:Name="label3" Content="Data de Validade:" HorizontalAlignment="Left" Margin="368,2,0,0" VerticalAlignment="Top"/>
+                        <DatePicker x:Name="campoData" HorizontalAlignment="Left" Margin="475,2,0,0" VerticalAlignment="Top" TabIndex="0" Width="146" SelectedDateFormat="Short" Text="A" ToolTip="Data da Visita" Height="24"/>
+                        <GroupBox x:Name="groupBox2" Header="Produto" Style="{DynamicResource GroupBoxStyle}" HorizontalAlignment="Left" Margin="159,31,0,0" VerticalAlignment="Top" Height="257" Width="559">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="75*"/>
+                                    <ColumnDefinition Width="128*"/>
+                                    <ColumnDefinition Width="89*"/>
+                                    <ColumnDefinition Width="78*"/>
+                                    <ColumnDefinition Width="177*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40*"/>
+                                    <RowDefinition Height="74*"/>
+                                    <RowDefinition Height="27*"/>
+                                    <RowDefinition Height="30*"/>
+                                    <RowDefinition Height="26*"/>
+                                    <RowDefinition Height="38*"/>
+                                </Grid.RowDefinitions>
+                                <Label x:Name="label4" Content="Descrição:" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1" Grid.Column="3" Height="24" Width="64" Margin="0,25"/>
+                                <TextBox x:Name="campoDesc" IsReadOnly="True" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Style="{DynamicResource TextBoxStyle}" HorizontalAlignment="Center" Height="71" TextWrapping="Wrap" VerticalAlignment="Center" Width="166" Grid.Row="1" Grid.Column="4"/>
+                                <Label x:Name="label5" Content="Tipo:" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="3" Height="24" Width="36"/>
+                                <TextBox x:Name="campoTipo" Height="24" IsReadOnly="True" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Style="{DynamicResource TextBoxStyle}" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="166" Grid.Column="4"/>
+                                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="181" Margin="20,12,0,0" VerticalAlignment="Top" Width="181" Grid.RowSpan="5" Grid.ColumnSpan="2">
+                                    <Image x:Name="campoImagem"/>
+                                </Border>
+                                <Label x:Name="label6" Content="Largura:" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="2" Grid.Column="3" Height="24" Width="53" Margin="0,2,0,1"/>
+                                <TextBox x:Name="campoLar" Style="{DynamicResource TextBoxStyle}" HorizontalAlignment="Center" Height="23" TextWrapping="Wrap" VerticalAlignment="Center" Width="166" TextChanged="campoLarg_TextChanged" Grid.Row="2" Grid.Column="4"/>
+                                <Label x:Name="label7" Content="Altura:" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="3" Grid.Column="3" Height="24" Width="44" Margin="0,3"/>
+                                <TextBox x:Name="campoAlt" Style="{DynamicResource TextBoxStyle}" HorizontalAlignment="Center" Height="23" TextWrapping="Wrap" VerticalAlignment="Center" Width="166" TextChanged="campoAlt_TextChanged" Grid.Row="3" Grid.Column="4"/>
+                                <Label x:Name="label8" Content="Quantidade:" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="4" Grid.Column="3" Height="24" Width="75" Margin="0,1"/>
+                                <TextBox x:Name="campoQuant" Style="{DynamicResource TextBoxStyle}" HorizontalAlignment="Center" Height="23" TextWrapping="Wrap" VerticalAlignment="Center" Width="166" TextChanged="campoQuant_TextChanged" Grid.Row="4" Grid.Column="4"/>
+                                <Label x:Name="label10" Content="Preço:" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="5" Height="24" Width="42" Margin="16,7,17,7"/>
+                                <TextBox x:Name="campoPreco" Style="{DynamicResource TextBoxStyle}" HorizontalAlignment="Center" Height="24" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Grid.Row="5" Grid.Column="1" Margin="4,7" IsEnabled="False" TextChanged="campoPreco_TextChanged"/>
+                                <Label x:Name="label12" Content="Preço Total: " HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="5" Grid.Column="3"  Height="24" Width="74" Margin="0,7"/>
+                                <TextBox x:Name="campoPrecoT" IsEnabled="False" Style="{DynamicResource TextBoxStyle}" HorizontalAlignment="Center" Height="23" TextWrapping="Wrap" VerticalAlignment="Center" Width="166" TextChanged="campoQuant_TextChanged" Grid.Row="5" Grid.Column="4"/>
+                            </Grid>
+                        </GroupBox>
+                        <Button x:Name="botaoGerar" Style="{DynamicResource ButtonStyle}" Content="Gerar" HorizontalAlignment="Left" Margin="429,376,0,0" VerticalAlignment="Top" Width="75" Click="botaoGerar_Click"/>
+                        <Label x:Name="label9" Content="Observações:" HorizontalAlignment="Left" Margin="159,300,0,0" VerticalAlignment="Top"/>
+                        <TextBox x:Name="campoObs" MaxLength="500" Style="{DynamicResource TextBoxStyle}" HorizontalAlignment="Left" Height="55" Margin="262,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="456"/>
+                        <Label x:Name="label11" Content="Total:" HorizontalAlignment="Left" Margin="159,373,0,0" VerticalAlignment="Top"/>
+                        <TextBox x:Name="campoPrecoO" Style="{DynamicResource TextBoxStyle}" IsReadOnly="True" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" HorizontalAlignment="Left" Height="23" Margin="262,373,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                        <DataGrid x:Name="dgv" Style="{DynamicResource DataGridStyle}" Visibility="Collapsed" HorizontalAlignment="Left" Margin="217,336,0,0" VerticalAlignment="Top"/>
+                        <DataGrid x:Name="dataGridView2" Style="{DynamicResource DataGridStyle}" Visibility="Collapsed" HorizontalAlignment="Left" Margin="217,336,0,0" VerticalAlignment="Top"/>
+                    </Grid>
+                </GroupBox>
+            </Grid>
+        </Border>
+    </DockPanel>
+</Window>

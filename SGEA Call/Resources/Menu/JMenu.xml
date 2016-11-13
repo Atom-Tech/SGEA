@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/jMenu">
+  <item 
+      android:id="@+id/relatorio"
+      android:title="Relatório"
+      android:showAsAction="collapseActionView"/>    
+  <item 
+      android:id="@+id/cliente"
+      android:title="Clientes"
+      android:showAsAction="collapseActionView"/>
+  <item
+      android:id="@+id/forn"
+      android:title="Fornecedores"
+      android:showAsAction="collapseActionView"/>
+</menu>

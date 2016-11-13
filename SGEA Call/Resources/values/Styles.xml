@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+  <style name="MyTheme" parent="@android:Theme.Holo">
+	<item name="android:layout_width">match_parent</item>
+    <item name="android:windowFullscreen">true</item>
+    <item name="android:actionBarSize">0dp</item>
+  </style>
+  <style name="Botao" parent="@android:style/Holo.Light.ButtonBar">
+    <item name="android:background">@drawable/botao</item>
+    <item name="android:layout_width">134.7dp</item>
+    <item name="android:layout_height">52.7dp</item>
+    <item name="android:textColor">@android:color/background_light</item>
+  </style>
+ <style name="telFixo" parent="@android:style/Holo.Light.ButtonBar">
+   <item name="android:background">@drawable/circuloTel</item>
+    <item name="android:layout_width">90.0dp</item>
+    <item name="android:layout_height">90.0dp</item>
+ </style>
+ <style name="telCel" parent="@android:style/Holo.Light.ButtonBar">
+   <item name="android:background">@drawable/circuloFone</item>
+    <item name="android:layout_width">90.0dp</item>
+    <item name="android:layout_height">90.0dp</item>
+ </style>
+  <style name="titleBar" parent="@android:style/Theme.Dialog">
+    <item name="android:windowTitleStyle">@style/title</item>
+  </style>
+  <style name="title" parent="android:Widget.TextView">
+    <item name="android:background">#0083CE</item>
+    <item name="android:padding">10dp</item>
+    <item name="android:textColor">@android:color/background_dark</item>
+  </style>
+</resources>

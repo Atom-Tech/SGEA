@@ -1,0 +1,206 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SGEA"
+        xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" x:Name="fMain" x:Class="SGEA.Main"
+        mc:Ignorable="d"
+        Top="0" Left="0"
+        Title="Sistema de Gerenciamento de Esquadrias de Alumínio" WindowStartupLocation="Manual" Style="{DynamicResource WindowStyle}" Height="726" Width="1024" KeyDown="fMain_KeyDown">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/WindowStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <Storyboard x:Key="Not">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="retNote">
+                    <EasingDoubleKeyFrame KeyTime="0:0:1" Value="300"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="NoteBlink" BeginTime="00:00:00" 
+                                    RepeatBehavior="Forever">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(Brush.Opacity)" Storyboard.TargetName="border">
+                    <EasingDoubleKeyFrame KeyTime="0:0:0" Value="0" />
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="ReNot">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="retNote">
+                    <SplineDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="Balloon">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="balNote">
+                    <EasingDoubleKeyFrame KeyTime="0:0:8" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="balNote">
+                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+                    <DiscreteObjectKeyFrame KeyTime="0:0:8" Value="{x:Static Visibility.Collapsed}"/>
+                </ObjectAnimationUsingKeyFrames>
+            </Storyboard>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource Balloon}"/>
+        </EventTrigger>
+    </Window.Triggers>
+    <DockPanel Style="{DynamicResource DockStyle}">
+        <Border x:Name="TitleBar" Style="{DynamicResource BorderStyle}" MouseLeftButtonUp="TitleBar_MouseLeftButtonUp" MouseLeftButtonDown="TitleBar_MouseLeftButtonDown" MouseMove="TitleBar_MouseMove" >
+            <DockPanel Height="28">
+                <StackPanel DockPanel.Dock="Left" Orientation="Horizontal">
+                    <Image Style="{DynamicResource ImageStyle}"/>
+                    <Label x:Name="titulo" Style="{DynamicResource labelTop}" Content="Sistema de Gerenciamento de Esquadria de Aluminio" Foreground="White" VerticalAlignment="Center" Margin="0,2" Width="475"/>
+                </StackPanel>
+                <StackPanel x:Name="stack" DockPanel.Dock="Right" HorizontalAlignment="Right" Orientation="Horizontal">
+                    <Button x:Name="border" BorderBrush="White" BorderThickness="1" Template="{DynamicResource ButtonOnly}" Content="0" Foreground="White" Width="Auto" MinWidth="24" Height="24" Click="border_Click" Cursor="Hand" ToolTip="Notificações">
+                        <Button.Background>
+                            <SolidColorBrush x:Name="corFundo" Color="#6058FF" Opacity="0"/>
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="home" Style="{DynamicResource TopHome}" ToolTip="Página Principal" Click="home_Click" />
+                    <Button x:Name="suaConta" Style="{DynamicResource TopMenu}" Click="suaConta_Click" ContextMenuService.IsEnabled="False">
+                        <Button.ContextMenu>
+                            <ContextMenu >
+                                <MenuItem Header="Configurações de Usuário" Click="config_Click"/>
+                                <MenuItem Header="Gerar Backup" Click="backupG_Click"/>
+                                <MenuItem x:Name="backupI"  Header="Importar Backup" Click="backupI_Click"/>
+                            </ContextMenu>
+                        </Button.ContextMenu>
+                    </Button>
+                    <Button x:Name="voltar" Style="{DynamicResource TopButtonS}" Width="23" Height="20" ToolTip="Trocar Funcionário" HorizontalAlignment="Left" VerticalAlignment="Top" Click="voltar_Click"/>
+                    <Button x:Name="minimizar" Style="{DynamicResource TopButton_}" Click="minimizar_Click" />
+                    <Button x:Name="fechar" Style="{DynamicResource TopButtonX}" Click="fechar_Click" />
+                    <DataGrid x:Name="dataGrid" Style="{DynamicResource DataGridStyle}" Visibility="Collapsed" HorizontalAlignment="Left" Margin="442,104,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+                    <DataGrid x:Name="dataGrid1" Style="{DynamicResource DataGridStyle}" Visibility="Collapsed" HorizontalAlignment="Left" Margin="442,104,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+                    <DataGrid x:Name="dataGrid2" Style="{DynamicResource DataGridStyle}" Visibility="Collapsed" HorizontalAlignment="Left" Margin="442,104,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+                    <DataGrid x:Name="dataGrid3" Style="{DynamicResource DataGridStyle}" Visibility="Collapsed" HorizontalAlignment="Left" Margin="442,104,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+                </StackPanel>
+            </DockPanel>
+        </Border>
+        <Border BorderBrush="#006564" BorderThickness="2,1,2,2" DockPanel.Dock="Bottom">
+            <DockPanel>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Background="Transparent" DockPanel.Dock="Top">
+                    <Button x:Name="menuUsuario" ToolTip="Usuário (F1)" Click="menuUsuario_Click" Style="{DynamicResource MenuButton}" Padding="10,0,5,0">
+                        <Grid>
+                            <Image Source="/SGEA;component/img/circulousuario.png" Height="55" Width="56" Margin="0,0,0,23"/>
+                            <TextBlock Text="Usuários (F1)" HorizontalAlignment="Center" Margin="0,55,0,0"/>
+
+                        </Grid>
+                    </Button>
+                    <Button x:Name="menuCliente" Click="menuCliente_Click" ToolTip="Cliente (F2)" Style="{DynamicResource MenuButton}" Padding="5,0,5,0">
+                        <Grid>
+                            <Image Source="/SGEA;component/img/circuloCliente.png" Height="55" Width="56" Margin="0,0,0,23"/>
+                            <TextBlock Text="Clientes (F2)" HorizontalAlignment="Center" Margin="0,55,0,0"/>
+                        </Grid>
+                    </Button>
+                    <Button x:Name="menuAgenda" Click="menuAgenda_Click" ToolTip="Agenda (F3)" Style="{DynamicResource MenuButton}" Padding="5,0,5,0">
+                        <Grid>
+                            <Image Source="/SGEA;component/img/circuloAgenda.png" Height="55" Width="56" Margin="0,0,0,23"/>
+                            <TextBlock Text="Agenda (F3)" HorizontalAlignment="Center" Margin="0,55,0,0"/>
+                        </Grid>
+                    </Button>
+                    <Button x:Name="menuForn" Click="menuForn_Click"  ToolTip="Fornecedor (F4)" Style="{DynamicResource MenuButton}" Padding="5,0,5,0">
+                        <Grid>
+                            <Image Source="/SGEA;component/img/circuloFornecedor.png" Height="55" Width="56" Margin="0,0,0,23"/>
+                            <TextBlock Text="Fornecedores (F4)" HorizontalAlignment="Center" Margin="0,55,0,0"/>
+                        </Grid>
+                    </Button>
+                    <Button x:Name="mPerfis" ToolTip="Perfis (F5)" Style="{DynamicResource MenuButton}" Click="mPerfis_Click" Padding="5,0,5,0">
+                        <Grid>
+                            <Image Source="/SGEA;component/img/circuloPerfil.png" Height="55" Width="56" Margin="0,0,0,23"/>
+                            <TextBlock Text="Perfis (F5)" HorizontalAlignment="Center" Margin="0,55,0,0"/>
+                        </Grid>
+                    </Button>
+                    <Button x:Name="mProdutos" ToolTip="Produtos (F6)" Click="mProdutos_Click" Style="{DynamicResource MenuButton}" Padding="5,0,5,0">
+                        <Grid>
+                            <Image Source="/SGEA;component/img/circuloProdutos.png" Height="55" Width="56" Margin="0,0,0,23"/>
+                            <TextBlock Text="Produtos (F6)" HorizontalAlignment="Center" Margin="0,55,0,0"/>
+                        </Grid>
+                    </Button>
+                    <Button x:Name="mServicos" ToolTip="Serviços (F7)" Click="mServicos_Click" Style="{DynamicResource MenuButton}" Padding="5,0,5,0">
+                        <Grid>
+                            <Image Source="/SGEA;component/img/circuloServiço.png" Height="55" Width="56" Margin="0,0,0,23"/>
+                            <TextBlock Text="Serviços (F7)" HorizontalAlignment="Center" Margin="0,55,0,0"/>
+                        </Grid>
+                    </Button>
+                    <Button x:Name="menuOrc" ToolTip="Orçamento (F8)" Style="{DynamicResource MenuButton}" Click="menuOrc_Click" Padding="5,0,5,0">
+                        <Grid>
+                            <Image Source="/SGEA;component/img/circuloorcamento.png" Height="55" Width="56" Margin="0,0,0,23"/>
+                            <TextBlock Text="Orçamentos (F8)" HorizontalAlignment="Center" Margin="0,55,0,0"/>
+                        </Grid>
+                    </Button>
+                    <Button x:Name="mProjeto" ToolTip="Projetos (F9)" Click="mProjeto_Click" Style="{DynamicResource MenuButton}" Padding="5,0,5,0">
+                        <Grid>
+                            <Image Source="/SGEA;component/img/circuloProjeto.png" Height="55" Width="56" Margin="0,0,0,23"/>
+                            <TextBlock Text="Projetos (F9)" HorizontalAlignment="Center" Margin="0,55,0,0"/>
+                        </Grid>
+                    </Button>
+                    <Button x:Name="mRelatorio" ToolTip="Relatórios do Mês (F10)" Click="mRelatorio_Click" Style="{DynamicResource MenuButton}" Padding="5,0,5,0">
+                        <Grid>
+                            <Image Source="/SGEA;component/img/circuloRelatorio.png" Height="55" Width="56" Margin="0,0,0,23"/>
+                            <TextBlock Text="Relatórios (F10)" HorizontalAlignment="Center" Margin="0,55,0,0"/>
+                        </Grid>
+                    </Button>
+                    <Button x:Name="historico" ToolTip="Exibir Histórico de Alterações (F11)" Style="{DynamicResource MenuButton}" Click="historico_Click" Padding="5,0,5,0">
+                        <Grid>
+                            <Image Source="/SGEA;component/img/circulohistorico.png" Height="55" Width="56" Margin="0,0,0,23"/>
+                            <TextBlock Text="Histórico (F11)" HorizontalAlignment="Center" Margin="0,55,0,0"/>
+                        </Grid>
+                    </Button>
+                    <Button x:Name="cel" ToolTip="Exportar Banco de Dados para o celular (F12)" Style="{DynamicResource MenuButton}" Click="cel_Click" Padding="5,0,10,0">
+                        <Grid>
+                            <Image Source="/SGEA;component/img/usb.png" Height="55" Width="56" Margin="0,0,0,23"/>
+                            <TextBlock Text="Exportar (F12)" HorizontalAlignment="Center" Margin="0,55,0,0"/>
+                        </Grid>
+                    </Button>
+                </StackPanel>
+                <Border DockPanel.Dock="Bottom">
+                    <DockPanel>
+                        <StatusBar DockPanel.Dock="Bottom" VerticalAlignment="Bottom" Height="23">
+                            <TextBlock x:Name="campoLogin" Text="Admin"/>
+                            <Separator/>
+                            <TextBlock x:Name="campoGrupo" Text="Administrador"/>
+                            <Separator/>
+                            <TextBlock Text="Versão 1.4.3" />
+                        </StatusBar>
+                        <Grid>
+                            <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Panel.ZIndex="1"/>
+                            <Border x:Name="balNote" BorderBrush="Black" CornerRadius="10" BorderThickness="1" Height="50" Width="150" VerticalAlignment="Top" Margin="0,-75,-768,0" Visibility="Collapsed">
+                                <Border.Background>
+                                    <SolidColorBrush Color="Green" Opacity="0.6"/>
+                                </Border.Background>
+                                <Grid>
+                                    <ed:RegularPolygon Fill="Green" HorizontalAlignment="Center" Height="14" InnerRadius="1" Margin="0,-10,0,0" PointCount="3" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="14" Opacity="0.6"/>
+                                    <Label Content="Notificações" Foreground="White" HorizontalAlignment="Center"/>
+                                    <TextBlock Text="Clique Aqui para verificar as notificações!" Margin="5,0,5,0" VerticalAlignment="Bottom" Foreground="White" TextWrapping="Wrap"/>
+                                </Grid>
+                            </Border>
+                            <Border x:Name="retNote" BorderBrush="Black" BorderThickness="1,1,1,0" HorizontalAlignment="Right" Width="0" Panel.ZIndex="2">
+                                <Border.Background>
+                                    <SolidColorBrush Color="Black" Opacity="0.6" />
+                                </Border.Background>
+                                <DockPanel x:Name="dock">
+                                    <StackPanel Orientation="Vertical" DockPanel.Dock="Top">
+                                        <Label HorizontalAlignment="Center" Foreground="White" Content="Notificações"/>
+                                        <StackPanel x:Name="menus" Orientation="Horizontal" Margin="0,5,0,0" HorizontalAlignment="Center">
+                                            <Button x:Name="todos" Click="todos_Click"  Content="Todos" Style="{DynamicResource ButtonStyle}" Template="{DynamicResource ButtonLeft}"/>
+                                            <Button x:Name="mvis" Click="vis_Click" Content="Visitas" Style="{DynamicResource ButtonStyle}" Template="{DynamicResource ButtonCenter}"/>
+                                            <Button x:Name="morc" Click="orc_Click" Content="Orçamentos" Style="{DynamicResource ButtonStyle}" Template="{DynamicResource ButtonCenter}"/>
+                                            <Button x:Name="mproj" Click="proj_Click" Content="Projetos" Style="{DynamicResource ButtonStyle}" Template="{DynamicResource ButtonRight}"/>
+                                        </StackPanel>
+                                        <Label x:Name="opcoes" Content="Todos" Foreground="White" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                    <ScrollViewer Margin="0,5,0,0">
+                                        <StackPanel x:Name="painel" Orientation="Vertical"/>
+                                    </ScrollViewer>
+                                </DockPanel>
+                            </Border>
+                        </Grid>
+                    </DockPanel>
+                </Border>
+            </DockPanel>
+        </Border>
+    </DockPanel>
+</Window>

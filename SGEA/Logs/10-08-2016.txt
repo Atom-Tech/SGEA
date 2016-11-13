@@ -1,0 +1,8 @@
+
+
+Mensagem do Erro: SQL logic error or missing database
+no such table: tbTransacao
+Janela:           
+Linha:            0
+Coluna:           0
+Método:           Prepare

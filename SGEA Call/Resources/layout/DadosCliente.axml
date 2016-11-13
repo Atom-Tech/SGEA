@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:theme="@android:style/Theme.Holo.Light.NoActionBar"
+    android:background="@color/fundo">
+    <Toolbar
+        android:background="@color/topo"
+        android:layout_width="match_parent"
+        android:layout_height="70.5dp"
+        android:id="@+id/toolbar1">
+        <ImageView
+            android:src="@drawable/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView1" />
+        <TextView
+            android:text="Clientes"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView1"
+            android:textColor="@android:color/black"
+            android:layout_marginLeft="29.5dp" />
+    </Toolbar>
+    <HorizontalScrollView
+        android:scrollbars="horizontal"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:layout_width="match_parent">
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="vertical">
+            <TableLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp">
+                <TableRow>
+                    <TextView
+                        android:text="Nome:"
+                        android:textColor="@android:color/black"
+                        android:textSize="18dp" />
+                    <TextView
+                        android:text="(Nome)"
+                        android:textColor="@android:color/black"
+                        android:id="@+id/campoNome"
+                        android:textSize="18dp"
+                        android:layout_marginLeft="60dp"
+                        android:layout_width="wrap_content" />
+                </TableRow>
+                <TableRow
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:text="Sexo:"
+                        android:textSize="18dp"
+                        android:textColor="@android:color/black" />
+                    <TextView
+                        android:text="(Sexo)"
+                        android:textSize="18dp"
+                        android:textColor="@android:color/black"
+                        android:id="@+id/campoSexo"
+                        android:layout_marginLeft="60dp"
+                        android:layout_width="wrap_content" />
+                </TableRow>
+                <TableRow
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:text="Email:"
+                        android:textColor="@android:color/black"
+                        android:textSize="18dp" />
+                    <TextView
+                        android:text="(Email)"
+                        android:textColor="@android:color/black"
+                        android:id="@+id/campoEmail"
+                        android:textSize="18dp"
+                        android:layout_marginLeft="60dp"
+                        android:layout_width="wrap_content" />
+                </TableRow>
+                <TableRow
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:text="CEP:"
+                        android:textSize="18dp"
+                        android:textColor="@android:color/black" />
+                    <TextView
+                        android:text="00000000"
+                        android:textSize="18dp"
+                        android:textColor="@android:color/black"
+                        android:id="@+id/campoCep"
+                        android:layout_marginLeft="60dp"
+                        android:layout_width="wrap_content" />
+                </TableRow>
+                <TableRow
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:text="Bairro:"
+                        android:textSize="18dp"
+                        android:textColor="@android:color/black" />
+                    <TextView
+                        android:text="(BAIRRO)"
+                        android:textSize="18dp"
+                        android:textColor="@android:color/black"
+                        android:id="@+id/campoBairro"
+                        android:layout_marginLeft="60dp"
+                        android:layout_width="wrap_content" />
+                </TableRow>
+                <TableRow
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:text="Rua:"
+                        android:textSize="18dp"
+                        android:textColor="@android:color/black" />
+                    <TextView
+                        android:text="(RUA)"
+                        android:textSize="18dp"
+                        android:textColor="@android:color/black"
+                        android:id="@+id/campoRua"
+                        android:layout_marginLeft="60dp"
+                        android:layout_width="wrap_content" />
+                </TableRow>
+                <TableRow
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:text="Telefone Fixo:"
+                        android:textSize="18dp"
+                        android:textColor="@android:color/black" />
+                    <TextView
+                        android:text="(Fixo)"
+                        android:textSize="18dp"
+                        android:textColor="@android:color/black"
+                        android:id="@+id/telFixo"
+                        android:layout_marginLeft="60dp"
+                        android:layout_width="wrap_content" />
+                </TableRow>
+                <TableRow
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:text="Celular:"
+                        android:textSize="18dp"
+                        android:textColor="@android:color/black" />
+                    <TextView
+                        android:text="(Celular)"
+                        android:textSize="18dp"
+                        android:textColor="@android:color/black"
+                        android:id="@+id/telCel"
+                        android:layout_marginLeft="60.0dp"
+                        android:layout_width="wrap_content" />
+                </TableRow>
+            </TableLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20.0dp">
+                <TextView
+                    android:id="@+id/centerPoint"
+                    android:text=""
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_centerHorizontal="true" />
+                <Button
+                    android:id="@+id/botaoFixo"
+                    style="@style/telFixo"
+                    android:layout_toLeftOf="@id/centerPoint" />
+                <Button
+                    android:id="@+id/botaoCel"
+                    style="@style/telCel"
+                    android:layout_toRightOf="@id/centerPoint" />
+                <TextView
+                    android:text="Visitas Agendadas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView"
+                    android:layout_below="@id/botaoFixo"
+                    android:textColor="@android:color/background_dark"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp" />
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_below="@id/textView"
+                    android:text="(Visitas)"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/textoVisitas"
+                    android:textColor="@android:color/background_dark"
+                    android:scrollbars="vertical"
+                    android:scrollbarStyle="outsideOverlay" />
+            </RelativeLayout>
+        </LinearLayout>
+    </HorizontalScrollView>
+</LinearLayout>

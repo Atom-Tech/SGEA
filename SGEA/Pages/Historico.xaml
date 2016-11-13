@@ -1,0 +1,29 @@
+﻿<Page x:Class="SGEA.Pages.Historico"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SGEA.Pages"
+      mc:Ignorable="d"
+      Title="Historico" Height="575" Width="1024">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/WindowStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <Style TargetType="{x:Type Rectangle}" />
+        </ResourceDictionary>
+    </Page.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <GroupBox x:Name="groupBox" Style="{DynamicResource GroupBoxStyle}" Header="Data" Margin="10,10,10,10">
+            <DataGrid x:Name="listaDia" Style="{DynamicResource DataGridStyle}" SelectionChanged="listaDia_SelectionChanged" ColumnWidth="*"/>
+        </GroupBox>
+        <GroupBox x:Name="groupHistorico" Header="Histórico do Dia" Style="{DynamicResource GroupBoxStyle}" Grid.Column="1" Margin="10,10,10,10">
+            <DataGrid x:Name="listaHistorico" Style="{DynamicResource DataGridStyle}" ColumnWidth="Auto"/>
+        </GroupBox>
+    </Grid>
+</Page>

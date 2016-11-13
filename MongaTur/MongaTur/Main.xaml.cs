@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace MongaTur
 {
-    public partial class Main : ContentPage
+    public partial class Main : TabbedPage
     {
         public Main()
         {

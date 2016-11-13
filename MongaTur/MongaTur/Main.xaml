@@ -1,15 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MongaTur.Main">
-  <ContentPage.Content>
-    <Label>
-      <Label.Text>
-        <OnPlatform x:TypeArguments="x:String"
-                    Android="Olá, Android!"
-                    WinPhone="Olá, Windows!">
-        </OnPlatform>
-      </Label.Text>
-    </Label>
-  </ContentPage.Content>
-</ContentPage>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:MongaTur;assembly=MongaTur"
+            x:Class="MongaTur.Main">
+  <NavigationPage Title="Pontos Turísticos" Icon="Assets/pontosT.png">
+    <ContentPage>
+
+    </ContentPage>
+  </NavigationPage>
+  <NavigationPage Title="Telefones Úteis">
+    <ContentPage>
+
+    </ContentPage>
+  </NavigationPage>
+</TabbedPage>

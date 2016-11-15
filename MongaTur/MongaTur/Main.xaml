@@ -1,16 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:local="clr-namespace:MongaTur;assembly=MongaTur"
             x:Class="MongaTur.Main">
-  <NavigationPage Title="Pontos Turísticos" Icon="Assets/pontosT.png">
-    <ContentPage>
+  <Grid RowSpacing="0">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <ActivityIndicator Grid.RowSpan="2"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       IsVisible="False"
+                       IsEnabled="True"
+                       x:Name="syncIndicator"/>
+    <ListView x:Name="todoList"
+				IsPullToRefreshEnabled="true"
+				Grid.Row="1">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal" Padding="15,5,0,0">
+              <StackLayout Padding="5,0,0,0" VerticalOptions="StartAndExpand" Orientation="Vertical">
+                <Label Text="{Binding Nome}"  />
+              </StackLayout>
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </Grid>
 
-    </ContentPage>
-  </NavigationPage>
-  <NavigationPage Title="Telefones Úteis">
-    <ContentPage>
-
-    </ContentPage>
-  </NavigationPage>
-</TabbedPage>
+</ContentPage>

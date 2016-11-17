@@ -30,7 +30,7 @@ namespace Apresentacao.Slide
             InitializeComponent();
             slideMestre = m;
             add = (Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86) +
-                "\\AtomTech\\SGEA\\Site\\index.html");
+                "\\AtomTech\\SGEA\\Site\\index.php");
             DispatcherTimer timer = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Normal, delegate
             {
                 horario.Content = DateTime.Now.ToString("HH:mm");

@@ -69,19 +69,20 @@ namespace SGEA.Pages
         private void botaoSalvar_Click(object sender, RoutedEventArgs e)
         {
             bool v = false;
-            if (campoTipo.Items.Count > 0)
+            if (campoTipo.Items.Count > 0 && campoPreco.Value != null)
             {
+                preco = (double)campoPreco.Value;
                 ClasseProduto p = new ClasseProduto(cdUsuario);
                 if (op == 0)
                 {
                     if (campoImagem.Source != null)
                     {
                         string imagem = campoImagem.Source.ToString();
-                        v = p.CadastrarProduto(campoNome.Text, campoDesc.Text, campoTipo.SelectedValue.ToString(), caminhoOriginal, c, i, campoPreco.Text);
+                        v = p.CadastrarProduto(campoNome.Text, campoDesc.Text, campoTipo.SelectedValue.ToString(), caminhoOriginal, c, i, preco);
                     }
                     else
                     {
-                        v = p.CadastrarProduto(campoNome.Text, campoDesc.Text, campoTipo.SelectedValue.ToString(),campoPreco.Text);
+                        v = p.CadastrarProduto(campoNome.Text, campoDesc.Text, campoTipo.SelectedValue.ToString(),preco);
                     }
                     id = IndexProduto();
                     if (v)
@@ -102,11 +103,11 @@ namespace SGEA.Pages
                             i = x[x.Length - 1];
                         }
                         campoImagem.Source = null;
-                        v = p.AlterarProduto(id, campoNome.Text, campoDesc.Text, campoTipo.SelectedValue.ToString(), imagem, c, i, campoPreco.Text);
+                        v = p.AlterarProduto(id, campoNome.Text, campoDesc.Text, campoTipo.SelectedValue.ToString(), imagem, c, i, preco);
                     }
                     else
                     {
-                       v = p.AlterarProduto(id, campoNome.Text, campoDesc.Text, campoTipo.SelectedValue.ToString(), campoPreco.Text);
+                       v = p.AlterarProduto(id, campoNome.Text, campoDesc.Text, campoTipo.SelectedValue.ToString(), preco);
                     }
                     if (v)
                     {
@@ -375,20 +376,7 @@ namespace SGEA.Pages
             t.ShowDialog();
             AtualizarTipos();
         }
-
-        private void campoPreco_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            try
-            {
-                preco = Convert.ToDouble(campoPreco.Text);
-            }
-            catch
-            {
-                campoPreco.Text = "0";
-                preco = 0;
-            }
-        }
-
+        
         private void botaoDel_Click(object sender, RoutedEventArgs e)
         {
             try

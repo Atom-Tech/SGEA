@@ -30,7 +30,7 @@ namespace SGEA
         /// <param name="tipo">Tipo do Produto</param>
         /// <param name="preco">Preço por Metro Quadrado</param>
         /// <returns>Returna true se foi executado com sucesso</returns>
-        public bool CadastrarProduto(string nome, string desc, string tipo, string preco)
+        public bool CadastrarProduto(string nome, string desc, string tipo, double preco)
         {
             try
             {
@@ -40,7 +40,7 @@ namespace SGEA
                     if (mConn.State == ConnectionState.Open) //Se a Conexão estiver aberta
                     {
                         //Checa para ver se os campos obrigatórios não estão nulos
-                        if (nome != "" && desc != "" && preco != "")
+                        if (nome != "" && desc != "")
                         {
                             string img = "Sem Imagem"; //Cadastra produto sem imagem
                             //Query de Insert
@@ -87,7 +87,7 @@ namespace SGEA
         /// <param name="c">Caminho completo da Imagem</param>
         /// <param name="i">Nome da Imagem</param>
         public bool CadastrarProduto(string nome, string desc, string tipo,
-            string imagem, string c, string i, string preco)
+            string imagem, string c, string i, double preco)
         {
             try
             {
@@ -96,7 +96,7 @@ namespace SGEA
                     mConn.Open();
                     if (mConn.State == ConnectionState.Open)
                     {
-                        if (nome != "" && desc != "" && preco != "")
+                        if (nome != "" && desc != "")
                         {
                             string e = i.Substring((i.Length) - 4, 4);
                             string caminho = c + nome + e;
@@ -141,7 +141,7 @@ namespace SGEA
         /// <param name="imagem">Imagem</param>
         /// <param name="c">Caminho completo da imagem</param>
         /// <param name="i">Nome da Imagem</param>
-        public bool AlterarProduto(long index, string nome, string text, string tipo, string imagem, string c, string i, string preco)
+        public bool AlterarProduto(long index, string nome, string text, string tipo, string imagem, string c, string i, double preco)
         {
             try
             {
@@ -150,7 +150,7 @@ namespace SGEA
                     mConn.Open();
                     if (mConn.State == ConnectionState.Open)
                     {
-                        if (nome != "" && text != "" && preco != "")
+                        if (nome != "" && text != "")
                         {
                             string e = i.Substring((i.Length) - 4, 4);
                             string caminho = c + nome + e;
@@ -193,7 +193,7 @@ namespace SGEA
         /// <param name="nome">Nome</param>
         /// <param name="text">Descrição</param>
         /// <param name="tipo">Tipo</param>
-        public bool AlterarProduto(long index, string nome, string text, string tipo, string preco)
+        public bool AlterarProduto(long index, string nome, string text, string tipo, double preco)
         {
             try
             {
@@ -202,7 +202,7 @@ namespace SGEA
                     mConn.Open();
                     if (mConn.State == ConnectionState.Open)
                     {
-                        if (nome != "" && text != "" && preco != "")
+                        if (nome != "" && text != "")
                         {
                             string imagem = "Sem Imagem";
                             string cmdText = "update tbProduto set nmProduto = @nome, dsProduto = @desc, imagem = @img, tpProduto = @tipo, preco = @preco where cdProduto = @cd";

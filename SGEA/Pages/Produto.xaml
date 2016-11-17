@@ -3,6 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
       xmlns:local="clr-namespace:SGEA.Pages"
       mc:Ignorable="d"
       Title="Produto" Height="575" Width="1024">
@@ -89,8 +90,9 @@
                         <ComboBoxItem Content=">" Width="Auto" Margin="0,0,0,0"/>
                         <ComboBoxItem Content=">=" Width="Auto" Margin="0,0,0,0"/>
                     </ComboBox>
-                    <TextBox x:Name="campoPreco" TabIndex="6"  IsEnabled="False" TextChanged="campoPreco_TextChanged" VerticalAlignment="Center" Style="{DynamicResource TextBoxStyle}" Margin="10,0,10,0"/>
-                </DockPanel>
+                    <xctk:DoubleUpDown x:Name="campoPreco" TabIndex="6" IsEnabled="False" Margin="10,0,10,0" Height="23"/>
+                    <!--                    <TextBox x:Name="campoPreco" TabIndex="6"  IsEnabled="False" TextChanged="campoPreco_TextChanged" VerticalAlignment="Center" Style="{DynamicResource TextBoxStyle}" Margin="10,0,10,0"/>
+-->                </DockPanel>
                 <GroupBox x:Name="groupBox1" Header="Perfis" Style="{DynamicResource GroupBoxStyle}" Grid.Column="3" Grid.RowSpan="7">
                     <Grid>
                         <Grid.ColumnDefinitions>

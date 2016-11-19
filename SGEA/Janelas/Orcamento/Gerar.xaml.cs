@@ -21,7 +21,7 @@ namespace SGEA.Janelas.Orcamento
     public partial class Gerar : Window
     {
         private int cdUsuario, idO;
-        private bool op;
+        private bool op, check;
         private string data, cliente;
         private List<int> cd = new List<int>(), quant = new List<int>(), cdN = new List<int>();
         private List<string> nome = new List<string>(), tp = new List<string>()
@@ -215,27 +215,6 @@ namespace SGEA.Janelas.Orcamento
             }
         }
 
-        private void campoLarg_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            int q = listaOrc.Items.Count;
-            int x = listaOrc.SelectedIndex;
-            if (campoLar.Text != "" && listaOrc.SelectedIndex != -1)
-                try { larg[x] = double.Parse(campoLar.Text); }
-                catch { campoLar.Text = "0"; }
-            PrecoMetro();
-            CalcularPreco();
-        }
-
-        private void campoAlt_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            int x = listaOrc.SelectedIndex;
-            if (campoAlt.Text != "" && listaOrc.SelectedIndex != -1)
-                try { alt[x] = double.Parse(campoAlt.Text); }
-                catch { campoAlt.Text = "0"; }
-            PrecoMetro();
-            CalcularPreco();
-        }
-
         public void PrecoMetro()
         {
             int x = listaOrc.SelectedIndex;
@@ -291,6 +270,7 @@ namespace SGEA.Janelas.Orcamento
 
         private void listaOrc_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            check = true;
             if (listaOrc.SelectedIndex != -1)
             {
                 campoQuant.IsEnabled = true;
@@ -304,10 +284,10 @@ namespace SGEA.Janelas.Orcamento
                     campoDesc.Text = desc[x];
                     campoTipo.Text = tipo[x];
                     campoImagem.Source = null;
-                    campoLar.Text = larg[x].ToString();
-                    campoAlt.Text = alt[x].ToString();
+                    campoLar.Value = larg[x];
+                    campoAlt.Value = alt[x];
                     campoQuant.Text = quant[x].ToString();
-                    campoPreco.Text = preco[x].ToString();
+                    campoPreco.Value = preco[x];
                 }
                 else
                 {
@@ -325,22 +305,39 @@ namespace SGEA.Janelas.Orcamento
                     {
                         campoImagem.Source = null;
                     }
-                    campoLar.Text = larg[x].ToString();
-                    campoAlt.Text = alt[x].ToString();
+                    campoLar.Value = larg[x];
+                    campoAlt.Value = alt[x];
                     campoQuant.Text = quant[x].ToString();
-                    campoPreco.Text = preco[x].ToString();
+                    campoPreco.Value = preco[x];
                 }
             }
+            check = false;
+        }
+        
+        private void campoLar_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        {
+            int x = listaOrc.SelectedIndex;
+            larg[x] = (double)campoLar.Value;
+            PrecoMetro();
+            CalcularPreco();
         }
 
-        private void campoPreco_TextChanged(object sender, TextChangedEventArgs e)
+        private void campoAlt_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        {
+            int x = listaOrc.SelectedIndex;
+            alt[x] = (double)campoAlt.Value;
+            PrecoMetro();
+            CalcularPreco();
+        }
+
+        private void campoPreco_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
             int x = listaOrc.SelectedIndex;
             if (x != -1 && tipo[x] == "Serviço" && campoPreco.Text != "")
             {
                 try
                 {
-                    preco[x] = double.Parse(campoPreco.Text);
+                    preco[x] = (double)campoPreco.Value;
                 }
                 catch
                 {
@@ -352,29 +349,34 @@ namespace SGEA.Janelas.Orcamento
 
         public void CalcularPreco()
         {
-            int x = listaOrc.SelectedIndex;
-            double alt = 0, larg = 0, p = 0;
-            int quant = 0;
-            if (campoAlt.Text != "" && campoLar.Text != "" && campoQuant.Text != "" && campoPreco.Text != "" && listaOrc.SelectedIndex != -1)
+            if (!check)
             {
-                quant = int.Parse(campoQuant.Text);
-                alt = double.Parse(campoAlt.Text);
-                larg = double.Parse(campoLar.Text);
-                p = double.Parse(campoPreco.Text);
-                campoPrecoT.Text = (p * quant).ToString();
-                precoT[x] = double.Parse(campoPrecoT.Text);
-                try
+                int x = listaOrc.SelectedIndex;
+                double alt = 0, larg = 0, p = 0;
+                int quant = 0;
+                if (campoAlt.Text != "" && campoLar.Text != "" &&
+                    campoQuant.Text != "" && campoPreco.Text != "" &&
+                    listaOrc.SelectedIndex != -1)
                 {
-                    double precoO = 0;
-                    for (int i = 0; i < listaOrc.Items.Count; i++)
+                    quant = int.Parse(campoQuant.Text);
+                    alt = (double)campoAlt.Value;
+                    larg = (double)campoLar.Value;
+                    p = (double)campoPreco.Value;
+                    campoPrecoT.Text = (p * quant).ToString();
+                    precoT[x] = double.Parse(campoPrecoT.Text);
+                    try
                     {
-                        precoO += precoT[i];
+                        double precoO = 0;
+                        for (int i = 0; i < listaOrc.Items.Count; i++)
+                        {
+                            precoO += precoT[i];
+                        }
+                        campoPrecoO.Text = precoO.ToString();
                     }
-                    campoPrecoO.Text = precoO.ToString();
-                }
-                catch
-                {
-                    campoPrecoO.Text = "0";
+                    catch
+                    {
+                        campoPrecoO.Text = "0";
+                    }
                 }
             }
         }
@@ -418,10 +420,19 @@ namespace SGEA.Janelas.Orcamento
                         mConn.Open();
                         if (mConn.State == ConnectionState.Open)
                         {
-                            string cmdText = "insert into tbItemNota values (null,@id,@cd,@l, @a, @q, @p)";
+                            string cmdText = "insert into tbItemNota values (null,@id,@cdP,@cdS,@l, @a, @q, @p)";
                             SQLiteCommand cmd = new SQLiteCommand(cmdText, mConn);
                             cmd.Parameters.AddWithValue("@id", idO);
-                            cmd.Parameters.AddWithValue("@cd", r);
+                            if (tipo[i] == "Serviço")
+                            {
+                                cmd.Parameters.AddWithValue("@cdS", r);
+                                cmd.Parameters.AddWithValue("@cdP", null);
+                            }
+                            else
+                            {
+                                cmd.Parameters.AddWithValue("@cdP", r);
+                                cmd.Parameters.AddWithValue("@cdS", null);
+                            }
                             cmd.Parameters.AddWithValue("@l", larg[i]);
                             cmd.Parameters.AddWithValue("@a", alt[i]);
                             cmd.Parameters.AddWithValue("@q", quant[i]);
@@ -499,7 +510,7 @@ namespace SGEA.Janelas.Orcamento
                         cmd.Parameters.AddWithValue("@id", cliente);
                         cmd.ExecuteNonQuery();
                         int index = Atualizar();
-                        o.ArmazenarRelatorio(cd, nome, desc, tipo, imagem, larg, alt, quant, preco, campoObs.Text, index, q);
+                        o.ArmazenarRelatorio(cd, nome, desc, tipo, imagem, larg, alt, quant, this.precoT, campoObs.Text, index, q);
                         Close();
                         Xceed.Wpf.Toolkit.MessageBox.Show("Orçamento gerado Com Sucesso!");
                         Historico.AdicionarHistorico(cdUsuario, "gerou", "um", "orçamento");

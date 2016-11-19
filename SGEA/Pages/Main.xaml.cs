@@ -107,7 +107,7 @@ namespace SGEA.Pages
                     {
                         DataGridRow row = (DataGridRow)listaProjetos.ItemContainerGenerator.ContainerFromIndex(i);
                         DataRowView r = (DataRowView)listaProjetos.Items[i];
-                        string data = r[3].ToString();
+                        string data = r[4].ToString();
                         int dia = Convert.ToInt32(data.Substring(8, 2));
                         int mes = Convert.ToInt32(data.Substring(5, 2));
                         int ano = Convert.ToInt32(data.Substring(0, 4));

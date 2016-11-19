@@ -76,7 +76,6 @@ namespace SGEA
         {
             listaOrc.Clear();
             dataGrid2.SelectNotificacaoProjetos();
-            Wait.Waiting();
             if (dataGrid2.Items.Count > 0)
             {
                 for (int i = 0; i < dataGrid2.Items.Count; i++)

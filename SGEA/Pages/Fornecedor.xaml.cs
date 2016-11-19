@@ -162,15 +162,16 @@ namespace SGEA.Pages
                 {
                     if (!telFixo.IsMaskFull) telFixo.Text = "(00)0000-0000";
                     if (!telCel.IsMaskFull) telCel.Text = "(00)00000-0000";
+                    string cnpj = campoCNPJ.Text.Replace(',','.');
                     ClasseFornecedor p = new ClasseFornecedor(cdUsuario);
                     if (op == 0)
                     {
                         v = p.CadastrarFornecedor(campoNome.Text, campoCep.Text, campoBairro.Text, campoRua.Text, campoEmail.Text,
-                            telFixo.Text, telCel.Text, campoCNPJ.Text, campoRS.Text);
+                            telFixo.Text, telCel.Text, cnpj, campoRS.Text);
                     }
                     else if (op == 1)
                     {
-                        v = p.AlterarFornecedor(id, campoCNPJ.Text, campoNome.Text, campoRS.Text, campoEmail.Text,
+                        v = p.AlterarFornecedor(id, cnpj, campoNome.Text, campoRS.Text, campoEmail.Text,
                             campoCep.Text, campoBairro.Text, campoRua.Text, telFixo.Text, telCel.Text);
                     }
                     if (v)
@@ -190,7 +191,7 @@ namespace SGEA.Pages
                 if (campoNome.Text != "")
                     pesquisa.Add("nmFornecedor", campoNome.Text);
                 if (campoCNPJ.IsMaskFull)
-                    pesquisa.Add("cnpj", campoCNPJ.Text);
+                    pesquisa.Add("cnpj", campoCNPJ.Text.Replace(',','.'));
                 if (campoEmail.Text != "")
                     pesquisa.Add("email", campoEmail.Text);
                 if (campoBairro.Text != "")

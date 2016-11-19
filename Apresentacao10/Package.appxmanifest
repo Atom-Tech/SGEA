@@ -1,10 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity
-    Name="e1a81fad-a870-4a73-920d-6a51fd80598a"
-    Publisher = "CN=Thiago"
-    Version = "1.0.0.0" /> 
-  <mp:PhoneIdentity PhoneProductId="e1a81fad-a870-4a73-920d-6a51fd80598a" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <Identity Name="e1a81fad-a870-4a73-920d-6a51fd80598a" Publisher="CN=Thiago" Version="1.0.0.0" />
+  <mp:PhoneIdentity PhoneProductId="e1a81fad-a870-4a73-920d-6a51fd80598a" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>Apresentacao10</DisplayName>
     <PublisherDisplayName>Thiago</PublisherDisplayName>
@@ -18,10 +15,14 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Apresentacao10.App">
-      <uap:VisualElements DisplayName="Apresentacao10.App" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="Sample" BackgroundColor="transparent">
+      <uap:VisualElements DisplayName="Apresentacao10.App" Square150x150Logo="Assets\Splash.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="Sample" BackgroundColor="transparent">
+        <uap:LockScreen Notification="" BadgeLogo="Assets\BadgeLogo.png" />
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="square150x150Logo" />
+          </uap:ShowNameOnTiles>
         </uap:DefaultTile>
-        <uap:SplashScreen Image="Assets\SplashScreen.png" />
+        <uap:SplashScreen Image="Assets\Splash.png" />
       </uap:VisualElements>
     </Application>
   </Applications>

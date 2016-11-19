@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Apresentacao10</RootNamespace>
     <AssemblyName>Apresentacao10</AssemblyName>
-    <DefaultLanguage>en-US</DefaultLanguage>
+    <DefaultLanguage>pt-BR</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
@@ -127,7 +127,9 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\BadgeLogo.scale-400.png" />
     <Content Include="Assets\Splash.png" />
+    <Content Include="Assets\Square150x150Logo.scale-400.png" />
     <Content Include="Help.htm" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />

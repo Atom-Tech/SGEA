@@ -8,6 +8,9 @@ using System;
 using System.Linq;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.ViewManagement;
+using Windows.Foundation;
+using Windows.ApplicationModel.Core;
 
 namespace Apresentacao10
 {
@@ -20,8 +23,8 @@ namespace Apresentacao10
         public App()
         {
             InitializeComponent();
+            ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.FullScreen;
             SplashFactory = (e) => new Views.Splash(e);
-
             #region app settings
 
             // some settings must be set in app.constructor

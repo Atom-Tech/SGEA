@@ -18,7 +18,7 @@
                 <ImageBrush ImageSource="ms-appx:///Assets/Splash.png" Stretch="Uniform" />
             </Canvas.Background>
             <Viewbox x:Name="splashImage">
-                <Image Source="ms-appx:///Assets/SplashScreen.png" ImageOpened="Image_Loaded" />
+                <Image Source="ms-appx:///Assets/Splash.png" ImageOpened="Image_Loaded" />
             </Viewbox>
         </Canvas>
 

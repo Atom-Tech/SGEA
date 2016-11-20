@@ -54,6 +54,51 @@ namespace Apresentacao10.Views
         {
             m.Navigate(typeof(Equipe));
         }
+
+        private void mvv_Selected(object sender, RoutedEventArgs e)
+        {
+            m.Navigate(typeof(MVV));
+        }
+
+        private void cliente_Selected(object sender, RoutedEventArgs e)
+        {
+            m.Navigate(typeof(MVV));
+        }
+
+        private void perfil_Selected(object sender, RoutedEventArgs e)
+        {
+            m.Navigate(typeof(MVV));
+        }
+
+        private void problema_Selected(object sender, RoutedEventArgs e)
+        {
+            m.Navigate(typeof(MVV));
+        }
+
+        private void solucao_Selected(object sender, RoutedEventArgs e)
+        {
+            m.Navigate(typeof(MVV));
+        }
+
+        private void site_Selected(object sender, RoutedEventArgs e)
+        {
+            m.Navigate(typeof(Site));
+        }
+
+        private void sgea_Selected(object sender, RoutedEventArgs e)
+        {
+            m.Navigate(typeof(MVV));
+        }
+
+        private void call_Selected(object sender, RoutedEventArgs e)
+        {
+            m.Navigate(typeof(MVV));
+        }
+
+        private void conclusao_Selected(object sender, RoutedEventArgs e)
+        {
+            m.Navigate(typeof(MVV));
+        }
     }
 }
 

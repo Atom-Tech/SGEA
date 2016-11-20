@@ -1,4 +1,4 @@
-<Page x:Class="Apresentacao10.Views.Shell"
+﻿<Page x:Class="Apresentacao10.Views.Shell"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:Controls="using:Template10.Controls"
@@ -11,7 +11,7 @@
       xmlns:views="using:Apresentacao10.Slides"
       mc:Ignorable="d">
 
-    <Controls:HamburgerMenu x:Name="lista">
+    <Controls:HamburgerMenu x:Name="lista" NavAreaBackground="SteelBlue">
         <Controls:HamburgerMenu.PrimaryButtons>
             <Controls:HamburgerButtonInfo x:Name="intro"
                 ClearHistory="True" Selected="intro_Selected">
@@ -34,6 +34,105 @@
                     <TextBlock Margin="12,0,0,0"
                                VerticalAlignment="Center"
                                Text="Equipe" />
+                </StackPanel>
+            </Controls:HamburgerButtonInfo>
+            <Controls:HamburgerButtonInfo x:Name="mvv"
+                ClearHistory="True" Selected="mvv_Selected">
+                <StackPanel Orientation="Horizontal">
+                    <SymbolIcon Width="48"
+                                Height="48"
+                                Symbol="ContactInfo" />
+                    <TextBlock Margin="12,0,0,0"
+                               VerticalAlignment="Center"
+                               Text="MVV" />
+                </StackPanel>
+            </Controls:HamburgerButtonInfo>
+            <Controls:HamburgerButtonInfo x:Name="cliente"
+                ClearHistory="True" Selected="cliente_Selected">
+                <StackPanel Orientation="Horizontal">
+                    <SymbolIcon Width="48"
+                                Height="48"
+                                Symbol="Street" />
+                    <TextBlock Margin="12,0,0,0"
+                               VerticalAlignment="Center"
+                               Text="Cliente" />
+                </StackPanel>
+            </Controls:HamburgerButtonInfo>
+            <Controls:HamburgerButtonInfo x:Name="perfil"
+                ClearHistory="True" Selected="perfil_Selected">
+                <StackPanel Orientation="Horizontal">
+                    <SymbolIcon Width="48"
+                                Height="48"
+                                Symbol="Link" />
+                    <TextBlock Margin="12,0,0,0"
+                               VerticalAlignment="Center"
+                               Text="Perfil" />
+                </StackPanel>
+            </Controls:HamburgerButtonInfo>
+            <Controls:HamburgerButtonInfo x:Name="problema"
+                ClearHistory="True" Selected="problema_Selected">
+                <StackPanel Orientation="Horizontal">
+                    <SymbolIcon Width="48"
+                                Height="48"
+                                Symbol="Help" />
+                    <TextBlock Margin="12,0,0,0"
+                               VerticalAlignment="Center"
+                               Text="Problema" />
+                </StackPanel>
+            </Controls:HamburgerButtonInfo>
+            <Controls:HamburgerButtonInfo x:Name="solucao"
+                ClearHistory="True" Selected="solucao_Selected">
+                <StackPanel Orientation="Horizontal">
+                    <SymbolIcon Width="48"
+                                Height="48"
+                                Symbol="Accept" />
+                    <TextBlock Margin="12,0,0,0"
+                               VerticalAlignment="Center"
+                               Text="Solução" />
+                </StackPanel>
+            </Controls:HamburgerButtonInfo>
+            <Controls:HamburgerButtonInfo x:Name="site"
+                ClearHistory="True" Selected="site_Selected">
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="48"
+                                Height="48"
+                                Source="ms-appx:///Assets/Google-Chrome-icon.png" />
+                    <TextBlock Margin="12,0,0,0"
+                               VerticalAlignment="Center"
+                               Text="Site" />
+                </StackPanel>
+            </Controls:HamburgerButtonInfo>
+            <Controls:HamburgerButtonInfo x:Name="sgea"
+                ClearHistory="True" Selected="sgea_Selected">
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="48"
+                                Height="48"
+                                Source="ms-appx:///Assets/LogoPrograma.png" />
+                    <TextBlock Margin="12,0,0,0"
+                               VerticalAlignment="Center"
+                               Text="SGEA" />
+                </StackPanel>
+            </Controls:HamburgerButtonInfo>
+            <Controls:HamburgerButtonInfo x:Name="call"
+                ClearHistory="True" Selected="call_Selected">
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="48"
+                                Height="48"
+                                Source="ms-appx:///Assets/Icone64PX.png" />
+                    <TextBlock Margin="12,0,0,0"
+                               VerticalAlignment="Center"
+                               Text="SGEA Call" />
+                </StackPanel>
+            </Controls:HamburgerButtonInfo>
+            <Controls:HamburgerButtonInfo x:Name="conclusao"
+                ClearHistory="True" Selected="conclusao_Selected">
+                <StackPanel Orientation="Horizontal">
+                    <SymbolIcon Width="48"
+                                Height="48"
+                                Symbol="Flag" />
+                    <TextBlock Margin="12,0,0,0"
+                               VerticalAlignment="Center"
+                               Text="Conclusão" />
                 </StackPanel>
             </Controls:HamburgerButtonInfo>
         </Controls:HamburgerMenu.PrimaryButtons>

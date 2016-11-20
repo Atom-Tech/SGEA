@@ -93,6 +93,9 @@
     <Content Include="Assets\Atom.png" />
     <Content Include="Assets\brushedframe4.jpg" />
     <Content Include="Assets\Equipe\Logo.png" />
+    <Content Include="Assets\Google-Chrome-icon.png" />
+    <Content Include="Assets\Icone64PX.png" />
+    <Content Include="Assets\LogoPrograma.png" />
     <Content Include="Assets\Site\ICON\facebook.png" />
     <Content Include="Assets\Site\ICON\favicon.ico" />
     <Content Include="Assets\Site\ICON\ICAut.png" />
@@ -145,6 +148,12 @@
     </Compile>
     <Compile Include="Slides\Intro.xaml.cs">
       <DependentUpon>Intro.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Slides\MVV.xaml.cs">
+      <DependentUpon>MVV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Slides\Site.xaml.cs">
+      <DependentUpon>Site.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\DetailPageViewModel.cs" />
@@ -206,6 +215,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Slides\Intro.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Slides\MVV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Slides\Site.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

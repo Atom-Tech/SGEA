@@ -10,6 +10,14 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:vm="using:Apresentacao10.ViewModels"
       mc:Ignorable="d">
+    <Page.Resources>
+        <Storyboard x:Name="Transicao">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="frame">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Page.Resources>
 
     <Page.DataContext>
         <vm:MainPageViewModel x:Name="ViewModel" />

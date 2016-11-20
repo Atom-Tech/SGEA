@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using Windows.ApplicationModel.Core;
 using System.IO;
 using Apresentacao10.Slides;
+using Windows.UI.Xaml.Media.Animation;
 
 namespace Apresentacao10.Views
 {
@@ -26,6 +27,8 @@ namespace Apresentacao10.Views
 
         public void Navigate(Type t)
         {
+            Storyboard storyBoard = (Storyboard)Resources["Transicao"];
+            storyBoard.Begin();
             frame.Navigate(t);
         }
 

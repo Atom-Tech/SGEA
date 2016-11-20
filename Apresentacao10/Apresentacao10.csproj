@@ -90,8 +90,49 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <Content Include="Assets\Atom.png" />
+    <Content Include="Assets\brushedframe4.jpg" />
+    <Content Include="Assets\Equipe\Logo.png" />
+    <Content Include="Assets\Site\ICON\facebook.png" />
+    <Content Include="Assets\Site\ICON\favicon.ico" />
+    <Content Include="Assets\Site\ICON\ICAut.png" />
+    <Content Include="Assets\Site\ICON\ICEdu.png" />
+    <Content Include="Assets\Site\ICON\ICOpo.png" />
+    <Content Include="Assets\Site\ICON\ICQual.png" />
+    <Content Include="Assets\Site\ICON\ICRes.png" />
+    <Content Include="Assets\Site\ICON\ICSeo.png" />
+    <Content Include="Assets\Site\ICON\instagram.png" />
+    <Content Include="Assets\Site\ICON\LinksSociais\facebook.png" />
+    <Content Include="Assets\Site\ICON\LinksSociais\linkedin.png" />
+    <Content Include="Assets\Site\ICON\LinksSociais\twitter.png" />
+    <Content Include="Assets\Site\ICON\Svg\close-envelope.svg" />
+    <Content Include="Assets\Site\ICON\Svg\glyphicons-224-chevron-right.png" />
+    <Content Include="Assets\Site\ICON\Svg\glyphicons-387-log-in.png" />
+    <Content Include="Assets\Site\ICON\Svg\location-pointer.svg" />
+    <Content Include="Assets\Site\ICON\Svg\old-typical-phone.svg" />
+    <Content Include="Assets\Site\ICON\Svg\smartphone-call.svg" />
+    <Content Include="Assets\Site\ICON\tablet-1.svg" />
+    <Content Include="Assets\Site\ICON\twitter.png" />
+    <Content Include="Assets\Site\ICON\worldwide.svg" />
+    <Content Include="Assets\Site\IMG\Fotos\Fernando.jpg" />
+    <Content Include="Assets\Site\IMG\Fotos\foto.jpg" />
+    <Content Include="Assets\Site\IMG\Fotos\Moline.jpg" />
+    <Content Include="Assets\Site\IMG\Fotos\Raphael.jpg" />
+    <Content Include="Assets\Site\IMG\Fotos\Thayna.jpg" />
+    <Content Include="Assets\Site\IMG\Fotos\Thiago.jpg" />
+    <Content Include="Assets\Site\IMG\Logo.png" />
+    <Content Include="Assets\Site\IMG\Parallax\Para1.png" />
+    <Content Include="Assets\Site\IMG\Portfolio\LG_Ari.jpg" />
+    <Content Include="Assets\Site\IMG\Portfolio\LG_RL.jpg" />
+    <Content Include="Assets\Site\IMG\Portfolio\LG_SGEA.png" />
+    <Content Include="Assets\Site\JS\bootstrap.min.js" />
+    <Content Include="Assets\Site\JS\jquery.min.js" />
     <None Include="Apresentacao10_TemporaryKey.pfx" />
     <None Include="project.json" />
+    <Content Include="Assets\Site\Font\Jura-DemiBold.ttf" />
+    <Content Include="Assets\Site\index.php">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -99,6 +140,12 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\SettingsServices\SettingsService.cs" />
+    <Compile Include="Slides\Equipe.xaml.cs">
+      <DependentUpon>Equipe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Slides\Intro.xaml.cs">
+      <DependentUpon>Intro.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\DetailPageViewModel.cs" />
     <Compile Include="ViewModels\SettingsPageViewModel.cs" />
@@ -128,7 +175,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\BadgeLogo.scale-400.png" />
+    <Content Include="Assets\Splash-1240x600.png" />
     <Content Include="Assets\Splash.png" />
+    <Content Include="Assets\Splash.scale-100.png" />
+    <Content Include="Assets\Splash.scale-200.png" />
     <Content Include="Assets\Square150x150Logo.scale-400.png" />
     <Content Include="Help.htm" />
     <Content Include="Properties\Default.rd.xml" />
@@ -139,6 +189,10 @@
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="Assets\Site\backup da apresentação da equipe.txt" />
+    <Content Include="Assets\Site\backup\index.html" />
+    <Content Include="Assets\Site\CSS\bootstrap.min.css" />
+    <Content Include="Assets\Site\CSS\estilo.css" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -147,6 +201,14 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Slides\Equipe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Slides\Intro.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\Custom.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

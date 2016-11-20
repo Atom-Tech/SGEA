@@ -40,7 +40,7 @@ namespace Apresentacao10.Services.SettingsServices
             {
                 _helper.Write(nameof(AppTheme), value.ToString());
                 (Window.Current.Content as FrameworkElement).RequestedTheme = value.ToElementTheme();
-                Views.Shell.HamburgerMenu.RefreshStyles(value, true);
+                Views.Shell.Lista.RefreshStyles(value, true);
             }
         }
 
@@ -60,7 +60,7 @@ namespace Apresentacao10.Services.SettingsServices
             set
             {
                 _helper.Write(nameof(ShowHamburgerButton), value);
-                Views.Shell.HamburgerMenu.HamburgerButtonVisibility = value ? Visibility.Visible : Visibility.Collapsed;
+                Views.Shell.Lista.HamburgerButtonVisibility = value ? Visibility.Visible : Visibility.Collapsed;
             }
         }
 
@@ -70,7 +70,7 @@ namespace Apresentacao10.Services.SettingsServices
             set
             {
                 _helper.Write(nameof(IsFullScreen), value);
-                Views.Shell.HamburgerMenu.IsFullScreen = value;
+                Views.Shell.Lista.IsFullScreen = value;
             }
         }
     }

@@ -8,16 +8,13 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="using:Apresentacao10.Views"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-      xmlns:views="using:Apresentacao10.Views"
-      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+      xmlns:views="using:Apresentacao10.Slides"
       mc:Ignorable="d">
 
-    <Controls:HamburgerMenu x:Name="MyHamburgerMenu">
+    <Controls:HamburgerMenu x:Name="lista">
         <Controls:HamburgerMenu.PrimaryButtons>
-            <!--  mainpage button  -->
-            <Controls:HamburgerButtonInfo
-                ClearHistory="True"
-                PageType="views:MainPage">
+            <Controls:HamburgerButtonInfo x:Name="intro"
+                ClearHistory="True" Selected="intro_Selected">
                 <StackPanel Orientation="Horizontal">
                     <SymbolIcon Width="48"
                                     Height="48"
@@ -27,12 +24,13 @@
                                Text="Home" />
                 </StackPanel>
             </Controls:HamburgerButtonInfo>
-            <Controls:HamburgerButtonInfo>
+            <Controls:HamburgerButtonInfo x:Name="equipe"
+                ClearHistory="True" Selected="equipe_Selected">
                 <StackPanel Orientation="Horizontal">
                     <Image Width="48"
                            Height="48"
                            Stretch="Fill"
-                           Source="ms-appx:///Assets/Splash.png" />
+                           Source="ms-appx:///Assets/Atom.png" />
                     <TextBlock Margin="12,0,0,0"
                                VerticalAlignment="Center"
                                Text="Equipe" />

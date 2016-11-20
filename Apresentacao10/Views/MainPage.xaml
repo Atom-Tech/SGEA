@@ -15,22 +15,25 @@
         <vm:MainPageViewModel x:Name="ViewModel" />
     </Page.DataContext>
 
-    <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    <RelativePanel>
+        <RelativePanel.Background>
+            <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/brushedframe4.jpg"/>
+        </RelativePanel.Background>
         <controls:PageHeader x:Name="pageHeader"
                              RelativePanel.AlignLeftWithPanel="True"
                              RelativePanel.AlignRightWithPanel="True"
                              RelativePanel.AlignTopWithPanel="True" 
-                             EllipsisVisibility="Collapsed"/>
-        <TextBlock Text="Apresentação - Atom Technology Company" Margin="16,12,0,0" FontSize="18.14px"/>
+                             EllipsisVisibility="Collapsed"
+                             Visibility="Collapsed"/>
+        <TextBlock Text="Apresentação - Atom Technology Company" Margin="16,12,0,0" FontSize="18.14px" Visibility="Collapsed"/>
         <RelativePanel EntranceNavigationTransitionInfo.IsTargetElement="True"
                        RelativePanel.AlignBottomWithPanel="True"
                        RelativePanel.AlignLeftWithPanel="True"
                        RelativePanel.AlignRightWithPanel="True"
-                       RelativePanel.Below="pageHeader">
+                       RelativePanel.Below="pageHeader"
+                       Visibility="Collapsed">
 
-
-            <controls:Resizer x:Name="parameterResizer" Margin="16,16,16,0">
+            <controls:Resizer x:Name="parameterResizer" Margin="16,16,16,0" Visibility="Collapsed">
 
                 <TextBox MinWidth="150"
                          MinHeight="62"
@@ -58,16 +61,19 @@
                     Click="{x:Bind ViewModel.GotoDetailsPage}"
                     Content="Submit"
                     RelativePanel.AlignBottomWith="parameterResizer"
-                    RelativePanel.RightOf="parameterResizer" />
+                    RelativePanel.RightOf="parameterResizer" Visibility="Collapsed"/>
 
             <TextBlock x:Name="stateTextBox"
                        Margin="16,16,0,0"
                        RelativePanel.AlignLeftWith="parameterResizer"
                        RelativePanel.Below="parameterResizer"
                        Text="Current Visual State" />
-
         </RelativePanel>
-
+        <Frame x:Name="frame"
+                 RelativePanel.AlignTopWithPanel="True"
+                 RelativePanel.AlignLeftWithPanel="True"
+                 RelativePanel.AlignRightWithPanel="True"
+                 RelativePanel.AlignBottomWithPanel="True"/>
     </RelativePanel>
 </Page>
 

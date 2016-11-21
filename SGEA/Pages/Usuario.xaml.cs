@@ -47,11 +47,10 @@ namespace SGEA.Pages
             try
             {
                 listaFunc.DataContext = Connect.LiteConnection("select cdUsuario 'Código', login 'Login',"
-                    + " nmUsuario 'Nome', sexo 'Sexo', cep 'CEP', bairro 'Bairro', rua 'Rua', email 'E-Mail', "
+                    + " nmUsuario 'Nome', sexo 'Sexo', cep 'CEP', bairro 'Bairro', rua 'Rua', numero 'Nº', email 'E-Mail', "
                     + " grupo 'Grupo', telFixo 'Telefone', telCel 'Celular' from tbUsuario "
                     + " where login != '" + login + "'");
             }
-
             catch (Exception ex)
             {
                 Error.Erro(ex);
@@ -67,6 +66,7 @@ namespace SGEA.Pages
             campoCidade.IsEnabled = vf;
             campoBairro.IsEnabled = vf;
             campoRua.IsEnabled = vf;
+            campoNum.IsEnabled = vf;
             radioF.IsEnabled = vf;
             radioM.IsEnabled = vf;
             campoLogin.IsEnabled = vf;
@@ -131,7 +131,7 @@ namespace SGEA.Pages
                         ClasseUsuario u = new ClasseUsuario(cdUsuario);
                         if (op == 0)
                         {
-                            v = u.CadastrarUsuario(campoNome.Text, campoCep.Text, campoBairro.Text, campoRua.Text, campoEmail.Text, sexo, fixo,
+                            v = u.CadastrarUsuario(campoNome.Text, campoCep.Text, campoBairro.Text, campoRua.Text, campoNum.Text, campoEmail.Text, sexo, fixo,
                                 cel, campoLogin.Text, senha, tipoUsuario.Text);
                             if (v)
                             {
@@ -147,7 +147,7 @@ namespace SGEA.Pages
                                 if (Criptografar.segSenha(campoSenhaNova.Password, checkSenha.IsChecked))
                                 {
                                     bool ver = VerificarSenha(campoSenhaAntiga.Password);
-                                    v = u.AlterarUsuario(campoNome.Text, campoCep.Text, campoBairro.Text, campoRua.Text, fixo, cel, campoLogin.Text,
+                                    v = u.AlterarUsuario(campoNome.Text, campoCep.Text, campoBairro.Text, campoRua.Text, campoNum.Text, fixo, cel, campoLogin.Text,
                                         loginU, campoEmail.Text, sexo, checkSenha.IsChecked, campoSenhaAntiga.Password, campoSenhaNova.Password, tipoUsuario.Text, ver);
                                     if (v)
                                     {
@@ -187,6 +187,8 @@ namespace SGEA.Pages
                     pesquisa.Add("bairro", campoBairro.Text);
                 if (campoRua.Text != "")
                     pesquisa.Add("rua", campoRua.Text);
+                if (campoNum.Text != "")
+                    pesquisa.Add("numero", campoNum.Text);
                 if (checkRadio.IsChecked == true)
                 {
                     if (radioM.IsChecked == true)
@@ -203,7 +205,7 @@ namespace SGEA.Pages
                 if (pesquisa.Count > 0 || campoCidade.Text != "")
                 {
                     string cmdText = "select cdUsuario 'Código', login 'Login',"
-                        + " nmUsuario 'Nome', sexo 'Sexo', cep 'CEP', bairro 'Bairro', rua 'Rua', email 'E-Mail', "
+                        + " nmUsuario 'Nome', sexo 'Sexo', cep 'CEP', bairro 'Bairro', rua 'Rua', numero 'Nº', email 'E-Mail', "
                         + " grupo 'Grupo', telFixo 'Telefone', telCel 'Celular' from tbUsuario "
                         + " where login != '" + login + "' and ";
                     if (pesquisa.Count > 0)
@@ -257,6 +259,7 @@ namespace SGEA.Pages
             campoCidade.Text = "";
             campoBairro.Text = "";
             campoRua.Text = "";
+            campoNum.Text = "";
             radioM.IsChecked = true;
             campoLogin.Text = "";
             checkSenha.IsChecked = false;
@@ -283,12 +286,13 @@ namespace SGEA.Pages
                 {
                     row = (DataRowView)listaFunc.Items[0];
                 }
-                tipoUsuario.Text = row[8].ToString();
+                tipoUsuario.Text = row[9].ToString();
                 campoNome.Text = row[2].ToString();
-                campoEmail.Text = row[7].ToString();
+                campoEmail.Text = row[8].ToString();
                 campoCep.Text = row[4].ToString();
                 campoBairro.Text = row[5].ToString();
                 campoRua.Text = row[6].ToString();
+                campoNum.Text = row[7].ToString();
                 if (row[3].ToString() == "M")
                     radioM.IsChecked = true;
                 else
@@ -296,8 +300,8 @@ namespace SGEA.Pages
                 campoLogin.Text = row[1].ToString();
                 loginU = row[1].ToString();
                 checkSenha.IsChecked = false;
-                telCel.Text = row[10].ToString();
-                telFixo.Text = row[9].ToString();
+                telCel.Text = row[11].ToString();
+                telFixo.Text = row[10].ToString();
             }
         }
 

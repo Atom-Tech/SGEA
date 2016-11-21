@@ -60,6 +60,10 @@ namespace SGEA.Pages
                 int index = listaOrc.SelectedIndex;
                 DataRowView row = (DataRowView)listaOrc.Items[index];
                 string login = row[1].ToString();
+                string cd = row[0].ToString();
+                string cliente = row[9].ToString();
+                DateTime data = DateTime.Parse(row[3].ToString());
+                DateTime dataV = DateTime.Parse(row[5].ToString());
                 string obs = row[8].ToString();
                 for (int i = 0; i < viewOrcP.Items.Count; i++)
                 {
@@ -86,7 +90,7 @@ namespace SGEA.Pages
                     preco.Add(Convert.ToDouble(row[3]));
                 }
                 ClasseOrcamento o = new ClasseOrcamento(cdUsuario);
-                o.ExportarRelatorio(nome, desc, tipo, imagem, larg, alt, quant, preco, obs, login, viewOrcP.Items.Count + viewOrcS.Items.Count);
+                o.ExportarRelatorio(nome, desc, tipo, imagem, larg, alt, quant, preco, data, dataV, cd, cliente, obs, login, viewOrcP.Items.Count + viewOrcS.Items.Count);
             }
             else
             {

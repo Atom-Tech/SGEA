@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SGEA.Janelas.Usuario"
         mc:Ignorable="d"
-        Title="Alterar Usuário" Style="{DynamicResource WindowStyle}" Height="320" Width="500" WindowStartupLocation="CenterScreen">
+        Title="Alterar Usuário" Style="{DynamicResource WindowStyle}" Height="320" Width="600" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <ResourceDictionary>
             <Style TargetType="{x:Type Rectangle}" />
@@ -19,7 +19,7 @@
         <Border x:Name="TitleBar"  Style="{DynamicResource BorderStyle}"  MouseLeftButtonUp="TitleBar_MouseLeftButtonUp" MouseLeftButtonDown="TitleBar_MouseLeftButtonDown" MouseMove="TitleBar_MouseMove" >
             <StackPanel Orientation="Horizontal" Height="28">
                 <Image Style="{DynamicResource ImageStyle}"/>
-                <Label x:Name="titulo" Style="{DynamicResource labelTop}" Content="Alterar Usuário" Width="411" Foreground="White" VerticalAlignment="Center" Margin="0,2"/>
+                <Label x:Name="titulo" Style="{DynamicResource labelTop}" Content="Alterar Usuário" Width="514" Foreground="White" VerticalAlignment="Center" Margin="0,2"/>
                 <Button x:Name="minimizar" Style="{DynamicResource TopButton_}" Click="minimizar_Click" >
                     <Image Source="/SGEA;component/img/_.png"/>
                 </Button>
@@ -32,8 +32,8 @@
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="63*"/>
-                    <ColumnDefinition Width="175*"/>
-                    <ColumnDefinition Width="254*"/>
+                    <ColumnDefinition Width="229*"/>
+                    <ColumnDefinition Width="200*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
@@ -46,9 +46,9 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Button x:Name="botaoAlterar" Style="{DynamicResource ButtonStyle}" Content="Alterar" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" TabIndex="11" Click="botaoAlterar_Click" Grid.Row="8" Grid.Column="2"/>
+                <Button x:Name="botaoAlterar" Style="{DynamicResource ButtonStyle}" Content="Alterar" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" TabIndex="15" Click="botaoAlterar_Click" Grid.Row="8" Grid.Column="2"/>
                 <Label x:Name="label1" Content="Nome: " HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <Label x:Name="label2" Content="CEP: " HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1"/>
+                <Label x:Name="label2" Content="CEP: " HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="2"/>
                 <GroupBox x:Name="groupBox" Header="Telefone" Style="{DynamicResource GroupBoxStyle}" Grid.RowSpan="3" Grid.Column="2">
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -61,18 +61,20 @@
                         </Grid.RowDefinitions>
                         <Label x:Name="label3" Content="Fixo:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                         <Label x:Name="label4" Content="Celular: " HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1"/>
-                        <xctk:MaskedTextBox x:Name="telFixo" ToolTip="Telefone Fixo do Usuário"  Mask="(##)####-####"  Height="23" Margin="0,3,0,0" TextWrapping="Wrap" VerticalAlignment="Center" TabIndex="8" Grid.Column="1"/>
-                        <xctk:MaskedTextBox x:Name="telCel" ToolTip="Telefone Celular do Usuário"  Mask="(##)#####-####"  Height="23" Margin="0,3,0,0" TextWrapping="Wrap" VerticalAlignment="Center" TabIndex="9" Grid.Column="1" Grid.Row="1"/>
+                        <xctk:MaskedTextBox x:Name="telFixo" ToolTip="Telefone Fixo do Usuário"  Mask="(##)####-####"  Height="23" Margin="0,3,0,0" TextWrapping="Wrap" VerticalAlignment="Center" TabIndex="9" Grid.Column="1"/>
+                        <xctk:MaskedTextBox x:Name="telCel" ToolTip="Telefone Celular do Usuário"  Mask="(##)#####-####"  Height="23" Margin="0,3,0,0" TextWrapping="Wrap" VerticalAlignment="Center" TabIndex="10" Grid.Column="1" Grid.Row="1"/>
                     </Grid>
                 </GroupBox>
                 <Label x:Name="label5" Content="Login: " HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="7"/>
                 <Label x:Name="label7" Content="E-Mail:" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="8"/>
                 <TextBox x:Name="campoNome" ToolTip="Nome do Usuário" MaxLength="100" Style="{DynamicResource TextBoxStyle}" TextWrapping="Wrap" VerticalAlignment="Center" Margin="10,3,10,0" TabIndex="1" Grid.Column="1"/>
-                <xctk:MaskedTextBox x:Name="campoCep" Mask="#####-###" Style="{DynamicResource TextBoxStyle}" Height="23" Margin="10,3,10,0" TextWrapping="Wrap" VerticalAlignment="Center" TabIndex="2" Grid.Row="1" Grid.Column="1" TextChanged="campoCep_TextChanged"/>
-                <Label Content="Cidade:" Grid.Row="2" VerticalAlignment="Center"/>
-                <TextBox x:Name="campoCidade" TabIndex="3"  Grid.Row="2" Grid.Column="1" Margin="10,3,10,0" LostFocus="campoCidade_LostFocus" Style="{DynamicResource TextBoxStyle}"/>
-                <TextBox x:Name="campoLogin" ToolTip="Login do Usuário" MaxLength="100" Style="{DynamicResource TextBoxStyle}" Height="23" Margin="10,3,10,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="158" TabIndex="6" Grid.Row="7" Grid.Column="1"/>
-                <TextBox x:Name="campoEmail" ToolTip="Email do Usuário" MaxLength="100" Style="{DynamicResource TextBoxStyle}" Height="23" Margin="10,3,10,0" TextWrapping="Wrap" VerticalAlignment="Center" TabIndex="7" Grid.Row="8" Grid.Column="1"/>
+                <xctk:MaskedTextBox x:Name="campoCep" Mask="#####-###" Style="{DynamicResource TextBoxStyle}" Height="23" Margin="10,3,0,0" MinWidth="60"  TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left" TabIndex="2" Grid.Row="2" Grid.Column="1" TextChanged="campoCep_TextChanged"/>
+                <Label Content="Número:" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="70,0,0,0"/>
+                <TextBox x:Name="campoNum" Grid.Row="2" Grid.Column="1" Style="{DynamicResource TextBoxStyle}" VerticalAlignment="Center" Margin="130,3,10,0" TabIndex="3"/>
+                <Label Content="Cidade:" Grid.Row="3" VerticalAlignment="Center"/>
+                <TextBox x:Name="campoCidade" TabIndex="4" Grid.Row="3" Grid.Column="1" Margin="10,3,10,0" LostFocus="campoCidade_LostFocus" Style="{DynamicResource TextBoxStyle}"/>
+                <TextBox x:Name="campoLogin" ToolTip="Login do Usuário" MaxLength="100" Style="{DynamicResource TextBoxStyle}" Height="23" Margin="10,3,10,0" TextWrapping="Wrap" VerticalAlignment="Center" TabIndex="7" Grid.Row="7" Grid.Column="1"/>
+                <TextBox x:Name="campoEmail" ToolTip="Email do Usuário" MaxLength="100" Style="{DynamicResource TextBoxStyle}" Height="23" Margin="10,3,10,0" TextWrapping="Wrap" VerticalAlignment="Center" TabIndex="8" Grid.Row="8" Grid.Column="1"/>
                 <GroupBox x:Name="groupBox1" Header="Mudar Senha" Style="{DynamicResource GroupBoxStyle}" Grid.Row="3" Grid.RowSpan="5" Grid.Column="2">
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -85,23 +87,23 @@
                             <RowDefinition Height="*" />
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
-                        <PasswordBox x:Name="campoSenhaAntiga" ToolTip="Senha do Usuário" MaxLength="50" Style="{DynamicResource PasswordStyle}" Height="23" Margin="10,3,10,0" VerticalAlignment="Center" TabIndex="11" Grid.Row="1" Grid.Column="1" IsEnabled="False"/>
+                        <PasswordBox x:Name="campoSenhaAntiga" ToolTip="Senha do Usuário" MaxLength="50" Style="{DynamicResource PasswordStyle}" Height="23" Margin="10,3,10,0" VerticalAlignment="Center" TabIndex="12" Grid.Row="1" Grid.Column="1" IsEnabled="False"/>
                         <Label x:Name="label6" Content="Senha Antiga:" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1"/>
-                        <CheckBox x:Name="checkSenha" Content="Mudar Senha" ToolTip="Marque essa caixa se deseja alterar a senha" HorizontalAlignment="Left" VerticalAlignment="Center" TabIndex="10" Checked="checkSenha_Checked" Unchecked="checkSenha_Unchecked"/>
+                        <CheckBox x:Name="checkSenha" Content="Mudar Senha" ToolTip="Marque essa caixa se deseja alterar a senha" HorizontalAlignment="Left" VerticalAlignment="Center" TabIndex="11" Checked="checkSenha_Checked" Unchecked="checkSenha_Unchecked"/>
                         <Label x:Name="label" Content="Senha Nova:" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="2"/>
-                        <PasswordBox x:Name="campoSenhaNova" MaxLength="50" Style="{DynamicResource PasswordStyle}" Height="23" Margin="10,3,10,0" VerticalAlignment="Center" TabIndex="12" IsEnabled="False" Grid.Row="2" Grid.Column="1"/>
+                        <PasswordBox x:Name="campoSenhaNova" MaxLength="50" Style="{DynamicResource PasswordStyle}" Height="23" Margin="10,3,10,0" VerticalAlignment="Center" TabIndex="13" IsEnabled="False" Grid.Row="2" Grid.Column="1"/>
                         <Label x:Name="label8" Content="Confirmar Senha:" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="3"/>
-                        <PasswordBox x:Name="campoConfirmar" MaxLength="50" Style="{DynamicResource PasswordStyle}" Height="23" Margin="10,3,10,0" VerticalAlignment="Center" TabIndex="13" IsEnabled="False" Grid.Row="3" Grid.Column="1"/>
+                        <PasswordBox x:Name="campoConfirmar" MaxLength="50" Style="{DynamicResource PasswordStyle}" Height="23" Margin="10,3,10,0" VerticalAlignment="Center" TabIndex="14" IsEnabled="False" Grid.Row="3" Grid.Column="1"/>
                     </Grid>
                 </GroupBox>
                 <DataGrid x:Name="dataGrid" Style="{DynamicResource DataGridStyle}" Visibility="Collapsed" HorizontalAlignment="Left" Margin="20,18,0,0" VerticalAlignment="Top" Grid.Row="8"/>
-                <Label x:Name="label10" Content="Sexo:" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="6"/>
-                <RadioButton x:Name="radioM" Content="Masculino" HorizontalAlignment="Left" Margin="10,3,0,0" VerticalAlignment="Center" Grid.Row="6" Grid.Column="1"/>
-                <RadioButton x:Name="radioF" Content="Feminino" HorizontalAlignment="Right" Margin="10,3,20,0" VerticalAlignment="Center" Grid.Row="6" Grid.Column="1"/>
-                <Label x:Name="label9" Content="Bairro: " HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="3"/>
-                <TextBox x:Name="campoBairro" TabIndex="4" Style="{DynamicResource TextBoxStyle}" Height="23" Margin="10,3,10,0" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1" LostFocus="campoBairro_LostFocus"/>
-                <Label x:Name="label11" Content="Rua:" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="4"/>
-                <TextBox x:Name="campoRua" TabIndex="5" Height="Auto" Margin="10,3,10,10" TextWrapping="Wrap" Style="{DynamicResource TextBoxStyle}" Grid.Row="4" Grid.Column="1" Grid.RowSpan="2"/>
+                <Label x:Name="label10" Content="Sexo:" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1"/>
+                <RadioButton x:Name="radioM" Content="Masculino" HorizontalAlignment="Left" Margin="10,3,0,0" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1"/>
+                <RadioButton x:Name="radioF" Content="Feminino" HorizontalAlignment="Center" Margin="0,3,20,0" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1"/>
+                <Label x:Name="label9" Content="Bairro: " HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="4"/>
+                <TextBox x:Name="campoBairro" TabIndex="5" Style="{DynamicResource TextBoxStyle}" Height="23" Margin="10,3,10,0" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="4" Grid.Column="1" LostFocus="campoBairro_LostFocus"/>
+                <Label x:Name="label11" Content="Rua:" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="5"/>
+                <TextBox x:Name="campoRua" TabIndex="6" Height="Auto" Margin="10,3,10,10" TextWrapping="Wrap" Style="{DynamicResource TextBoxStyle}" Grid.Row="5" Grid.Column="1" Grid.RowSpan="2"/>
             </Grid>
         </Border>
     </DockPanel>

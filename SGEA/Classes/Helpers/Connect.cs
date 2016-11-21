@@ -144,6 +144,11 @@ namespace SGEA
             return (DataRowView)dg.Items[dg.SelectedIndex];
         }
 
+        public static DataRowView SelectFirstRow(this DataGrid dg)
+        {
+            return (DataRowView)dg.Items[0];
+        }
+
         public static string PesquisarCidade(this TextBox campoCidade,
             string cmdText)
         {

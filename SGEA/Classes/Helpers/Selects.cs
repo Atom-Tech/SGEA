@@ -37,7 +37,7 @@ namespace SGEA
         {
             dg.DataContext = LiteConnection(
                 "Select cdUsuario, login, senha, email, grupo, nmUsuario, " +
-                " cep, bairro, rua, telFixo, telCel, sexo from tbUsuario " +
+                " cep, bairro, rua, telFixo, telCel, sexo, numero from tbUsuario " +
                 "where login = '" + login + "' and senha = '" + senha + "'");
             return dg;
         }

@@ -1,20 +1,20 @@
 ﻿using iTextSharp.text;
 using iTextSharp.text.pdf;
-using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Windows;
-using System.Windows.Controls;
-using System.Data.SqlClient;
-using System.Configuration;
 using Microsoft.Win32;
 using System.Globalization;
 using System.Diagnostics;
 using WPFCustomMessageBox;
 using System.Data.SQLite;
 using SGEA.Classes;
+using SGEA.Properties;
+using System.Windows.Media.Imaging;
+using System.Drawing.Imaging;
+using System.Reflection;
 
 namespace SGEA
 {
@@ -27,9 +27,9 @@ namespace SGEA
 
         public ClasseOrcamento(int cdUsuario)
         {
-            this.cdUsuario = cdUsuario;         
+            this.cdUsuario = cdUsuario;
         }
-        
+
         /// <summary>
         /// Método para Armazenar o Orçamento
         /// </summary>
@@ -82,13 +82,13 @@ namespace SGEA
                 }
             }
         }
-        
+
         /// <summary>
         /// Método para Exportar Orçamento
         /// </summary>
         /// <param name="q">Quantidade de Produtos/Serviços</param>
         public void ExportarRelatorio(List<string> nome, List<string> desc, List<string> tipo, List<string> imagem,
-            List<double> larg, List<double> alt, List<int> quant, List<double> preco, string obs, string login,int q)
+            List<double> larg, List<double> alt, List<int> quant, List<double> preco, DateTime data, DateTime dataV, string cd, string cliente, string obs, string login, int q)
         {
             int v = 1;
             for (int i = 0; i < q; i++)
@@ -100,6 +100,13 @@ namespace SGEA
             }
             if (v == 1)
             {
+                var con = Connect.LiteConnection("select * from tbCliente where cdCliente = " + cliente);
+                var row = con.DataSet.Tables[0].Rows[0];
+                string nmCliente = row[1].ToString();
+                string cidade = row[4].ToString().getCidade();
+                string bairro = row[5].ToString();
+                string rua = row[6].ToString() + " nº " + row[7].ToString();
+                string tel = row[8].ToString() + " / " + row[9].ToString();
                 string c = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Orçamentos\\";
                 Directory.CreateDirectory(c);
                 double precoT = 0;
@@ -117,61 +124,32 @@ namespace SGEA
                 Document pdf = new Document(PageSize.A4, 10, 10, 42, 35);
                 PdfWriter.GetInstance(pdf, new FileStream(caminhoC, FileMode.Create));
                 pdf.Open();
+                Paragraph p = new Paragraph(new Phrase("Orçamento "+data.Date.ToShortDateString()));
+                p.Alignment = Element.ALIGN_RIGHT;
+                p.Font.Size = 18;
+                pdf.Add(p);
+                Image i = Image.GetInstance(new Uri(Environment.GetFolderPath(
+                    Environment.SpecialFolder.ApplicationData) + "\\SGEA\\LogoPrograma.png"));
+                i.ScaleAbsolute(96,96);
+                i.Alignment = Element.ALIGN_TOP;
+                pdf.Add(i);
                 PdfPTable table = new PdfPTable(2);
-                pdf.Add(new Paragraph("Funcionário:   \t" + login));
-                for (int i = 0; i < q; i++)
-                {
-                    PdfPCell cellBlankRow = new PdfPCell(new Phrase(" "));
-                    cellBlankRow.Colspan = 3;
-                    cellBlankRow.HorizontalAlignment = 1;
-                    cellBlankRow.Border = 0;
-                    table.AddCell(cellBlankRow);
-                    if (imagem[i] != "Sem Imagem")
-                    {
-                        try
-                        {
-                            System.Drawing.Image im = System.Drawing.Image.FromFile(imagem[i]);
-                            iTextSharp.text.Image pic = iTextSharp.text.Image.GetInstance(im, System.Drawing.Imaging.ImageFormat.Jpeg);
-                            pic.ScaleAbsolute(121, 121);
-                            PdfPCell cell = new PdfPCell(pic);
-                            cell.Colspan = 2;
-                            cell.HorizontalAlignment = 1;
-                            table.AddCell(cell);
-                        }
-                        catch
-                        {
-                            PdfPCell cell = new PdfPCell(new Phrase("Sem imagem"));
-                            cell.Colspan = 2;
-                            cell.HorizontalAlignment = 1;
-                            table.AddCell(cell);
-                        }
-                    }
-                    else
-                    {
-                        PdfPCell cell = new PdfPCell(new Phrase("Sem imagem"));
-                        cell.Colspan = 2;
-                        cell.HorizontalAlignment = 1;
-                        table.AddCell(cell);
-                    }
-                    table.AddCell(new Paragraph("Produto: "));
-                    table.AddCell(new Paragraph(nome[i]));
-                    table.AddCell(new Paragraph("Quantidade: "));
-                    table.AddCell(new Paragraph("" + quant[i]));
-                    table.AddCell(new Paragraph("Descrição: "));
-                    table.AddCell(new Paragraph(desc[i]));
-                    table.AddCell(new Paragraph("Tipo: "));
-                    table.AddCell(new Paragraph(tipo[i]));
-                    table.AddCell(new Paragraph("Medidas: "));
-                    table.AddCell(new Paragraph(larg[i] + "x" + alt[i] + "m²"));
-                    table.AddCell(new Paragraph("Preço Unitário: "));
-                    table.AddCell(new Paragraph("" + preco[i]));
-                    table.AddCell(new Paragraph("Preço Total do Produto: "));
-                    table.AddCell(new Paragraph("" + (preco[i] * quant[i]) + "\n"));
-                    precoT += (preco[i] * quant[i]);
-                }
-                pdf.Add(table);
-                pdf.Add(new Paragraph("Preço Total do Orçamento:   \t" + precoT));
-                pdf.Add(new Paragraph("Observações:   \t" + obs));
+                table.AddCell("Orçamento nº ");
+                table.AddCell(cd);
+                table.AddCell("Data de Validade: ");
+                table.AddCell(dataV.Date.ToShortDateString());
+                table.AddCell("Usuário: ");
+                table.AddCell(login);
+                table.AddCell("Cliente: ");
+                table.AddCell(nmCliente);
+                table.AddCell("Cidade: ");
+                table.AddCell(cidade);
+                table.AddCell("Bairro: ");
+                table.AddCell(bairro);
+                table.AddCell("Rua: ");
+                table.AddCell(rua);
+                table.AddCell("Telefone: ");
+                table.AddCell(tel);
                 pdf.Close();
                 MessageBoxResult r = CustomMessageBox.ShowYesNoCancel("PDF foi gerado na pasta \n" + caminho + "\nVocê deseja abrir o arquivo ou a pasta?", "Orçamento", "Arquivo", "Pasta", "Nenhum", MessageBoxImage.Question);
                 switch (r)
@@ -212,11 +190,11 @@ namespace SGEA
                         cmd.Parameters.AddWithValue("@cd", cd);
                         cmd.ExecuteNonQuery();
                         Xceed.Wpf.Toolkit.MessageBox.Show("Orçamento Deletado Com Sucesso!");
-                        Historico.AdicionarHistorico(cdUsuario, "deletou", "o", "orcamento",cd);
+                        Historico.AdicionarHistorico(cdUsuario, "deletou", "o", "orcamento", cd);
                     }
                 }
             }
-            
+
             catch (Exception ex)
             {
                 Error.Erro(ex);
@@ -243,7 +221,7 @@ namespace SGEA
                     }
                 }
             }
-            
+
             catch (Exception ex)
             {
                 Error.Erro(ex);
@@ -270,12 +248,12 @@ namespace SGEA
                     }
                 }
             }
-            
+
             catch (Exception ex)
             {
                 Error.Erro(ex);
             }
         }
-        
+
     }
 }

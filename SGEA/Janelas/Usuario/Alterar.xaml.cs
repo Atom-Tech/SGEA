@@ -22,7 +22,7 @@ namespace SGEA.Janelas.Usuario
         private bool vFechar = false;
 
         public Alterar(string login, string email, string nome,
-            string cep, string bairro, string rua, string fixo, string cel,
+            string cep, string bairro, string rua, string num, string fixo, string cel,
             string grupo, string sexo, int op, int cd)
         {
             InitializeComponent();
@@ -34,6 +34,7 @@ namespace SGEA.Janelas.Usuario
             campoCep.Text = cep;
             campoBairro.Text = bairro;
             campoRua.Text = rua;
+            campoNum.Text = num;
             if (sexo == "M")
                 radioM.IsChecked = true;
             else if (sexo == "F")
@@ -76,6 +77,7 @@ namespace SGEA.Janelas.Usuario
 
         private void botaoAlterar_Click(object sender, RoutedEventArgs e)
         {
+            bool v = false;
             if (radioM.IsChecked == false && radioF.IsChecked == false)
             {
                 Xceed.Wpf.Toolkit.MessageBox.Show("Selecione um dos sexos");
@@ -101,10 +103,9 @@ namespace SGEA.Janelas.Usuario
                             {
                                 bool ver = VerificarSenha(campoSenhaAntiga.Password);
                                 ClasseUsuario u = new ClasseUsuario(cd);
-                                u.AlterarUsuario(campoNome.Text, campoCep.Text, campoBairro.Text, campoRua.Text, telFixo.Text, telCel.Text, campoLogin.Text,
+                                v = u.AlterarUsuario(campoNome.Text, campoCep.Text, campoBairro.Text, campoRua.Text, campoNum.Text, telFixo.Text, telCel.Text, campoLogin.Text,
                                     login, campoEmail.Text, sexo, checkSenha.IsChecked, campoSenhaAntiga.Password, campoSenhaNova.Password, ver);
                                 vFechar = true;
-                                Close();
                             }
                             else
                             {
@@ -115,10 +116,9 @@ namespace SGEA.Janelas.Usuario
                         {
                             bool ver = VerificarSenha(campoSenhaAntiga.Password);
                             ClasseUsuario u = new ClasseUsuario(cd);
-                            u.AlterarUsuario(campoNome.Text, campoCep.Text, campoBairro.Text, campoRua.Text, telFixo.Text, telCel.Text, campoLogin.Text,
+                            v = u.AlterarUsuario(campoNome.Text, campoCep.Text, campoBairro.Text, campoRua.Text, campoNum.Text, telFixo.Text, telCel.Text, campoLogin.Text,
                                 login, campoEmail.Text, sexo, checkSenha.IsChecked, campoSenhaAntiga.Password, campoSenhaNova.Password, ver);
                             vFechar = true;
-                            Close();
                         }
                     }
                     else
@@ -130,6 +130,7 @@ namespace SGEA.Janelas.Usuario
                 {
                     Xceed.Wpf.Toolkit.MessageBox.Show("E-Mail inválido");
                 }
+                if (v) Close();
             }
         }
 

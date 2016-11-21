@@ -34,8 +34,8 @@
                     <ColumnDefinition Width="91*"/>
                     <ColumnDefinition Width="32*"/>
                     <ColumnDefinition Width="91*"/>
-                    <ColumnDefinition Width="100*"/>
                     <ColumnDefinition Width="150*"/>
+                    <ColumnDefinition Width="100*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
@@ -63,7 +63,7 @@
                     </StackPanel>
                 </Label>
                 <Label x:Name="label2" Content="CEP: " HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="2"/>
-                <GroupBox x:Name="groupBox" Header="Telefone" Style="{DynamicResource GroupBoxStyle}" Grid.Column="4" Grid.RowSpan="3">
+                <GroupBox x:Name="groupBox" Header="Telefone" Style="{DynamicResource GroupBoxStyle}" Grid.Column="4" Grid.RowSpan="2" HorizontalAlignment="Center" Width="200">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="57*"/>
@@ -75,8 +75,8 @@
                         </Grid.RowDefinitions>
                         <Label x:Name="label3" Content="Fixo:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                         <Label x:Name="label4" Content="Celular: " HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1"/>
-                        <xctk:MaskedTextBox x:Name="telFixo" ToolTip="Telefone Fixo do Usuário"  Mask="(##)####-####"  Height="23" Margin="10,3,10,0" TextWrapping="Wrap" VerticalAlignment="Center" TabIndex="8" Grid.Column="1"/>
-                        <xctk:MaskedTextBox x:Name="telCel" ToolTip="Telefone Celular do Usuário"  Mask="(##)#####-####"  Height="23" Margin="10,3,10,0" TextWrapping="Wrap" VerticalAlignment="Center" TabIndex="9" Grid.Row="1" Grid.Column="1"/>
+                        <xctk:MaskedTextBox x:Name="telFixo" ToolTip="Telefone Fixo do Usuário"  Mask="(##)####-####"  Height="23" Margin="10,3,10,0" TextWrapping="Wrap" VerticalAlignment="Center" TabIndex="9" Grid.Column="1"/>
+                        <xctk:MaskedTextBox x:Name="telCel" ToolTip="Telefone Celular do Usuário"  Mask="(##)#####-####"  Height="23" Margin="10,3,10,0" TextWrapping="Wrap" VerticalAlignment="Center" TabIndex="10" Grid.Row="1" Grid.Column="1"/>
                     </Grid>
                 </GroupBox>
                 <Label x:Name="label5" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2">
@@ -85,7 +85,7 @@
                         <TextBlock Text="Login: "/>
                     </StackPanel>
                 </Label>
-                <Label x:Name="label7" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="3" Grid.Column="2">
+                <Label x:Name="label7" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="2" Grid.Column="2">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Foreground="Red" Text="*"/>
                         <TextBlock Text="Email: "/>
@@ -93,11 +93,11 @@
                 </Label>
                 <TextBox x:Name="campoNome" ToolTip="Nome do Usuário" MaxLength="100" Style="{DynamicResource TextBoxStyle}" Margin="15,3,15,0" TextWrapping="Wrap" VerticalAlignment="Center" TabIndex="1" Grid.Row="1" Grid.Column="1"/>
                 <xctk:MaskedTextBox x:Name="campoCep" Mask="#####-###" ToolTip="CEP" MaxLength="8" Style="{DynamicResource TextBoxStyle}" Margin="15,3,15,0" TextWrapping="Wrap" VerticalAlignment="Center" TabIndex="2" Grid.Row="2" Grid.Column="1" TextChanged="campoCep_TextChanged"/>
-                <Label Content="Cidade:" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center"/>
-                <TextBox x:Name="campoCidade" Grid.Row="2" Grid.Column="3" Margin="10,3,10,0" Style="{DynamicResource TextBoxStyle}" LostFocus="campoCidade_LostFocus" TabIndex="6"/>
+                <Label Content="Cidade:" Grid.Row="3" VerticalAlignment="Center"/>
+                <TextBox x:Name="campoCidade" Grid.Row="3" Grid.Column="1" Margin="15,3,15,0" Style="{DynamicResource TextBoxStyle}" LostFocus="campoCidade_LostFocus" TabIndex="3"/>
                 <TextBox x:Name="campoLogin" ToolTip="Login do Usuário" MaxLength="100" Style="{DynamicResource TextBoxStyle}" TextWrapping="Wrap" VerticalAlignment="Center" TabIndex="5" Margin="10,3,10,0" Grid.Row="1" Grid.Column="3"/>
-                <TextBox x:Name="campoEmail" ToolTip="Email do Usuário" MaxLength="100" Style="{DynamicResource TextBoxStyle}" Height="23" TextWrapping="Wrap" VerticalAlignment="Center" TabIndex="7" Margin="10,3,10,0" Grid.Row="3" Grid.Column="3"/>
-                <Button x:Name="botaoSalvar" Style="{DynamicResource ButtonStyle}" Content="Salvar" HorizontalAlignment="Center" VerticalAlignment="Center" TabIndex="10" Click="botaoSalvar_Click" Grid.Row="5" Grid.Column="4" IsEnabled="False"/>
+                <TextBox x:Name="campoEmail" ToolTip="Email do Usuário" MaxLength="100" Style="{DynamicResource TextBoxStyle}" Height="23" TextWrapping="Wrap" VerticalAlignment="Center" TabIndex="6" Margin="10,3,10,0" Grid.Row="2" Grid.Column="3"/>
+                <Button x:Name="botaoSalvar" Style="{DynamicResource ButtonStyle}" Content="Salvar" HorizontalAlignment="Center" VerticalAlignment="Center" TabIndex="15" Click="botaoSalvar_Click" Grid.Row="5" Grid.Column="3" IsEnabled="False"/>
                 <Label x:Name="label8" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Foreground="Red" Text="*"/>
@@ -107,7 +107,7 @@
                 <CheckBox x:Name="checkRadio" Grid.Column="3" VerticalAlignment="Center" Visibility="Collapsed"/>
                 <RadioButton x:Name="radioM" Content="Masculino" HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="True" Grid.Column="3" Margin="0,3,75,0"/>
                 <RadioButton x:Name="radioF" Content="Feminino" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3" Margin="75,3,0,0"/>
-                <GroupBox x:Name="grupoSenha" Header="Mudar Senha" Style="{DynamicResource GroupBoxStyle}" Margin="10,3,10,0" Grid.Column="5" Grid.RowSpan="4">
+                <GroupBox x:Name="grupoSenha" Header="Mudar Senha" Style="{DynamicResource GroupBoxStyle}" Margin="0,3,0,0" Grid.Column="4" Grid.Row="2" Grid.RowSpan="4">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="60*"/>
@@ -128,10 +128,12 @@
                         <PasswordBox x:Name="campoConfirmar" IsEnabled="false" MaxLength="50" Style="{DynamicResource PasswordStyle}" Margin="10,3,10,0" VerticalAlignment="Center" TabIndex="14" Grid.Row="4" Grid.Column="1"/>
                     </Grid>
                 </GroupBox>
-                <Label x:Name="label6" Content="Bairro: " HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="3"/>
-                <TextBox x:Name="campoBairro" Style="{DynamicResource TextBoxStyle}" MaxLength="50" Margin="15,3,15,0" TextWrapping="Wrap" VerticalAlignment="Center" TabIndex="3" Grid.Row="3" Grid.Column="1" LostFocus="campoBairro_LostFocus"/>
+                <Label x:Name="label6" Content="Bairro: " HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="3" Grid.Column="2"/>
+                <TextBox x:Name="campoBairro" Style="{DynamicResource TextBoxStyle}" MaxLength="50" Margin="10,3,10,0" TextWrapping="Wrap" VerticalAlignment="Center" TabIndex="7" Grid.Row="3" Grid.Column="3" LostFocus="campoBairro_LostFocus"/>
                 <Label x:Name="label12" Content="Rua:" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="4"/>
                 <TextBox x:Name="campoRua" Margin="15,5,15,5" TextWrapping="Wrap" Style="{DynamicResource TextBoxStyle}" TabIndex="4" Grid.Row="4" Grid.RowSpan="2" Grid.Column="1" Height="Auto"/>
+                <Label Content="Número: " Grid.Row="4" Grid.Column="2" VerticalAlignment="Center"/>
+                <TextBox x:Name="campoNum" Grid.Row="4" Grid.Column="3" Margin="10,3,10,0" VerticalAlignment="Center" Style="{DynamicResource TextBoxStyle}" TabIndex="8"/>
             </Grid>
         </GroupBox>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1" Grid.ColumnSpan="5" VerticalAlignment="Top" Margin="0,10,0,0">

@@ -29,7 +29,7 @@ namespace SGEA.Classes
         /// <param name="login">Login</param>
         /// <param name="senha">Senha</param>
         /// <param name="grupo">Grupo</param>
-        public bool CadastrarUsuario(string nome, string cep, string bairro, string rua, string email, string sexo, string telFixo,
+        public bool CadastrarUsuario(string nome, string cep, string bairro, string rua, string num, string email, string sexo, string telFixo,
             string telCel, string login, string senha, string grupo)
         {
             try
@@ -44,13 +44,14 @@ namespace SGEA.Classes
                         {
                             if (telFixo != "(00)0000-0000" || telCel != "(00)00000-0000")
                             {
-                                string cmdText = "insert into tbUsuario values (null,@nm,@login,@pass,@email,@sexo,@grupo,@end,@bairro,@rua,@fixo,@cel)";
+                                string cmdText = "insert into tbUsuario values (null,@nm,@login,@pass,@email,@sexo,@grupo,@end,@bairro,@rua,@num,@fixo,@cel)";
                                 SQLiteCommand cmd = new SQLiteCommand(cmdText, mConn);
                                 cmd.Parameters.AddWithValue("@login", login);
                                 cmd.Parameters.AddWithValue("@nm", nome);
                                 cmd.Parameters.AddWithValue("@end", cep);
                                 cmd.Parameters.AddWithValue("@bairro", bairro);
                                 cmd.Parameters.AddWithValue("@rua", rua);
+                                cmd.Parameters.AddWithValue("@num", num);
                                 cmd.Parameters.AddWithValue("@pass", senha);
                                 cmd.Parameters.AddWithValue("@email", email);
                                 cmd.Parameters.AddWithValue("@sexo", sexo);
@@ -101,7 +102,7 @@ namespace SGEA.Classes
         /// <param name="senhaN">Senha Nova</param>
         /// <param name="grupo">Grupo</param>
         /// <param name="ver">Verificação</param>
-        public bool AlterarUsuario(string nome, string cep, string bairro, string rua, string telFixo, string telCel, string loginN, string loginA,
+        public bool AlterarUsuario(string nome, string cep, string bairro, string rua, string num, string telFixo, string telCel, string loginN, string loginA,
             string email, string sexo, bool? check, string senhaA, string senhaN, string grupo, bool ver)
         {
             try
@@ -118,7 +119,7 @@ namespace SGEA.Classes
                             {
                                 if (telFixo != "(00)0000-0000" || telCel != "(00)00000-0000")
                                 {
-                                    string cmdText = "update tbUsuario set login = @login, sexo = @sexo, email = @email, nmUsuario = @nome, cep = @end, bairro = @bairro, rua = @rua, telFixo = @fixo, telCel = @cel, grupo = @grupo where login = '" + loginA + "'";
+                                    string cmdText = "update tbUsuario set login = @login, sexo = @sexo, email = @email, nmUsuario = @nome, cep = @end, bairro = @bairro, rua = @rua, numero = @num, telFixo = @fixo, telCel = @cel, grupo = @grupo where login = '" + loginA + "'";
                                     SQLiteCommand cmd = new SQLiteCommand(cmdText, mConn);
                                     cmd.Parameters.AddWithValue("@login", loginN);
                                     cmd.Parameters.AddWithValue("@sexo", sexo);
@@ -126,6 +127,7 @@ namespace SGEA.Classes
                                     cmd.Parameters.AddWithValue("@end", cep);
                                     cmd.Parameters.AddWithValue("@bairro", bairro);
                                     cmd.Parameters.AddWithValue("@rua", rua);
+                                    cmd.Parameters.AddWithValue("@num", num);
                                     cmd.Parameters.AddWithValue("@fixo", telFixo);
                                     cmd.Parameters.AddWithValue("@cel", telCel);
                                     cmd.Parameters.AddWithValue("@email", email);
@@ -191,7 +193,7 @@ namespace SGEA.Classes
             return false;
         }
 
-        public bool AlterarUsuario(string nome, string cep, string bairro, string rua, string telFixo, string telCel, string loginN, string loginA,
+        public bool AlterarUsuario(string nome, string cep, string bairro, string rua, string num, string telFixo, string telCel, string loginN, string loginA,
             string email, string sexo, bool? check, string senhaA, string senhaN, bool ver)
         {
             try
@@ -208,7 +210,7 @@ namespace SGEA.Classes
                             {
                                 if (telFixo != "(00)0000-0000" || telCel != "(00)00000-0000")
                                 {
-                                    string cmdText = "update tbUsuario set login = @login, sexo = @sexo, email = @email, nmUsuario = @nome, cep = @end, bairro = @bairro, rua = @rua, telFixo = @fixo, telCel = @cel where login = '" + loginA + "'";
+                                    string cmdText = "update tbUsuario set login = @login, sexo = @sexo, email = @email, nmUsuario = @nome, cep = @end, bairro = @bairro, rua = @rua, numero = @num, telFixo = @fixo, telCel = @cel where login = '" + loginA + "'";
                                     SQLiteCommand cmd = new SQLiteCommand(cmdText, mConn);
                                     cmd.Parameters.AddWithValue("@login", loginN);
                                     cmd.Parameters.AddWithValue("@sexo", sexo);
@@ -216,6 +218,7 @@ namespace SGEA.Classes
                                     cmd.Parameters.AddWithValue("@end", cep);
                                     cmd.Parameters.AddWithValue("@bairro", bairro);
                                     cmd.Parameters.AddWithValue("@rua", rua);
+                                    cmd.Parameters.AddWithValue("@num", num);
                                     cmd.Parameters.AddWithValue("@fixo", telFixo);
                                     cmd.Parameters.AddWithValue("@cel", telCel);
                                     cmd.Parameters.AddWithValue("@email", email);

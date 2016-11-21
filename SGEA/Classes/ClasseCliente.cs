@@ -18,7 +18,7 @@ namespace SGEA.Classes
             this.cdUsuario = cdUsuario;
         }
 
-        public bool CadastrarCliente(string n, string cep, string b, string r, string m, string s, string f, string c)
+        public bool CadastrarCliente(string n, string cep, string b, string r, string num, string m, string s, string f, string c)
         {
             try
             {
@@ -29,13 +29,14 @@ namespace SGEA.Classes
                     {
                         if (f != "(00)0000-0000" || c != "(00)00000-0000")
                         {
-                            string cmdText = "INSERT INTO tbCliente VALUES (null,@nome, @email,@sexo,@end,@bairro,@rua,@fixo,@cel)";
+                            string cmdText = "INSERT INTO tbCliente VALUES (null,@nome, @email,@sexo,@end,@bairro,@rua,@num,@fixo,@cel)";
                             SQLiteCommand cmd = new SQLiteCommand(cmdText, mConn);
                             cmd.Parameters.AddWithValue("@nome", n); //Insere nome
                             cmd.Parameters.AddWithValue("@email", m); //Insere email
                             cmd.Parameters.AddWithValue("@end", cep); //Insere cep
                             cmd.Parameters.AddWithValue("@bairro", b); //Insere bairro
                             cmd.Parameters.AddWithValue("@rua", r); //Insere rua
+                            cmd.Parameters.AddWithValue("@num", num); //Insere número
                             cmd.Parameters.AddWithValue("@sexo", s); //insere sexo
                             cmd.Parameters.AddWithValue("@fixo", f); //Insere telefone fixo
                             cmd.Parameters.AddWithValue("@cel", c); //Insere celular
@@ -72,7 +73,7 @@ namespace SGEA.Classes
         /// <param name="end">Endereço do Cliente</param>
         /// <param name="tel">Telefone Fixo do Cliente</param>
         /// <param name="cel">Celular do Cliente</param>
-        public bool AlterarCliente(int cd, string n, string email, string sexo, string cep, string b, string r, string tel, string cel)
+        public bool AlterarCliente(int cd, string n, string email, string sexo, string cep, string b, string r, string num, string tel, string cel)
         {
             try
             {
@@ -85,13 +86,14 @@ namespace SGEA.Classes
                         {
                             if (tel != "(00)0000-0000" || cel != "(00)00000-0000")
                             {
-                                string cmdText = "update tbCliente set nmCliente = @nome, email = @email, sexo = @sexo, cep = @end, bairro = @bairro, rua = @rua, telFixo = @fixo, telCel = @cel where cdCliente = @cd";
+                                string cmdText = "update tbCliente set nmCliente = @nome, email = @email, sexo = @sexo, cep = @end, bairro = @bairro, rua = @rua, numero = @num, telFixo = @fixo, telCel = @cel where cdCliente = @cd";
                                 SQLiteCommand cmd = new SQLiteCommand(cmdText, mConn);
                                 cmd.Parameters.AddWithValue("@nome", n);
                                 cmd.Parameters.AddWithValue("@cd", cd);
                                 cmd.Parameters.AddWithValue("@email", email);
                                 cmd.Parameters.AddWithValue("@sexo", sexo);
                                 cmd.Parameters.AddWithValue("@end", cep);
+                                cmd.Parameters.AddWithValue("@num", num);
                                 cmd.Parameters.AddWithValue("@bairro", b);
                                 cmd.Parameters.AddWithValue("@rua", r);
                                 cmd.Parameters.AddWithValue("@fixo", tel);

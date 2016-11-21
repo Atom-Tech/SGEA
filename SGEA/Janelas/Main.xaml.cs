@@ -26,14 +26,14 @@ namespace SGEA
         private Pages.Projeto proj;
         private Pages.Cliente cliente;
         private bool _isMouseDown, not = false;
-        private string nmUsuario, email, nome, cep, bairro, rua, telFixo, telCel, grupo, sexo;
+        private string nmUsuario, email, nome, cep, bairro, rua, num, telFixo, telCel, grupo, sexo;
         private int cdUsuario, janela = 0, notificacoes = 0;
         private Dictionary<int, string> listaOrc = new Dictionary<int, string>();
         private Dictionary<int, string> listaVisita = new Dictionary<int, string>();
         private Dictionary<int, string> listaProjeto = new Dictionary<int, string>();
 
         public Main(string login, string nmUsuario, int cdUsuario, string email, string nome, string cep,
-            string bairro, string rua, string telFixo, string telCel, string sexo)
+            string bairro, string rua, string num, string telFixo, string telCel, string sexo)
         {
             InitializeComponent();
             grupo = login;
@@ -44,6 +44,7 @@ namespace SGEA
             this.cep = cep;
             this.bairro = bairro;
             this.rua = rua;
+            this.num = num;
             this.telFixo = telFixo;
             this.telCel = telCel;
             this.sexo = sexo;
@@ -337,12 +338,25 @@ namespace SGEA
         private void config_Click(object sender, RoutedEventArgs e)
         {
             VerificarConta();
-            Janelas.Usuario.Alterar u = new Janelas.Usuario.Alterar(nmUsuario, email, nome, cep, bairro, rua, telFixo, telCel, grupo, sexo, 0, cdUsuario);
+            Janelas.Usuario.Alterar u = new Janelas.Usuario.Alterar(nmUsuario, email, nome, cep, bairro, rua, num, telFixo, telCel, grupo, sexo, 0, cdUsuario);
             u.ShowDialog();
             if (u.Retornar())
             {
                 campoLogin.Text = u.NovoLogin();
                 nmUsuario = u.NovoLogin();
+                dataGrid4.DataContext = 
+                    Connect.LiteConnection("select * from tbUsuario where login = '"+nmUsuario+"'");
+                DataRowView row = dataGrid4.SelectFirstRow();
+                nome = row[1].ToString();
+                email = row[4].ToString();
+                sexo = row[5].ToString();
+                grupo = row[6].ToString();
+                cep = row[7].ToString();
+                bairro = row[8].ToString();
+                rua = row[9].ToString();
+                num = row[10].ToString();
+                telFixo = row[11].ToString();
+                telCel = row[12].ToString();
             }
         }
 

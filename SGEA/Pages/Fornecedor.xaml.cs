@@ -58,6 +58,7 @@ namespace SGEA.Pages
             campoCidade.IsEnabled = v;
             campoBairro.IsEnabled = v;
             campoRua.IsEnabled = v;
+            campoNum.IsEnabled = v;
             campoEmail.IsEnabled = v;
             campoCNPJ.IsEnabled = v;
             campoRS.IsEnabled = v;
@@ -75,7 +76,7 @@ namespace SGEA.Pages
             try
             {
                 listaForn.DataContext = Connect.LiteConnection("select cdFornecedor 'Código', cnpj 'CNPJ', nmFornecedor 'Nome Fantasia', razaoSocial 'Razão Social', " +
-        " email 'Email', cep 'CEP', bairro 'Bairro', rua 'Rua', telFixo 'Telefone Fixo', telCel 'Celular' from tbFornecedor");
+        " email 'Email', cep 'CEP', bairro 'Bairro', rua 'Rua', numero 'Nº', telFixo 'Telefone Fixo', telCel 'Celular' from tbFornecedor");
             }
             catch (Exception ex)
             {
@@ -106,11 +107,12 @@ namespace SGEA.Pages
                 campoCep.Text = row[5].ToString();
                 campoBairro.Text = row[6].ToString();
                 campoRua.Text = row[7].ToString();
+                campoNum.Text = row[8].ToString();
                 campoEmail.Text = row[4].ToString();
-                campoCNPJ.Text = row[1].ToString();
+                campoCNPJ.Text = row[1].ToString().Replace('.',',');
                 campoRS.Text = row[3].ToString();
-                telCel.Text = row[9].ToString();
-                telFixo.Text = row[8].ToString();
+                telCel.Text = row[10].ToString();
+                telFixo.Text = row[9].ToString();
                 AtualizarPerfis();
             }
         }
@@ -166,13 +168,13 @@ namespace SGEA.Pages
                     ClasseFornecedor p = new ClasseFornecedor(cdUsuario);
                     if (op == 0)
                     {
-                        v = p.CadastrarFornecedor(campoNome.Text, campoCep.Text, campoBairro.Text, campoRua.Text, campoEmail.Text,
+                        v = p.CadastrarFornecedor(campoNome.Text, campoCep.Text, campoBairro.Text, campoRua.Text, campoNum.Text, campoEmail.Text,
                             telFixo.Text, telCel.Text, cnpj, campoRS.Text);
                     }
                     else if (op == 1)
                     {
                         v = p.AlterarFornecedor(id, cnpj, campoNome.Text, campoRS.Text, campoEmail.Text,
-                            campoCep.Text, campoBairro.Text, campoRua.Text, telFixo.Text, telCel.Text);
+                            campoCep.Text, campoBairro.Text, campoRua.Text, campoNum.Text, telFixo.Text, telCel.Text);
                     }
                     if (v)
                     {
@@ -198,6 +200,8 @@ namespace SGEA.Pages
                     pesquisa.Add("bairro", campoBairro.Text);
                 if (campoRua.Text != "")
                     pesquisa.Add("rua", campoRua.Text);
+                if (campoNum.Text != "")
+                    pesquisa.Add("numero", campoNum.Text);
                 if (campoRS.Text != "")
                     pesquisa.Add("razaoSocial", campoRS.Text);
                 if (telFixo.IsMaskFull)
@@ -207,7 +211,7 @@ namespace SGEA.Pages
                 if (pesquisa.Count > 0 || campoCidade.Text != "")
                 {
                     string cmdText = "select cdFornecedor 'Código', cnpj 'CNPJ', nmFornecedor 'Nome Fantasia', razaoSocial 'Razão Social', " +
-        " email 'Email', cep 'CEP', bairro 'Bairro', rua 'Rua', telFixo 'Telefone Fixo', telCel 'Celular' from tbFornecedor where ";
+        " email 'Email', cep 'CEP', bairro 'Bairro', rua 'Rua', numero 'Nº', telFixo 'Telefone Fixo', telCel 'Celular' from tbFornecedor where ";
                     if (pesquisa.Count > 0)
                     {
                         foreach (var filtro in pesquisa)
@@ -265,7 +269,6 @@ namespace SGEA.Pages
                     Xceed.Wpf.Toolkit.MessageBox.Show("Não há perfil cadastrado");
                 }
             }
-
             catch
             {
                 Xceed.Wpf.Toolkit.MessageBox.Show("Você não selecionou");
@@ -382,6 +385,7 @@ namespace SGEA.Pages
             campoBairro.Text = "";
             campoRua.Text = "";
             campoEmail.Text = "";
+            campoNum.Text = "";
             campoCNPJ.Text = "";
             campoRS.Text = "";
             telCel.Text = "";

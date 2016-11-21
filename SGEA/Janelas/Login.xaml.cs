@@ -53,12 +53,13 @@ namespace SGEA
                         string cep = row[6].ToString();
                         string bairro = row[7].ToString();
                         string rua = row[8].ToString();
+                        string num = row[12].ToString();
                         string telFixo = row[9].ToString();
                         string telCel = row[10].ToString();
                         string sexo = row[11].ToString();
                         Hide();
                         Xceed.Wpf.Toolkit.MessageBox.Show("Bem Vindo, " + login + "!","Bem Vindo");
-                        Main m = new Main(id, login, cd, email, nome, cep, bairro, rua, telFixo, telCel, sexo);
+                        Main m = new Main(id, login, cd, email, nome, cep, bairro, rua, num, telFixo, telCel, sexo);
                         m.Closed += (s, args) => Close();
                         m.Show();
                     }

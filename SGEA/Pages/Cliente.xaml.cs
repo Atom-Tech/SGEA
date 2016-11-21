@@ -53,7 +53,7 @@ namespace SGEA.Pages
             try
             {
                 listaCliente.DataContext = Connect.LiteConnection("select cdCliente 'Código', nmCliente 'Nome', sexo 'Sexo' , email 'Email', " +
-                    " cep 'CEP', bairro 'Bairro', rua 'Rua', telFixo 'Telefone Fixo', telCel 'Celular' from tbCliente");
+                    " cep 'CEP', bairro 'Bairro', rua 'Rua', numero 'Nº', telFixo 'Telefone Fixo', telCel 'Celular' from tbCliente");
             }
 
             catch (Exception ex)
@@ -69,6 +69,7 @@ namespace SGEA.Pages
             campoCidade.IsEnabled = v;
             campoBairro.IsEnabled = v;
             campoRua.IsEnabled = v;
+            campoNum.IsEnabled = v;
             campoEmail.IsEnabled = v;
             campoSexo.IsEnabled = v;
             telCel.IsEnabled = v;
@@ -123,13 +124,13 @@ namespace SGEA.Pages
                 {
                     if (op == 0)
                     {
-                        v = p.CadastrarCliente(campoNome.Text, campoCep.Text, campoBairro.Text, campoRua.Text, campoEmail.Text,
+                        v = p.CadastrarCliente(campoNome.Text, campoCep.Text, campoBairro.Text, campoRua.Text, campoNum.Text, campoEmail.Text,
                     sexo, telFixo.Text, telCel.Text);
                     }
                     else if (op == 1)
                     {
                         v = p.AlterarCliente(id, campoNome.Text, campoEmail.Text, sexo, campoCep.Text,
-                            campoBairro.Text, campoRua.Text, telFixo.Text, telCel.Text);
+                            campoBairro.Text, campoRua.Text, campoNum.Text, telFixo.Text, telCel.Text);
                     }
                     else
                     {
@@ -159,6 +160,8 @@ namespace SGEA.Pages
                     pesquisa.Add("bairro", campoBairro.Text);
                 if (campoRua.Text != "")
                     pesquisa.Add("rua", campoRua.Text);
+                if (campoNum.Text != "")
+                    pesquisa.Add("numero", campoNum.Text);
                 if (telFixo.IsMaskFull)
                     pesquisa.Add("telFixo", telFixo.Text);
                 if (telCel.IsMaskFull)
@@ -181,7 +184,7 @@ namespace SGEA.Pages
                 if (pesquisa.Count > 0 || campoCidade.Text != "")
                 {
                     string cmdText = "select cdCliente 'Código', nmCliente 'Nome', sexo 'Sexo' , email 'Email', " +
-                        " cep 'CEP', bairro 'Bairro', rua 'Rua', telFixo 'Telefone Fixo', telCel 'Celular' from tbCliente where ";
+                        " cep 'CEP', bairro 'Bairro', rua 'Rua', numero 'Nº', telFixo 'Telefone Fixo', telCel 'Celular' from tbCliente where ";
                     if (pesquisa.Count > 0)
                     {
                         foreach (var filtro in pesquisa)
@@ -262,8 +265,9 @@ namespace SGEA.Pages
                 campoCep.Text = row[4].ToString();
                 campoBairro.Text = row[5].ToString();
                 campoRua.Text = row[6].ToString();
-                telFixo.Text = row[7].ToString();
-                telCel.Text = row[8].ToString();
+                campoNum.Text = row[7].ToString();
+                telFixo.Text = row[8].ToString();
+                telCel.Text = row[9].ToString();
             }
         }
 
@@ -276,6 +280,7 @@ namespace SGEA.Pages
             campoCidade.Text = "";
             campoBairro.Text = "";
             campoRua.Text = "";
+            campoNum.Text = "";
             campoEmail.Text = "";
             campoSexo.Text = "Masculino";
             telFixo.Text = "";
@@ -329,6 +334,7 @@ namespace SGEA.Pages
             campoBairro.Text = "";
             campoRua.Text = "";
             campoEmail.Text = "";
+            campoNum.Text = "";
             campoSexo.Text = "Masculino";
             telFixo.Text = "";
             telCel.Text = "";

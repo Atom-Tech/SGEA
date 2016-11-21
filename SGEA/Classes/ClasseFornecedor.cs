@@ -18,7 +18,7 @@ namespace SGEA.Classes
             this.cdUsuario = cdUsuario;
         }
 
-        public bool CadastrarFornecedor(string n, string e, string b, string r, string m, string f, string c, string cn, string rs)
+        public bool CadastrarFornecedor(string n, string e, string b, string r, string num, string m, string f, string c, string cn, string rs)
         {
             try
             {
@@ -31,7 +31,7 @@ namespace SGEA.Classes
                         {
                             if (f != "(00)0000-0000" || c != "(00)00000-0000")
                             {
-                                string cmdText = "INSERT INTO tbFornecedor VALUES (null,@cnpj,@nome,@rs, @email,@end,@bairro,@rua,@fixo,@cel)";
+                                string cmdText = "INSERT INTO tbFornecedor VALUES (null,@cnpj,@nome,@rs, @email,@end,@bairro,@rua,@num,@fixo,@cel)";
                                 SQLiteCommand cmd = new SQLiteCommand(cmdText, mConn);
                                 cmd.Parameters.AddWithValue("@cnpj", cn); //Insere CNPJ
                                 cmd.Parameters.AddWithValue("@nome", n); //Insere nome
@@ -40,6 +40,7 @@ namespace SGEA.Classes
                                 cmd.Parameters.AddWithValue("@end", e); //Insere cep
                                 cmd.Parameters.AddWithValue("@bairro", b); //Insere bairro
                                 cmd.Parameters.AddWithValue("@rua", r); //Insere rua
+                                cmd.Parameters.AddWithValue("@num", num); //Insere número
                                 cmd.Parameters.AddWithValue("@fixo", f); //Insere telefone fixo
                                 cmd.Parameters.AddWithValue("@cel", c); //Insere celular
                                 cmd.ExecuteNonQuery();
@@ -85,7 +86,7 @@ namespace SGEA.Classes
         /// <param name="end">Endereço</param>
         /// <param name="tel">Telefone Fixo</param>
         /// <param name="cel">Celular</param>
-        public bool AlterarFornecedor(int cd, string cnpj, string n, string rs, string email, string cep, string bairro, string rua, string tel, string cel)
+        public bool AlterarFornecedor(int cd, string cnpj, string n, string rs, string email, string cep, string bairro, string rua, string num, string tel, string cel)
         {
             try
             {
@@ -98,7 +99,7 @@ namespace SGEA.Classes
                         {
                             if (tel != "(00)0000-0000" || cel != "(00)00000-0000")
                             {
-                                string cmdText = "update tbFornecedor set nmFornecedor = @nome, email = @email, cep = @cep, bairro = @bairro, rua = @rua, telFixo = @fixo, telCel = @cel, cnpj = @cnpj, razaoSocial = @rs where cdFornecedor = @cd";
+                                string cmdText = "update tbFornecedor set nmFornecedor = @nome, email = @email, cep = @cep, bairro = @bairro, rua = @rua, numero = @num, telFixo = @fixo, telCel = @cel, cnpj = @cnpj, razaoSocial = @rs where cdFornecedor = @cd";
                                 SQLiteCommand cmd = new SQLiteCommand(cmdText, mConn);
                                 cmd.Parameters.AddWithValue("@nome", n);
                                 cmd.Parameters.AddWithValue("@cd", cd);
@@ -106,6 +107,7 @@ namespace SGEA.Classes
                                 cmd.Parameters.AddWithValue("@cep", cep);
                                 cmd.Parameters.AddWithValue("@bairro", bairro);
                                 cmd.Parameters.AddWithValue("@rua", rua);
+                                cmd.Parameters.AddWithValue("@num", num);
                                 cmd.Parameters.AddWithValue("@fixo", tel);
                                 cmd.Parameters.AddWithValue("@cel", cel);
                                 cmd.Parameters.AddWithValue("@cnpj", cnpj);

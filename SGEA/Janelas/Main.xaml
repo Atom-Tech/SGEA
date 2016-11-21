@@ -76,6 +76,7 @@
                     <DataGrid x:Name="dataGrid1" Style="{DynamicResource DataGridStyle}" Visibility="Collapsed" HorizontalAlignment="Left" Margin="442,104,0,0" Grid.Row="1" VerticalAlignment="Top"/>
                     <DataGrid x:Name="dataGrid2" Style="{DynamicResource DataGridStyle}" Visibility="Collapsed" HorizontalAlignment="Left" Margin="442,104,0,0" Grid.Row="1" VerticalAlignment="Top"/>
                     <DataGrid x:Name="dataGrid3" Style="{DynamicResource DataGridStyle}" Visibility="Collapsed" HorizontalAlignment="Left" Margin="442,104,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+                    <DataGrid x:Name="dataGrid4" Style="{DynamicResource DataGridStyle}" Visibility="Collapsed" HorizontalAlignment="Left" Margin="442,104,0,0" Grid.Row="1" VerticalAlignment="Top"/>
                 </StackPanel>
             </DockPanel>
         </Border>

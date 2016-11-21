@@ -13,16 +13,17 @@ namespace Apresentacao10.Views
 {
     public sealed partial class MainPage : Page
     {
+        Shell s;
+        int i = 0;
+
         public MainPage()
         {
             InitializeComponent();
-            Shell s = Shell.Instance;
+            s = Shell.Instance;
             s.Transfer(this);
             NavigationCacheMode = NavigationCacheMode.Enabled;
             Window.Current.CoreWindow.KeyUp += CoreWindow_KeyUp;
-            //chrome.Source = new Uri
-            //    ("ms-appx-web:///Assets/Site/index.php");
-            Navigate(typeof(Intro));
+            s.SetView(0);
         }
 
         public void Navigate(Type t)
@@ -38,6 +39,20 @@ namespace Apresentacao10.Views
             {
                 case Windows.System.VirtualKey.Escape:
                     CoreApplication.Exit();
+                    break;
+                case Windows.System.VirtualKey.Left:
+                    if (i > 0)
+                    {
+                        i--;
+                        s.SetView(i);
+                    }
+                    break;
+                case Windows.System.VirtualKey.Right:
+                    if (i < 10)
+                    {
+                        i++;
+                        s.SetView(i);
+                    }
                     break;
             }
         }

@@ -28,6 +28,46 @@ namespace Apresentacao10.Views
             _settings = Services.SettingsServices.SettingsService.Instance;
         }
 
+        public void SetView(int i)
+        {
+            switch (i)
+            {
+                case 0:
+                    lista.Selected = intro;
+                    break;
+                case 1:
+                    lista.Selected = equipe;
+                    break;
+                case 2:
+                    lista.Selected = mvv;
+                    break;
+                case 3:
+                    lista.Selected = cliente;
+                    break;
+                case 4:
+                    lista.Selected = perfil;
+                    break;
+                case 5:
+                    lista.Selected = problema;
+                    break;
+                case 6:
+                    lista.Selected = solucao;
+                    break;
+                case 7:
+                    lista.Selected = site;
+                    break;
+                case 8:
+                    lista.Selected = sgea;
+                    break;
+                case 9:
+                    lista.Selected = call;
+                    break;
+                case 10:
+                    lista.Selected = conclusao;
+                    break;
+            }
+        }
+
         public void Transfer(MainPage m)
         {
             this.m = m;
@@ -92,7 +132,7 @@ namespace Apresentacao10.Views
 
         private void call_Selected(object sender, RoutedEventArgs e)
         {
-            m.Navigate(typeof(MVV));
+            m.Navigate(typeof(Sgea));
         }
 
         private void conclusao_Selected(object sender, RoutedEventArgs e)

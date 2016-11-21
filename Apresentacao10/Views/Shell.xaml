@@ -11,7 +11,11 @@
       xmlns:views="using:Apresentacao10.Slides"
       mc:Ignorable="d">
 
-    <Controls:HamburgerMenu x:Name="lista" NavAreaBackground="SteelBlue">
+    <Controls:HamburgerMenu x:Name="lista"
+                            NavAreaBackground="SteelBlue"
+                            NavButtonBackground="SteelBlue"
+                            NavButtonHoverBackground="#FF7FB8E8"
+                            NavButtonCheckedBackground="#FF7FB8E8">
         <Controls:HamburgerMenu.PrimaryButtons>
             <Controls:HamburgerButtonInfo x:Name="intro"
                 ClearHistory="True" Selected="intro_Selected">

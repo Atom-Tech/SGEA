@@ -9,6 +9,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Template10.Mvvm;
 using Apresentacao10.Slides;
+using Windows.System;
 
 namespace Apresentacao10.Views
 {
@@ -40,7 +41,6 @@ namespace Apresentacao10.Views
         public void SetNavigationService(INavigationService navigationService)
         {
             lista.NavigationService = navigationService;
-            Lista.RefreshStyles(_settings.AppTheme, true);
             Lista.IsFullScreen = _settings.IsFullScreen;
             Lista.HamburgerButtonVisibility = _settings.ShowHamburgerButton ? Visibility.Visible : Visibility.Collapsed;
         }
@@ -62,22 +62,22 @@ namespace Apresentacao10.Views
 
         private void cliente_Selected(object sender, RoutedEventArgs e)
         {
-            m.Navigate(typeof(MVV));
+            m.Navigate(typeof(Cliente));
         }
 
         private void perfil_Selected(object sender, RoutedEventArgs e)
         {
-            m.Navigate(typeof(MVV));
+            m.Navigate(typeof(Perfil));
         }
 
         private void problema_Selected(object sender, RoutedEventArgs e)
         {
-            m.Navigate(typeof(MVV));
+            m.Navigate(typeof(Problema));
         }
 
         private void solucao_Selected(object sender, RoutedEventArgs e)
         {
-            m.Navigate(typeof(MVV));
+            m.Navigate(typeof(Solucao));
         }
 
         private void site_Selected(object sender, RoutedEventArgs e)
@@ -87,7 +87,7 @@ namespace Apresentacao10.Views
 
         private void sgea_Selected(object sender, RoutedEventArgs e)
         {
-            m.Navigate(typeof(MVV));
+            m.Navigate(typeof(Sgea));
         }
 
         private void call_Selected(object sender, RoutedEventArgs e)
@@ -97,7 +97,7 @@ namespace Apresentacao10.Views
 
         private void conclusao_Selected(object sender, RoutedEventArgs e)
         {
-            m.Navigate(typeof(MVV));
+            m.Navigate(typeof(Conclusao));
         }
     }
 }

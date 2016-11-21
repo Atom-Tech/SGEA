@@ -92,10 +92,15 @@
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
     <Content Include="Assets\Atom.png" />
     <Content Include="Assets\brushedframe4.jpg" />
+    <Content Include="Assets\Cliente\Luminart.png" />
     <Content Include="Assets\Equipe\Logo.png" />
     <Content Include="Assets\Google-Chrome-icon.png" />
     <Content Include="Assets\Icone64PX.png" />
     <Content Include="Assets\LogoPrograma.png" />
+    <Content Include="Assets\Perfil\CL006 Real.png" />
+    <Content Include="Assets\Perfil\CL006.JPG" />
+    <Content Include="Assets\Perfil\Perfis_Aluminio_Hyspex_Slide5.jpg" />
+    <Content Include="Assets\Problema\tempoPapelada.png" />
     <Content Include="Assets\Site\ICON\facebook.png" />
     <Content Include="Assets\Site\ICON\favicon.ico" />
     <Content Include="Assets\Site\ICON\ICAut.png" />
@@ -143,6 +148,12 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\SettingsServices\SettingsService.cs" />
+    <Compile Include="Slides\Cliente.xaml.cs">
+      <DependentUpon>Cliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Slides\Conclusao.xaml.cs">
+      <DependentUpon>Conclusao.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Slides\Equipe.xaml.cs">
       <DependentUpon>Equipe.xaml</DependentUpon>
     </Compile>
@@ -152,8 +163,20 @@
     <Compile Include="Slides\MVV.xaml.cs">
       <DependentUpon>MVV.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Slides\Perfil.xaml.cs">
+      <DependentUpon>Perfil.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Slides\Problema.xaml.cs">
+      <DependentUpon>Problema.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Slides\Sgea.xaml.cs">
+      <DependentUpon>Sgea.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Slides\Site.xaml.cs">
       <DependentUpon>Site.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Slides\Solucao.xaml.cs">
+      <DependentUpon>Solucao.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\DetailPageViewModel.cs" />
@@ -184,6 +207,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\BadgeLogo.scale-400.png" />
+    <Content Include="Assets\Solucao\CSharp.png" />
+    <Content Include="Assets\Solucao\LogoPrograma.png" />
+    <Content Include="Assets\Solucao\monitor.png" />
+    <Content Include="Assets\Solucao\smartphone.png" />
+    <Content Include="Assets\Solucao\SQLite.png" />
+    <Content Include="Assets\Solucao\Xamarin.png" />
+    <Content Include="Assets\Solucao\XAML.png" />
+    <Content Include="Assets\Solucao\xml-logo.png" />
     <Content Include="Assets\Splash-1240x600.png" />
     <Content Include="Assets\Splash.png" />
     <Content Include="Assets\Splash.scale-100.png" />
@@ -210,6 +241,14 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Slides\Cliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Slides\Conclusao.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Slides\Equipe.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -222,7 +261,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Slides\Perfil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Slides\Problema.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Slides\Sgea.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Slides\Site.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Slides\Solucao.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

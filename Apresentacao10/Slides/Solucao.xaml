@@ -1,0 +1,114 @@
+﻿<Page
+    x:Class="Apresentacao10.Slides.Solucao"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Apresentacao10.Slides"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <Storyboard x:Key="monitor">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="textoPC">
+                <DiscreteObjectKeyFrame KeyTime="0:0:1" Value="Visible"/>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="monitor">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="262"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="monitor">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="245.5"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="monitor">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.712"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="monitor">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.662"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="cSharp">
+                <DiscreteObjectKeyFrame KeyTime="0:0:1" Value="Visible"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="xaml">
+                <DiscreteObjectKeyFrame KeyTime="0:0:1" Value="Visible"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="sqLite">
+                <DiscreteObjectKeyFrame KeyTime="0:0:1" Value="Visible"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="celular">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="celular">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="440"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="celular">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="308"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="celular">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="2.181"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="celular">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.895"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="textoCelular">
+                <DiscreteObjectKeyFrame KeyTime="0:0:1" Value="Visible"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="xml">
+                <DiscreteObjectKeyFrame KeyTime="0:0:1" Value="Visible"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="xamarin">
+                <DiscreteObjectKeyFrame KeyTime="0:0:1" Value="Visible"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="sqLite2">
+                <DiscreteObjectKeyFrame KeyTime="0:0:1" Value="Visible"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="cSharp2">
+                <DiscreteObjectKeyFrame KeyTime="0:0:1" Value="Visible"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+    </Page.Resources>
+    <Canvas>
+        <TextBlock x:Name="label" Text="NOSSA SOLUÇÃO" Foreground="Black" FontSize="40" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="158" Canvas.Top="72"/>
+        <Image x:Name="celular" Source="ms-appx:///Assets/Solucao/smartphone.png" Stretch="Fill" Margin="158.269,153.613,0,0" HorizontalAlignment="Left" Width="99.854" Height="194.341" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Tapped="celular_Tapped">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="monitor" Source="ms-appx:///Assets/Solucao/monitor.png" Stretch="Fill" Height="194.341" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Margin="271.463,153.613,0,0" HorizontalAlignment="Left" Width="242" Tapped="monitor_Tapped" >
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Grid HorizontalAlignment="Left" Width="159" Height="162" Canvas.Left="271" Canvas.Top="362">
+            <Image Source="ms-appx:///Assets/Solucao/LogoPrograma.png" Stretch="Fill"/>
+            <TextBlock Text="Projeto SGEA" FontStyle="Italic" Foreground="Black" FontSize="22" Height="33" Margin="18,0,17,-45" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+        </Grid>
+        <TextBlock x:Name="textoPC" Margin="464.483,354,304.71,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Height="170.297" FontSize="20" Visibility="Collapsed">
+            •Agendamento de visitas; <LineBreak />
+            •Gerenciamento de: <LineBreak />
+            <Run Text="   "/> •Clientes e Fornecedores; <LineBreak />
+            <Run Text="   "/> •Produtos e Serviços; <LineBreak />
+            <Run Text="   "/> •Perfis de Alumínio; <LineBreak />
+            <Run Text="   "/> •Orçamentos e Projetos.
+        </TextBlock>
+        <Image x:Name="cSharp" Source="ms-appx:///Assets/Solucao/CSharp.png" Visibility="Collapsed" Height="69" VerticalAlignment="Top" HorizontalAlignment="Left" Width="76" Canvas.Left="476.863" Canvas.Top="513.297"/>
+        <Image x:Name="xaml" HorizontalAlignment="Left" Height="87" VerticalAlignment="Bottom" Width="89" Source="ms-appx:///Assets/Solucao/XAML.png" Canvas.Left="552.863" Canvas.Top="504.297" Visibility="Collapsed"/>
+        <Image x:Name="sqLite" Height="58" VerticalAlignment="Bottom" Source="ms-appx:///Assets/Solucao/SQLite.png" Stretch="Fill" Visibility="Collapsed" HorizontalAlignment="Left" Width="132" Canvas.Left="684.863" Canvas.Top="524.297" />
+        <TextBlock x:Name="textoCelular" FontSize="18" Foreground="Black" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="150.737" Width="187.427" Canvas.Left="552.863" Canvas.Top="402" Visibility="Collapsed">
+            Notificação e verificação de Visitas; <LineBreak />
+            Agenda de Cliente; <LineBreak />
+            Agenda de Fornecedor; <LineBreak />
+            Verificação de Relatórios.
+        </TextBlock>
+        <Image x:Name="cSharp2" Margin="552.863,566.297,0,0" Visibility="Collapsed" Source="ms-appx:///Assets/Solucao/CSharp.png" Height="69" VerticalAlignment="Top" HorizontalAlignment="Left" Width="76"/>
+        <Image x:Name="sqLite2" Height="58" Visibility="Collapsed" VerticalAlignment="Bottom" Source="ms-appx:///Assets/Solucao/SQLite.png" Stretch="Fill" HorizontalAlignment="Left" Width="132" Canvas.Left="552.863" Canvas.Top="635.297" />
+        <Image x:Name="xamarin" Height="72" Visibility="Collapsed" VerticalAlignment="Bottom" Source="ms-appx:///Assets/Solucao/Xamarin.png" Stretch="Fill" HorizontalAlignment="Left" Width="102" Canvas.Left="633.863" Canvas.Top="531" />
+        <Image x:Name="xml" Height="54" Visibility="Collapsed" VerticalAlignment="Bottom" Source="ms-appx:///Assets/Solucao/xml-logo.png" Stretch="Fill" HorizontalAlignment="Left" Width="51" Canvas.Left="684.863" Canvas.Top="603" />
+    </Canvas>
+</Page>

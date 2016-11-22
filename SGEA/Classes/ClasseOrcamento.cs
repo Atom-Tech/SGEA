@@ -168,20 +168,20 @@ namespace SGEA
                 produto.AddCell("Descrição");
                 for (int i = 0; i < qtdProd; i++)
                 {
-                    Paragraph pP = new Paragraph();
+                    var pP = new PdfPCell();
                     if (produtos[i].Imagem == "Sem Imagem")
                     {
-                        pP.Add("Sem Imagem");
+                        pP.AddElement(new Paragraph("Sem Imagem"));
                     }
                     else
                     {
                         System.Drawing.Image sdi = System.Drawing.Image.FromFile(produtos[i].Imagem);
                         Image img = Image.GetInstance(sdi,ImageFormat.Jpeg);
                         img.ScaleAbsolute(64, 64);
-                        pP.Add(img);
+                        pP.AddElement(img);
                     }
-                    pP.Add("");
-                    pP.Add(produtos[i].Nome);
+                    pP.AddElement(new Paragraph(""));
+                    pP.AddElement(new Paragraph(produtos[i].Nome));
                     produto.AddCell(pP);
                     produto.AddCell(produtos[i].Tipo);
                     produto.AddCell(produtos[i].Dimensao);

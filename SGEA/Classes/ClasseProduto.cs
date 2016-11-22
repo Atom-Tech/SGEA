@@ -17,6 +17,27 @@ namespace SGEA
     {
         private int cdUsuario;
 
+        public string Nome { get; set; }
+
+        public string Imagem { get; set; }
+
+        public string Tipo { get; set; }
+
+        public string Dimensao { get; set; }
+
+        public double PrecoU { get; set; }
+
+        public double PrecoT { get; set; }
+
+        public string Descricao { get; set; }
+
+        public int Quantidade { get; set; }
+
+        public ClasseProduto()
+        {
+
+        }
+
         public ClasseProduto(int cdUsuario)
         {
             this.cdUsuario = cdUsuario;

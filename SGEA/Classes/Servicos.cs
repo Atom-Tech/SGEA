@@ -7,11 +7,22 @@ using System;
 using System.Data.SQLite;
 using SGEA.Classes;
 
-namespace SGEA.Forms
+namespace SGEA
 {
     public class Servicos
     {
         private int cdUsuario;
+
+        public string Nome { get; set; }
+
+        public string Descricao { get; set; }
+
+        public double PrecoT { get; set; }
+
+        public Servicos()
+        {
+
+        }
 
         public Servicos(int cdUsuario)
         {

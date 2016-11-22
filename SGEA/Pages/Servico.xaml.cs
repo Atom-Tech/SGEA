@@ -44,7 +44,7 @@ namespace SGEA.Pages
 
         private void botaoSalvar_Click(object sender, RoutedEventArgs e)
         {
-            Forms.Servicos s = new Forms.Servicos(cdUsuario);
+            Servicos s = new Servicos(cdUsuario);
             bool v = false;
             if (op == 0)
             {
@@ -143,7 +143,7 @@ namespace SGEA.Pages
                     int index = listaSer.SelectedIndex;
                     DataRowView row = (DataRowView)listaSer.Items[index];
                     id = Convert.ToInt64(row[0]);
-                    Forms.Servicos s = new Forms.Servicos(cdUsuario);
+                    Servicos s = new Servicos(cdUsuario);
                     s.DeletarServicos(id);
                     Atualizar();
                 }

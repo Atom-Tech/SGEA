@@ -57,6 +57,8 @@ namespace SGEA.Pages
         {
             if (listaOrc.SelectedIndex != -1)
             {
+                List<ClasseProduto> produtos = new List<ClasseProduto>();
+                List<Servicos> servicos = new List<Servicos>();
                 int index = listaOrc.SelectedIndex;
                 DataRowView row = (DataRowView)listaOrc.Items[index];
                 string login = row[1].ToString();
@@ -68,29 +70,30 @@ namespace SGEA.Pages
                 for (int i = 0; i < viewOrcP.Items.Count; i++)
                 {
                     row = (DataRowView)viewOrcP.Items[i];
-                    nome.Add(row[0].ToString());
-                    desc.Add(row[1].ToString());
-                    tipo.Add(row[2].ToString());
-                    imagem.Add(row[3].ToString());
-                    larg.Add(Convert.ToDouble(row[4]));
-                    alt.Add(Convert.ToDouble(row[5]));
-                    quant.Add(Convert.ToInt32(row[6]));
-                    preco.Add(Convert.ToDouble(row[8]));
+                    ClasseProduto p = new ClasseProduto();
+                    p.Nome = row[0].ToString();
+                    p.Descricao = row[1].ToString();
+                    p.Tipo = row[2].ToString();
+                    p.Imagem = row[3].ToString();
+                    p.Dimensao = row[4].ToString() + "m x " +
+                        row[5].ToString() + "m";
+                    p.Quantidade = Convert.ToInt32(row[6]);
+                    p.PrecoU = Convert.ToDouble(row[8]);
+                    p.PrecoT = p.Quantidade * p.PrecoU;
+                    produtos.Add(p);
                 }
                 for (int i = 0; i < viewOrcS.Items.Count; i++)
                 {
                     row = (DataRowView)viewOrcS.Items[i];
-                    nome.Add(row[0].ToString());
-                    desc.Add(row[1].ToString());
-                    tipo.Add("Serviço");
-                    imagem.Add("Sem Imagem");
-                    larg.Add(1);
-                    alt.Add(1);
-                    quant.Add(Convert.ToInt32(row[2]));
-                    preco.Add(Convert.ToDouble(row[3]));
+                    Servicos s = new Servicos();
+                    s.Nome = row[0].ToString();
+                    s.Descricao = row[1].ToString();
+                    s.PrecoT = Convert.ToDouble(row[3]);
+                    servicos.Add(s);
                 }
                 ClasseOrcamento o = new ClasseOrcamento(cdUsuario);
-                o.ExportarRelatorio(nome, desc, tipo, imagem, larg, alt, quant, preco, data, dataV, cd, cliente, obs, login, viewOrcP.Items.Count + viewOrcS.Items.Count);
+                o.ExportarRelatorio(produtos, servicos, data, dataV, cd, cliente, obs, login,
+                    viewOrcP.Items.Count + viewOrcS.Items.Count);
             }
             else
             {

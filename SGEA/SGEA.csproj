@@ -260,6 +260,7 @@
     <Compile Include="Classes\Helpers\Criptografar.cs" />
     <Compile Include="Classes\ClasseOrcamento.cs" />
     <Compile Include="Classes\Helpers\Error.cs" />
+    <Compile Include="Classes\Helpers\Header.cs" />
     <Compile Include="Classes\Helpers\Selects.cs" />
     <Compile Include="Classes\Helpers\Wait.cs" />
     <Compile Include="Classes\Historico.cs" />

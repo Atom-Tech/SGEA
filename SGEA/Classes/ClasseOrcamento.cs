@@ -15,6 +15,8 @@ using SGEA.Properties;
 using System.Windows.Media.Imaging;
 using System.Drawing.Imaging;
 using System.Reflection;
+using iTextSharp.text.pdf.draw;
+using System.Linq;
 
 namespace SGEA
 {
@@ -87,86 +89,122 @@ namespace SGEA
         /// Método para Exportar Orçamento
         /// </summary>
         /// <param name="q">Quantidade de Produtos/Serviços</param>
-        public void ExportarRelatorio(List<string> nome, List<string> desc, List<string> tipo, List<string> imagem,
-            List<double> larg, List<double> alt, List<int> quant, List<double> preco, DateTime data, DateTime dataV, string cd, string cliente, string obs, string login, int q)
+        public void ExportarRelatorio(List<ClasseProduto> produtos, List<Servicos> servicos, DateTime data,
+            DateTime dataV, string cd, string cliente, string obs, string login, int q)
         {
-            int v = 1;
-            for (int i = 0; i < q; i++)
+            var con = Connect.LiteConnection("select * from tbCliente where cdCliente = " + cliente);
+            var row = con.Rows[0];
+            string nmCliente = row.ItemArray[1].ToString();
+            string cidade = row.ItemArray[4].ToString().getCidade();
+            string bairro = row.ItemArray[5].ToString();
+            string rua = row.ItemArray[6].ToString() + " nº " + row.ItemArray[7].ToString();
+            string tel = row.ItemArray[8].ToString() + " / " + row.ItemArray[9].ToString();
+            string c = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\SGEA\\Orçamentos\\";
+            Directory.CreateDirectory(c);
+            double precoT = 0;
+            string dia = DateTime.Now.Day.ToString();
+            string mes = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(DateTime.Now.ToString("MMMM"));
+            string ano = DateTime.Now.Year.ToString();
+            string hora = DateTime.Now.Hour.ToString();
+            string min = DateTime.Now.Minute.ToString();
+            SaveFileDialog save = new SaveFileDialog();
+            string caminho = c + mes + " de " + ano + "\\";
+            Directory.CreateDirectory(caminho);
+            save.FileName = "Orçamento Dia " + dia + " " + hora + "_" + min + ".pdf";
+            save.Filter = "PDF Files| *.pdf";
+            string caminhoC = caminho + save.FileName;
+            Document pdf = new Document(PageSize.A4, 10, 10, 130, 35);
+            PdfWriter w = PdfWriter.GetInstance(pdf, new FileStream(caminhoC, FileMode.Create));
+            w.PageEvent = new HeaderFooter(data.Date.ToShortDateString());
+            pdf.Open();
+            //PDF ABERTO
+            PdfPTable table = new PdfPTable(2);
+            table.HorizontalAlignment = Element.ALIGN_RIGHT;
+            table.DefaultCell.Border = Rectangle.NO_BORDER;
+            //TABELA
+            table.AddCell("Orçamento nº " + cd);
+            table.AddCell("");
+            table.AddCell("Data de Validade: ");
+            table.AddCell(dataV.Date.ToShortDateString());
+            table.AddCell("Usuário: ");
+            table.AddCell(login);
+            table.AddCell("Cliente: ");
+            table.AddCell(nmCliente);
+            table.AddCell("Cidade: ");
+            table.AddCell(cidade);
+            table.AddCell("Bairro: ");
+            table.AddCell(bairro);
+            table.AddCell("Rua: ");
+            table.AddCell(rua);
+            table.AddCell("Telefone: ");
+            table.AddCell(tel);
+            pdf.Add(table);
+            var tP = new PdfPTable(1);
+            tP.WidthPercentage = 100;
+            var qtdProd = produtos.Count;
+            if (qtdProd > 0)
             {
-                if (larg[i] == 0 || alt[i] == 0)
+                Phrase phr = new Phrase("Produtos");
+                phr.Font.Size = 14;
+                var cellP = new PdfPCell(phr);
+                cellP.Colspan = 7;
+                cellP.Border = 0;
+                cellP.HorizontalAlignment = Element.ALIGN_CENTER;
+                var cellB = new PdfPCell();
+                cellB.Colspan = 7;
+                cellB.Border = 0;
+                //TABELA PRODUTO
+                var produto = new PdfPTable(7);
+                produto.SpacingBefore = 10f;
+                produto.WidthPercentage = 100;
+                produto.AddCell(cellP);
+                produto.AddCell(cellB);
+                produto.AddCell("Produto");
+                produto.AddCell("Tipo");
+                produto.AddCell("Dimensão");
+                produto.AddCell("Quantidade");
+                produto.AddCell("Preço Unitário");
+                produto.AddCell("Preço Total");
+                produto.AddCell("Descrição");
+                for (int i = 0; i < qtdProd; i++)
                 {
-                    v = 0;
+                    Paragraph pP = new Paragraph();
+                    if (produtos[i].Imagem == "Sem Imagem")
+                    {
+                        pP.Add("Sem Imagem");
+                    }
+                    else
+                    {
+                        System.Drawing.Image sdi = System.Drawing.Image.FromFile(produtos[i].Imagem);
+                        Image img = Image.GetInstance(sdi,ImageFormat.Jpeg);
+                        img.ScaleAbsolute(64, 64);
+                        pP.Add(img);
+                    }
+                    pP.Add("");
+                    pP.Add(produtos[i].Nome);
+                    produto.AddCell(pP);
+                    produto.AddCell(produtos[i].Tipo);
+                    produto.AddCell(produtos[i].Dimensao);
+                    produto.AddCell(produtos[i].Quantidade.ToString());
+                    produto.AddCell(produtos[i].PrecoU.ToString());
+                    produto.AddCell(produtos[i].PrecoT.ToString());
+                    produto.AddCell(produtos[i].Descricao);
                 }
+                pdf.Add(produto);
             }
-            if (v == 1)
+            //PDF FECHADO
+            pdf.Close();
+            MessageBoxResult r = CustomMessageBox.ShowYesNoCancel("PDF foi gerado na pasta \n" + caminho + "\nVocê deseja abrir o arquivo ou a pasta?", "Orçamento", "Arquivo", "Pasta", "Nenhum", MessageBoxImage.Question);
+            switch (r)
             {
-                var con = Connect.LiteConnection("select * from tbCliente where cdCliente = " + cliente);
-                var row = con.DataSet.Tables[0].Rows[0];
-                string nmCliente = row[1].ToString();
-                string cidade = row[4].ToString().getCidade();
-                string bairro = row[5].ToString();
-                string rua = row[6].ToString() + " nº " + row[7].ToString();
-                string tel = row[8].ToString() + " / " + row[9].ToString();
-                string c = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Orçamentos\\";
-                Directory.CreateDirectory(c);
-                double precoT = 0;
-                string dia = DateTime.Now.Day.ToString();
-                string mes = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(DateTime.Now.ToString("MMMM"));
-                string ano = DateTime.Now.Year.ToString();
-                string hora = DateTime.Now.Hour.ToString();
-                string min = DateTime.Now.Minute.ToString();
-                SaveFileDialog save = new SaveFileDialog();
-                string caminho = c + mes + " de " + ano + "\\";
-                Directory.CreateDirectory(caminho);
-                save.FileName = "Orçamento Dia " + dia + " " + hora + "_" + min + ".pdf";
-                save.Filter = "PDF Files| *.pdf";
-                string caminhoC = caminho + save.FileName;
-                Document pdf = new Document(PageSize.A4, 10, 10, 42, 35);
-                PdfWriter.GetInstance(pdf, new FileStream(caminhoC, FileMode.Create));
-                pdf.Open();
-                Paragraph p = new Paragraph(new Phrase("Orçamento "+data.Date.ToShortDateString()));
-                p.Alignment = Element.ALIGN_RIGHT;
-                p.Font.Size = 18;
-                pdf.Add(p);
-                Image i = Image.GetInstance(new Uri(Environment.GetFolderPath(
-                    Environment.SpecialFolder.ApplicationData) + "\\SGEA\\LogoPrograma.png"));
-                i.ScaleAbsolute(96,96);
-                i.Alignment = Element.ALIGN_TOP;
-                pdf.Add(i);
-                PdfPTable table = new PdfPTable(2);
-                table.AddCell("Orçamento nº ");
-                table.AddCell(cd);
-                table.AddCell("Data de Validade: ");
-                table.AddCell(dataV.Date.ToShortDateString());
-                table.AddCell("Usuário: ");
-                table.AddCell(login);
-                table.AddCell("Cliente: ");
-                table.AddCell(nmCliente);
-                table.AddCell("Cidade: ");
-                table.AddCell(cidade);
-                table.AddCell("Bairro: ");
-                table.AddCell(bairro);
-                table.AddCell("Rua: ");
-                table.AddCell(rua);
-                table.AddCell("Telefone: ");
-                table.AddCell(tel);
-                pdf.Close();
-                MessageBoxResult r = CustomMessageBox.ShowYesNoCancel("PDF foi gerado na pasta \n" + caminho + "\nVocê deseja abrir o arquivo ou a pasta?", "Orçamento", "Arquivo", "Pasta", "Nenhum", MessageBoxImage.Question);
-                switch (r)
-                {
-                    case MessageBoxResult.Yes:
-                        Process.Start(caminhoC);
-                        break;
-                    case MessageBoxResult.No:
-                        Process.Start(caminho);
-                        break;
-                    case MessageBoxResult.Cancel:
-                        break;
-                }
-            }
-            else
-            {
-                Xceed.Wpf.Toolkit.MessageBox.Show("Medidas não podem ser 0");
+                case MessageBoxResult.Yes:
+                    Process.Start(caminhoC);
+                    break;
+                case MessageBoxResult.No:
+                    Process.Start(caminho);
+                    break;
+                case MessageBoxResult.Cancel:
+                    break;
             }
         }
 

@@ -32,9 +32,9 @@ namespace SGEA_Call.Janelas
             var mConn = new SQLiteConnection(Connect.getPath());
             var select = mConn.Query<Classes.Orcamento>("select cdOrcamento, login 'Funcionário', nmCliente 'Cliente', date(dtOrcamento) 'dtOrcamento', date(dtModificacao)," +
                 " date(dtValidade), sum(precoU * quant) 'preco', observacoes, case when idExecucao = 0 then 'Não' when idExecucao = 1 then 'Sim' end as 'Confirmado?'" +
-                " from tbOrcamento, tbUsuario, tbItemNota, tbCliente, tbProduto, tbServico" +
+                " from tbOrcamento, tbUsuario, tbItemNota, tbCliente" +
                 " where cdUsuario = idUsuario and cdOrcamento = idOrcamento and cdCliente = idCliente and strftime('%m',dtOrcamento)='" + mes +
-                "' and strftime('%Y',dtOrcamento)= '" + ano + "' and (cdProduto = idProduto or idProduto is null) and(cdServico = idServico or idServico is null) group by cdOrcamento");
+                "' and strftime('%Y',dtOrcamento)= '" + ano + "' group by idOrcamento, cdOrcamento");
             var items = new List<Tuple<string, string>>();
             cd = new int[select.Count];
             for (int i = 0; i < select.Count; i++)

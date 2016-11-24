@@ -210,8 +210,8 @@ namespace SGEA.Pages
                     string[] d = rel.Split(' ');
                     listaOrc.DataContext = Connect.LiteConnection("select cdOrcamento 'Código', login 'Funcionário', nmCliente 'Cliente', date(dtOrcamento) 'Data de Criação', date(dtModificacao) 'Última Modificação',"+
                         " date(dtValidade) 'Data de Validade', sum(precoU * quant) 'Preço Total', observacoes 'Observações', case when idExecucao = 0 then 'Não' when idExecucao = 1 then 'Sim' end as 'Confirmado?'"+
-                        " from tbOrcamento, tbUsuario, tbItemNota, tbCliente, tbProduto, tbServico"+
-                        " where cdUsuario = idUsuario and cdOrcamento = idOrcamento and cdCliente = idCliente and(cdProduto = idProduto or idProduto is null) and (cdServico = idServico or idServico is null) and "+
+                        " from tbOrcamento, tbUsuario, tbItemNota, tbCliente"+
+                        " where cdUsuario = idUsuario and cdOrcamento = idOrcamento and cdCliente = idCliente and "+
                         " strftime('%m',dtOrcamento) = '"+d[0]+"' and strftime('%Y',dtOrcamento) = '"+d[1]+"' group by cdOrcamento");
                 }
                 listaOrc.Columns[7].Width = new DataGridLength(1, DataGridLengthUnitType.Star);

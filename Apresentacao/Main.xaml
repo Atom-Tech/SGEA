@@ -10,53 +10,17 @@
         mc:Ignorable="d"
         Title="Apresentação"
         WindowStyle="None" ResizeMode="NoResize"
-    WindowStartupLocation="CenterScreen" 
-    Width="1024" Height="768"
-    WindowState="Maximized" AllowsTransparency="True" KeyDown="Window_KeyDown">
-    <Window.Resources>
-        <ResourceDictionary>
-            <ControlTemplate x:Key="ButtonBaseControlTemplate1" TargetType="{x:Type ButtonBase}">
-                <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
-                    <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                </Border>
-                <ControlTemplate.Triggers>
-                    <Trigger Property="Button.IsDefaulted" Value="True">
-                        <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
-                    </Trigger>
-                    <Trigger Property="ToggleButton.IsChecked" Value="True">
-                        <Setter Property="Background" TargetName="border" Value="#FFBCDDEE"/>
-                        <Setter Property="BorderBrush" TargetName="border" Value="#FF245A83"/>
-                    </Trigger>
-                    <Trigger Property="IsEnabled" Value="False">
-                        <Setter Property="Background" TargetName="border" Value="#FFF4F4F4"/>
-                        <Setter Property="BorderBrush" TargetName="border" Value="#FFADB2B5"/>
-                        <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="#FF838383"/>
-                    </Trigger>
-                </ControlTemplate.Triggers>
-            </ControlTemplate>
-        </ResourceDictionary>
-    </Window.Resources>
-    <Window.Background>
-        <ImageBrush ImageSource="brushedframe4.jpg"/>
-    </Window.Background>
-    <Window.ContextMenu>
-        <ContextMenu x:Name="menu">
-            <MenuItem x:Name="s1" Header="Introdução" Click="s1_Click" IsEnabled="False"/>
-            <MenuItem x:Name="s2" Header="Empresa" Click="s2_Click"/>
-            <MenuItem x:Name="s3" Header="Missão, Visão e Valores" Click="s3_Click"/>
-            <Separator />
-            <MenuItem x:Name="s4" Header="Cliente" Click="s4_Click"/>
-            <MenuItem x:Name="s5" Header="Como Trabalha" Click="s5_Click"/>
-            <Separator />
-            <MenuItem x:Name="s6" Header="Problema" Click="s6_Click"/>
-            <MenuItem x:Name="s7" Header="Solução" Click="s7_Click"/>
-            <Separator />
-            <MenuItem x:Name="s8" Header="Nosso Projeto" Click="s8_Click"/>
-            <Separator />
-            <MenuItem x:Name="s9" Header="Conclusão" Click="s9_Click"/>
-        </ContextMenu>
-    </Window.ContextMenu>
+        WindowStartupLocation="CenterScreen" 
+        Width="1024" Height="768"
+        Background="Transparent"
+        WindowState="Maximized" Topmost="True" KeyDown="Window_KeyDown"  AllowsTransparency="True">
     <Grid>
-        <pageTransitions:PageTransition Name="slide"/>
+        <Border BorderThickness="315,50,355,50" Height="768" Width="1024" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Border.BorderBrush>
+                <ImageBrush ImageSource="/Apresentacao;component/brushedframe4.jpg"/>
+            </Border.BorderBrush>
+            <Image Source="Slide/Mobile/Mobile.png" Stretch="Fill" Margin="-12,-59,-25,-50"/>
+        </Border>
+        <Button Margin="62,348,732,358" BorderThickness="0" Background="Transparent" Style="{DynamicResource ButtonStyle1}"/>
     </Grid>
 </Window>

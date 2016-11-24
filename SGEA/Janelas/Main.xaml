@@ -164,7 +164,7 @@
                             <Separator/>
                             <TextBlock x:Name="campoGrupo" Text="Administrador"/>
                             <Separator/>
-                            <TextBlock Text="Versão 1.4.3" />
+                            <TextBlock Text="Versão 1.5.0" />
                         </StatusBar>
                         <Grid>
                             <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Panel.ZIndex="1"/>

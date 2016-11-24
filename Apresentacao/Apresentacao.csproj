@@ -158,43 +158,6 @@
     <Compile Include="Criptografar.cs" />
     <Compile Include="Error.cs" />
     <Compile Include="Month.cs" />
-    <Compile Include="Slide\AnimationException.cs" />
-    <Compile Include="Slide\BlockException.cs" />
-    <Compile Include="Slide\Slide11.xaml.cs">
-      <DependentUpon>Slide11.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Slide\Slide8.xaml.cs">
-      <DependentUpon>Slide8.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Slide\Slide10.xaml.cs">
-      <DependentUpon>Slide10.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Slide\Slide2.xaml.cs">
-      <DependentUpon>Slide2.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Slide\Slide3.xaml.cs">
-      <DependentUpon>Slide3.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Slide\Slide1.xaml.cs">
-      <DependentUpon>Slide1.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Slide\Slide5.xaml.cs">
-      <DependentUpon>Slide5.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Slide\Slide4.xaml.cs">
-      <DependentUpon>Slide4.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Slide\Slide9.xaml.cs">
-      <DependentUpon>Slide9.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Slide\Slide6.xaml.cs">
-      <DependentUpon>Slide6.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Slide\Slide7.xaml.cs">
-      <DependentUpon>Slide7.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Slide\SlideException.cs" />
-    <Compile Include="Slide\SlideFrame.cs" />
     <Compile Include="Wait.cs" />
     <Compile Include="WindowHelper.cs" />
     <Page Include="Main.xaml">
@@ -209,50 +172,6 @@
       <DependentUpon>Main.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Slide\Slide11.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Slide\Slide8.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Slide\Slide10.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Slide\Slide2.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Slide\Slide3.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Slide\Slide1.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Slide\Slide5.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Slide\Slide4.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Slide\Slide9.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Slide\Slide6.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Slide\Slide7.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Styles\WindowStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -298,13 +217,6 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="Slide\Site\.nojekyll" />
-    <None Include="Slide\Site\CNAME" />
-    <None Include="Slide\Site\README.md" />
-    <None Include="Slide\Site\_ICON\Thumbs.db" />
-    <None Include="Slide\Site\_IMG\Thumbs.db" />
-    <None Include="Slide\Site\_IMG\_Parallax\Thumbs.db" />
-    <None Include="Slide\Site\_IMG\_Portfolio\Thumbs.db" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -313,50 +225,13 @@
     <Resource Include="Slide\SlideFundo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Slide\Slide2\Logo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Slide\Slide4\Luminart.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="logo.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Slide\Slide6\tempoPapelada.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Slide\Slide7\monitor.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Slide\Slide7\smartphone.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Slide\Slide7\LogoPrograma.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Slide\Slide7\CSharp.png" />
-    <Resource Include="Slide\Slide7\SQLite.png" />
-    <Resource Include="Slide\Slide7\Xamarin.png" />
-    <Resource Include="Slide\Slide7\XAML.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Slide\Slide7\xml-logo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Slide\Slide8\Wallpaper.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Styles\botao.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Slide\Slide5\Perfis_Aluminio_Hyspex_Slide5.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="brushedframe4.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Slide\Slide5\CL006 Real.png" />
-    <Resource Include="Slide\Slide5\CL006.JPG" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Fundo cortado.jpg" />
@@ -365,26 +240,7 @@
     <Resource Include="Image1.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Slide\Slide8\Icone64PX.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Slide\Slide8\Atom.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Slide\Mobile\Mobile.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Slide\Slide11\Chrome.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Slide\Slide11\Left Able.png" />
-    <Resource Include="Slide\Slide11\Left Unable.png" />
-    <Resource Include="Slide\Slide11\Right Able.png" />
-    <Resource Include="Slide\Slide11\Right Unable.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Slide\Slide11\Loading.png" />
-    <Resource Include="Slide\Slide11\Refresh.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="widevinecdmadapter.dll" />
@@ -395,31 +251,7 @@
     <Content Include="libcef.dll" />
     <Content Include="libEGL.dll" />
     <Content Include="libGLESv2.dll" />
-    <Content Include="Slide\Site\index.html" />
-    <Content Include="Slide\Site\_CSS\estilo.css" />
     <None Include="vccorlib120.dll" />
-    <Resource Include="Slide\Slide11\Taskbar.png" />
-    <Resource Include="Slide\Site\_ICON\facebook.png" />
-    <Resource Include="Slide\Site\_ICON\ICAut.png" />
-    <Resource Include="Slide\Site\_ICON\ICEdu.png" />
-    <Resource Include="Slide\Site\_ICON\ICOpo.png" />
-    <Resource Include="Slide\Site\_ICON\ICQual.png" />
-    <Resource Include="Slide\Site\_ICON\ICRes.png" />
-    <Resource Include="Slide\Site\_ICON\ICSeo.png" />
-    <Content Include="Slide\Site\_ICON\tablet-1.svg" />
-    <Content Include="Slide\Site\_ICON\worldwide.svg" />
-    <Content Include="Slide\Site\_ICON\_Svg\close-envelope.svg" />
-    <Content Include="Slide\Site\_ICON\_Svg\location-pointer.svg" />
-    <Content Include="Slide\Site\_ICON\_Svg\old-typical-phone.svg" />
-    <Content Include="Slide\Site\_ICON\_Svg\smartphone-call.svg" />
-    <Resource Include="Slide\Site\_IMG\Logo.png" />
-    <Resource Include="Slide\Site\_IMG\_Parallax\Para1.png" />
-    <Resource Include="Slide\Site\_IMG\_Portfolio\LG_Ari.jpg" />
-    <Resource Include="Slide\Site\_IMG\_Portfolio\LG_RL.jpg" />
-    <Resource Include="Slide\Site\_IMG\_Portfolio\LG_SGEA.png" />
-    <Content Include="Slide\Site\_JS\bootstrap.min.js" />
-    <Content Include="Slide\Site\_JS\jquery.min.js" />
-    <Content Include="Slide\Site\_JS\Transicao.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.102.0\build\net451\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.102.0\build\net451\System.Data.SQLite.Core.targets')" />
@@ -455,16 +287,16 @@ xcopy "$(ProjectDir)lib\Microsoft.VC120.CRT*.*" "$(TargetDir)" /s /y /i</PostBui
   <Target Name="AfterBuild">
   </Target>
   -->
-<ItemGroup >
-  <Content Include="$(SolutionDir)packages\CefSharp.Wpf.53.0.0\cef\**\*">
-    <Link>%(RecursiveDir)%(Filename)%(Extension)</Link>
-  <Visible>False</Visible>
-  </Content>
-</ItemGroup>
-<ItemGroup >
-  <Content Include="$(ProjectDir)Lib\Microsoft.VC120.CRT\**\*">
-    <Link>%(RecursiveDir)%(Filename)%(Extension)</Link>
-  <Visible>False</Visible>
-  </Content>
-</ItemGroup>
+  <ItemGroup>
+    <Content Include="$(SolutionDir)packages\CefSharp.Wpf.53.0.0\cef\**\*">
+      <Link>%(RecursiveDir)%(Filename)%(Extension)</Link>
+      <Visible>False</Visible>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(ProjectDir)Lib\Microsoft.VC120.CRT\**\*">
+      <Link>%(RecursiveDir)%(Filename)%(Extension)</Link>
+      <Visible>False</Visible>
+    </Content>
+  </ItemGroup>
 </Project>

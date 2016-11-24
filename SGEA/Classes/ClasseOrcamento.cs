@@ -101,7 +101,6 @@ namespace SGEA
             string tel = row.ItemArray[8].ToString() + " / " + row.ItemArray[9].ToString();
             string c = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\SGEA\\Orçamentos\\";
             Directory.CreateDirectory(c);
-            double precoT = 0;
             string dia = DateTime.Now.Day.ToString();
             string mes = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(DateTime.Now.ToString("MMMM"));
             string ano = DateTime.Now.Year.ToString();
@@ -138,20 +137,27 @@ namespace SGEA
             table.AddCell(rua);
             table.AddCell("Telefone: ");
             table.AddCell(tel);
+            table.AddCell("Preço Total: ");
+            double soma = produtos.Sum(p => p.PrecoT) +
+                servicos.Sum(s => s.PrecoT);
+            table.AddCell("R$" + string.Format("{0:N2}", soma));
             pdf.Add(table);
             var tP = new PdfPTable(1);
             tP.WidthPercentage = 100;
             var qtdProd = produtos.Count;
+            var qtdSer = servicos.Count;
             if (qtdProd > 0)
             {
                 Phrase phr = new Phrase("Produtos");
-                phr.Font.Size = 14;
+                phr.Font.Size = 18;
                 var cellP = new PdfPCell(phr);
+                cellP.Phrase.Font.SetStyle(Font.BOLD);
                 cellP.Colspan = 7;
                 cellP.Border = 0;
                 cellP.HorizontalAlignment = Element.ALIGN_CENTER;
-                var cellB = new PdfPCell();
+                var cellB = new PdfPCell(new Phrase(" "));
                 cellB.Colspan = 7;
+                cellB.HorizontalAlignment = 1;
                 cellB.Border = 0;
                 //TABELA PRODUTO
                 var produto = new PdfPTable(7);
@@ -159,16 +165,25 @@ namespace SGEA
                 produto.WidthPercentage = 100;
                 produto.AddCell(cellP);
                 produto.AddCell(cellB);
-                produto.AddCell("Produto");
-                produto.AddCell("Tipo");
-                produto.AddCell("Dimensão");
-                produto.AddCell("Quantidade");
-                produto.AddCell("Preço Unitário");
-                produto.AddCell("Preço Total");
-                produto.AddCell("Descrição");
+                var head = new List<string>
+                {
+                    "Produto", "Tipo", "Dimensão", "Quantidade",
+                    "Preço Unitário", "Preço Total", "Descrição"
+                };
+                foreach (var h in head)
+                {
+                    Phrase p1 = new Phrase(h);
+                    p1.Font.SetStyle(Font.BOLD);
+                    var cellH = new PdfPCell(p1);
+                    cellH.BorderColor = new BaseColor(123, 160, 205);
+                    cellH.BackgroundColor = new BaseColor(211, 223, 238);
+                    produto.AddCell(cellH);
+                }
                 for (int i = 0; i < qtdProd; i++)
                 {
                     var pP = new PdfPCell();
+                    pP.BorderColor = new BaseColor(123, 160, 205);
+                    pP.BackgroundColor = new BaseColor(167, 191, 222);
                     if (produtos[i].Imagem == "Sem Imagem")
                     {
                         pP.AddElement(new Paragraph("Sem Imagem"));
@@ -176,21 +191,101 @@ namespace SGEA
                     else
                     {
                         System.Drawing.Image sdi = System.Drawing.Image.FromFile(produtos[i].Imagem);
-                        Image img = Image.GetInstance(sdi,ImageFormat.Jpeg);
+                        Image img = Image.GetInstance(sdi, ImageFormat.Jpeg);
                         img.ScaleAbsolute(64, 64);
                         pP.AddElement(img);
                     }
                     pP.AddElement(new Paragraph(""));
                     pP.AddElement(new Paragraph(produtos[i].Nome));
                     produto.AddCell(pP);
-                    produto.AddCell(produtos[i].Tipo);
-                    produto.AddCell(produtos[i].Dimensao);
-                    produto.AddCell(produtos[i].Quantidade.ToString());
-                    produto.AddCell(produtos[i].PrecoU.ToString());
-                    produto.AddCell(produtos[i].PrecoT.ToString());
-                    produto.AddCell(produtos[i].Descricao);
+                    var celulas = new List<string>(){
+                        produtos[i].Tipo,
+                        produtos[i].Dimensao,
+                        produtos[i].Quantidade.ToString(),
+                        "R$" + string.Format("{0:N2}",produtos[i].PrecoU),
+                        "R$" + string.Format("{0:N2}",produtos[i].PrecoT),
+                        produtos[i].Descricao
+                    };
+                    foreach (var ce in celulas)
+                    {
+                        pP = new PdfPCell(new Phrase(ce));
+                        pP.BorderColor = new BaseColor(123, 160, 205);
+                        pP.BackgroundColor = new BaseColor(167, 191, 222);
+                        produto.AddCell(pP);
+                    }
                 }
+                var pP2 = new PdfPCell(new Phrase("TOTAL: "));
+                pP2.HorizontalAlignment = Element.ALIGN_RIGHT;
+                pP2.Phrase.Font.SetStyle(Font.BOLD);
+                pP2.Colspan = 6;
+                pP2.BorderColor = new BaseColor(123, 160, 205);
+                pP2.BackgroundColor = new BaseColor(167, 191, 222);
+                produto.AddCell(pP2);
+                pP2.Phrase = new Phrase("R$" + string.Format("{0:N2}",
+                    produtos.Sum(p => p.PrecoT)));
+                produto.AddCell(pP2);
                 pdf.Add(produto);
+            }
+            //SERVIÇOS
+            if (qtdSer > 0)
+            {
+                Phrase phr = new Phrase("Serviços");
+                phr.Font.Size = 18;
+                var cellS = new PdfPCell(phr);
+                cellS.Phrase.Font.SetStyle(Font.BOLD);
+                cellS.Colspan = 3;
+                cellS.Border = 0;
+                cellS.HorizontalAlignment = Element.ALIGN_CENTER;
+                var cellB = new PdfPCell(new Phrase(" "));
+                cellB.Colspan = 3;
+                cellB.HorizontalAlignment = 1;
+                cellB.Border = 0;
+                //TABELA PRODUTO
+                var servico = new PdfPTable(3);
+                servico.SpacingBefore = 10f;
+                servico.WidthPercentage = 100;
+                servico.AddCell(cellS);
+                servico.AddCell(cellB);
+                var head = new List<string>
+                {
+                    "Serviço", "Descrição", "Preço Total"
+                };
+                foreach (var h in head)
+                {
+                    Phrase p1 = new Phrase(h);
+                    p1.Font.SetStyle(Font.BOLD);
+                    var cellH = new PdfPCell(p1);
+                    cellH.BorderColor = new BaseColor(123, 160, 205);
+                    cellH.BackgroundColor = new BaseColor(211, 223, 238);
+                    servico.AddCell(cellH);
+                }
+                for (int i = 0; i < qtdSer; i++)
+                {
+                    var celulas = new List<string>(){
+                        servicos[i].Nome,
+                        servicos[i].Descricao,
+                        "R$" + string.Format("{0:N2}",servicos[i].PrecoT)
+                    };
+                    foreach (var ce in celulas)
+                    {
+                        var pP = new PdfPCell(new Phrase(ce));
+                        pP.BorderColor = new BaseColor(123, 160, 205);
+                        pP.BackgroundColor = new BaseColor(167, 191, 222);
+                        servico.AddCell(pP);
+                    }
+                }
+                var pP2 = new PdfPCell(new Phrase("TOTAL: "));
+                pP2.HorizontalAlignment = Element.ALIGN_RIGHT;
+                pP2.Phrase.Font.SetStyle(Font.BOLD);
+                pP2.Colspan = 2;
+                pP2.BorderColor = new BaseColor(123, 160, 205);
+                pP2.BackgroundColor = new BaseColor(167, 191, 222);
+                servico.AddCell(pP2);
+                pP2.Phrase = new Phrase("R$" + string.Format("{0:N2}",
+                    servicos.Sum(p => p.PrecoT)));
+                pP2.HorizontalAlignment = Element.ALIGN_LEFT;
+                servico.AddCell(pP2);
+                pdf.Add(servico);
             }
             //PDF FECHADO
             pdf.Close();

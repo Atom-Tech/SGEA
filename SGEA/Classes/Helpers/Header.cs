@@ -15,7 +15,7 @@ namespace SGEA
         PdfContentByte cb;
 
         // we will put the final number of pages in a template
-        PdfTemplate headerTemplate, footerTemplate;
+        PdfTemplate footerTemplate;
 
         // this is the BaseFont we are going to use for the header / footer
         BaseFont bf = null;
@@ -49,7 +49,6 @@ namespace SGEA
                 PrintTime = DateTime.Now;
                 bf = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
                 cb = writer.DirectContent;
-                headerTemplate = cb.CreateTemplate(100, 100);
                 footerTemplate = cb.CreateTemplate(50, 50);
             }
             catch (DocumentException de)
@@ -92,7 +91,6 @@ namespace SGEA
             cb.AddTemplate(footerTemplate,
                 document.PageSize.GetRight(180) +
                 len, document.PageSize.GetBottom(30));
-            //set the alignment of all three cells and set border to 0
             pdfCell1.HorizontalAlignment = Element.ALIGN_LEFT;
             pdfCell2.HorizontalAlignment = Element.ALIGN_CENTER;
             pdfCell3.HorizontalAlignment = Element.ALIGN_RIGHT;
@@ -134,18 +132,11 @@ namespace SGEA
         {
             base.OnCloseDocument(writer, document);
 
-            headerTemplate.BeginText();
-            headerTemplate.SetFontAndSize(bf, 12);
-            headerTemplate.SetTextMatrix(0, 0);
-            headerTemplate.ShowText((writer.PageNumber - 1).ToString());
-            headerTemplate.EndText();
-
             footerTemplate.BeginText();
             footerTemplate.SetFontAndSize(bf, 12);
             footerTemplate.SetTextMatrix(0, 0);
-            footerTemplate.ShowText((writer.PageNumber - 1).ToString());
+            footerTemplate.ShowText((writer.PageNumber).ToString());
             footerTemplate.EndText();
-
 
         }
     }

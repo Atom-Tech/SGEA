@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="SGEA_Call_N.SGEA_Call_N" android:versionCode="1" android:versionName="1.0">
+  <uses-sdk android:minSdkVersion="16" />
+  <application android:label="SGEA_Call_N"></application>
+  <receiver android:name="ExampleAppWidgetProvider" >
+
+    <intent-filter>
+      <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+    </intent-filter>
+
+    <meta-data android:name="android.appwidget.provider"
+       android:resource="@xml/example_appwidget_info" />
+  </receiver>
+</manifest>

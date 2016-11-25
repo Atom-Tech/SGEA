@@ -28,7 +28,6 @@ namespace SGEA_Call.Janelas
             TextView nome = FindViewById<TextView>(Resource.Id.campoNome);
             TextView desc = FindViewById<TextView>(Resource.Id.campoDesc);
             TextView quant = FindViewById<TextView>(Resource.Id.campoQuant);
-            TextView precoU = FindViewById<TextView>(Resource.Id.campoPrecoU);
             TextView precoT = FindViewById<TextView>(Resource.Id.campoPrecoT);
             switch (e.Action)
             {
@@ -68,7 +67,6 @@ namespace SGEA_Call.Janelas
                             texto.Text = (i + 1) + "/" + q;
                             nome.Text = select[i].Nome;
                             desc.Text = select[i].Descricao;
-                            precoU.Text = "R$" + select[i].PrecoUnitario;
                             precoT.Text = "R$" + select[i].PrecoTotal;
                             quant.Text = select[i].Quantidade.ToString();
                         }
@@ -98,13 +96,11 @@ namespace SGEA_Call.Janelas
                 texto.Text = "1/" + q;
                 TextView nome = FindViewById<TextView>(Resource.Id.campoNome);
                 TextView desc = FindViewById<TextView>(Resource.Id.campoDesc);
-                TextView precoU = FindViewById<TextView>(Resource.Id.campoPrecoU);
                 TextView precoT = FindViewById<TextView>(Resource.Id.campoPrecoT);
                 TextView quant = FindViewById<TextView>(Resource.Id.campoQuant);
                 nome.Text = select[i].Nome;
                 desc.Text = select[i].Descricao;
                 quant.Text = select[i].Quantidade.ToString();
-                precoU.Text = "R$" + select[i].PrecoUnitario;
                 precoT.Text = "R$" + select[i].PrecoTotal;
             }
         }

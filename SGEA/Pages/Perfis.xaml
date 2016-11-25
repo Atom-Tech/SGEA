@@ -35,6 +35,7 @@
                     <ColumnDefinition Width="267*"/>
                     <ColumnDefinition Width="125*"/>
                 </Grid.ColumnDefinitions>
+                <TextBlock Style="{DynamicResource Alert}" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center"/>
                 <Label x:Name="label" HorizontalAlignment="Left" VerticalAlignment="Center">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Foreground="Red" Text="*"/>

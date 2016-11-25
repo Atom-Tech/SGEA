@@ -62,6 +62,7 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
+        <TextBlock Style="{DynamicResource Alert}" Grid.Row="1" VerticalAlignment="Top" Margin="10,10,0,0"/>
         <GroupBox Header="Fornecedores" Style="{DynamicResource GroupBoxStyle}" Grid.ColumnSpan="3" Margin="10">
             <Grid>
                 <Grid.RowDefinitions>
@@ -98,7 +99,7 @@
                         <TextBlock Text="CNPJ: "/>
                     </StackPanel>
                 </Label>
-                <xctk:MaskedTextBox x:Name="campoCNPJ" ToolTip="CNPJ do Fornecedor" MaxLength="18" Mask="##.###.###/####-##" Height="23" Margin="10,3,10,0" TextWrapping="Wrap" VerticalAlignment="Center" TabIndex="8" TextChanged="campoCNPJ_TextChanged" Style="{DynamicResource MaskedTextBoxStyle1}" Grid.Column="3"/>
+                <xctk:MaskedTextBox x:Name="campoCNPJ" ToolTip="CNPJ do Fornecedor" MaxLength="18" Mask="##\.###\.###/####-##" Height="23" Margin="10,3,10,0" TextWrapping="Wrap" VerticalAlignment="Center" TabIndex="8" TextChanged="campoCNPJ_TextChanged" Style="{DynamicResource MaskedTextBoxStyle1}" Grid.Column="3"/>
                 <Label x:Name="label6" Content="Razão Social:" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2" Grid.Row="1" Margin="0,7,0,8"/>
                 <TextBox x:Name="campoRS" MaxLength="100" ToolTip="Razão Social do Fornecedor" Height="23" Margin="10,3,10,0" TextWrapping="Wrap" VerticalAlignment="Center" TabIndex="9" Grid.Column="3" Grid.Row="1"/>
                 <GroupBox x:Name="groupTel" Header="Telefone" Style="{DynamicResource GroupBoxStyle}" Margin="0,0,0,0" Grid.Column="3" Grid.Row="2" Grid.RowSpan="3">

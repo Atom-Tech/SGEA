@@ -6,6 +6,10 @@
              StartupUri="Janelas\Login.xaml"
              DispatcherUnhandledException="Application_DispatcherUnhandledException">
     <Application.Resources>
+        <Style x:Key="Alert" TargetType="TextBlock">
+            <Setter Property="Text" Value="*Campo obrigatório" />
+            <Setter Property="Foreground" Value="Red" />
+        </Style>
         <Style x:Key="ButtonStyle2" TargetType="Button">
             <Setter Property="Height" Value="20"/>
             <Setter Property="MinWidth" Value="70" />

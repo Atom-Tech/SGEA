@@ -23,11 +23,12 @@ namespace SGEA.Janelas.Orcamento
         }
 
 
-        public View(int cd)
+        public View(int cd, string t)
         {
             InitializeComponent();
             this.cd = cd;
             ContentRendered += View_ContentRendered;
+            titulo.Content = "Verificar " + t;
         }
 
         private void View_ContentRendered(object sender, EventArgs e)

@@ -45,6 +45,7 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
+                <TextBlock Style="{DynamicResource Alert}" Margin="10,0,0,0" Grid.Row="5" Grid.Column="5" VerticalAlignment="Center"/>
                 <CheckBox x:Name="checkUsuario" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="60,3,0,0" Grid.ColumnSpan="2" Visibility="Collapsed"/>
                 <ComboBox x:Name="tipoUsuario" TabIndex="0" VerticalAlignment="Center" Margin="15,3,15,0" Grid.Column="1">
                     <ComboBoxItem Content="Administrador" HorizontalAlignment="Left" Width="182"/>

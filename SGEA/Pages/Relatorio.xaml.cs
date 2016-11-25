@@ -242,7 +242,7 @@ namespace SGEA.Pages
             {
                 DataRowView row = (DataRowView)listaOrc.Items[listaOrc.SelectedIndex];
                 int cd = row[0].ToString().ToInt();
-                Janelas.Orcamento.View v = new Janelas.Orcamento.View(cd);
+                Janelas.Orcamento.View v = new Janelas.Orcamento.View(cd,"Relatório");
                 v.ShowDialog();
             }
         }

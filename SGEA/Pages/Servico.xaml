@@ -33,6 +33,7 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
+                <TextBlock Style="{DynamicResource Alert}" Grid.Column="1" VerticalAlignment="Bottom"/>
                 <TextBox x:Name="campoNome" TabIndex="0" IsEnabled="False" Style="{DynamicResource TextBoxStyle}" MaxLength="100" HorizontalAlignment="Left" Height="23" Margin="79,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" Grid.Column="1"/>
                 <Label x:Name="label" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top" Grid.Column="1">
                     <StackPanel Orientation="Horizontal">

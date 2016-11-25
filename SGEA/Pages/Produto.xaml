@@ -43,6 +43,7 @@
                     <ColumnDefinition Width="192*"/>
                     <ColumnDefinition Width="461*"/>
                 </Grid.ColumnDefinitions>
+                <TextBlock Style="{DynamicResource Alert}" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center" Grid.ColumnSpan="2" HorizontalAlignment="Left"/>
                 <GroupBox x:Name="groupBox" Header="Imagem" Style="{DynamicResource GroupBoxStyle}" HorizontalAlignment="Left" Margin="10,0,0,0" Height="240" VerticalAlignment="Top" Grid.RowSpan="7" >
                     <Grid>
                         <Grid.ColumnDefinitions>

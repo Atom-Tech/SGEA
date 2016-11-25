@@ -133,12 +133,14 @@
                     <th class="AlingRight"><br>
                         <a href="https://www.facebook.com/raphael.dosanjos.1481" target="Blank" style="text-decoration:none;">Raphael dos Anjos&ensp;</a><br><br><br>
                         <a href="https://www.linkedin.com/in/raphael-dos-anjos-7bb02b12b?authType=NAME_SEARCH&authToken=HSmW&locale=pt_BR&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A534552767%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1478534037621%2Ctas%3Araphael%20dos%20anjos" target="Blank" style="text-decoration:none;">Raphael Anjos&ensp;</a><br><br><br>
-                        <a href="https://twitter.com/blackwolfren27" target="Blank" style="text-decoration:none;">@blackwolfren&ensp;</a>
+                        <a href="https://twitter.com/blackwolfren27" target="Blank" style="text-decoration:none;">@blackwolfren&ensp;</a><br><br><br>
+                        <a href="https://github.com/RaphaelAnjos27" target="Blank" style="text-decoration:none;">RaphaelAnjos27&ensp;</a>
                     </th>
                     <th><br>
                         <img src="ICON/LinksSociais/facebook.png" class="AlingLeft"><br><br>
                         <img src="ICON/LinksSociais/linkedin.png" class="AlingLeft"><br><br>
                         <img src="ICON/LinksSociais/twitter.png" class="AlingLeft"><br><br>
+                        <img src="ICON/LinksSociais/git30x30.png" class="AlingLeft"><br><br>
                     </th>
                 </tr>
                  
@@ -148,13 +150,15 @@
                     <th class="AlingRight"><br>
                         <a href="https://www.facebook.com/fernando.martinelli.1004" target="Blank" style="text-decoration:none;">Fernando Martinelli&ensp;</a><br><br><br>
                         <a href="https://www.linkedin.com/in/fernando-martinelli-b0691312a?authType=name&authToken=Lljy&trk=prof-sb-browse_map-name" target="Blank" style="text-decoration:none;">Fernando Martinelli&ensp;</a><br><br><br>
-                        <a href="https://twitter.com/_MartinelliFe" target="Blank" style="text-decoration:none;">@FernandoMartinelli&ensp;</a>
+                        <a href="https://twitter.com/_MartinelliFe" target="Blank" style="text-decoration:none;">@_MartinelliFe&ensp;</a><br><br><br>
+                        <a href="https://github.com/Fernando-Martinelli" target="Blank" style="text-decoration:none;">Fernando-Martinelli&ensp;</a>
 
                     </th>
                     <th><br>
                         <img src="ICON/LinksSociais/facebook.png" class="AlingLeft"><br><br>
                         <img src="ICON/LinksSociais/linkedin.png" class="AlingLeft"><br><br>
                         <img src="ICON/LinksSociais/twitter.png" class="AlingLeft"><br><br>
+                        <img src="ICON/LinksSociais/git30x30.png" class="AlingLeft"><br><br>
                     </th>
                 </tr>
                 
@@ -164,12 +168,14 @@
                     <th class="AlingRight"><br>
                          <a href="https://www.facebook.com/thiviscar" target="Blank" style="text-decoration:none;">Thiago Vinicius Scaramucci&ensp;</a><br><br><br>
                         <a href="https://www.linkedin.com/in/thiago-scaramucci-7223a812b?authType=NAME_SEARCH&authToken=atpK&locale=pt_BR&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A535459850%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1478533948527%2Ctas%3Athi" target="Blank" style="text-decoration:none;">Thiago Scaramucci&ensp;</a><br><br><br>
-                        <a href="https://twitter.com/scar_thiago" target="Blank" style="text-decoration:none;">@scar_thiago&ensp;</a>
+                        <a href="https://twitter.com/scar_thiago" target="Blank" style="text-decoration:none;">@scar_thiago&ensp;</a><br><br><br>
+                        <a href="https://github.com/thiviscar" target="Blank" style="text-decoration:none;">Thiviscar&ensp;</a>
                     </th>
                     <th><br>
                         <img src="ICON/LinksSociais/facebook.png" class="AlingLeft"><br><br>
                         <img src="ICON/LinksSociais/linkedin.png" class="AlingLeft"><br><br>
                         <img src="ICON/LinksSociais/twitter.png" class="AlingLeft"><br><br>
+                        <img src="ICON/LinksSociais/git30x30.png" class="AlingLeft"><br><br>
                     </th>
                 </tr>
                 
@@ -308,21 +314,28 @@
         </a>
         <br><br>
         <div class="row">
-        	<div class="col-lg-4 col-sm-4">
+        	<div class="col-lg-3 col-sm-3">
             	<div>
                 	 <a href="https://www.facebook.com/atomtechcompany" target="_blank" title="Facebook">
     					<img src="ICON/facebook.png" class="facebookConf">
   					 </a>
                 </div>
             </div>
-            <div class="col-lg-4 col-sm-4">
+            <div class="col-lg-3 col-sm-3">
+            	<div>
+                	 <a href="https://github.com/Atom-Tech" target="_blank" title="GitHub">
+    					<img src="ICON/Git.png" class="facebookConf">
+  					 </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-3">
             	<div>
                 	 <a href="https://twitter.com/Atom_TC" target="_blank" title="Twitter">
     					<img src="ICON/twitter.png" class="facebookConf">
   					 </a>
                 </div>
             </div>
-            <div class="col-lg-4 col-sm-4">
+            <div class="col-lg-3 col-sm-3">
             	<div>
                 	 <a href="https://www.instagram.com/atomteccompany/" target="_blank" title="Instagram">
     					<img src="ICON/instagram.png" class="facebookConf">

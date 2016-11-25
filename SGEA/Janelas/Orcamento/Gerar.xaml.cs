@@ -288,6 +288,7 @@ namespace SGEA.Janelas.Orcamento
                     campoAlt.Value = alt[x];
                     campoQuant.Text = quant[x].ToString();
                     campoPreco.Value = preco[x];
+                    campoPrecoT.Text = precoT[x].ToString();
                 }
                 else
                 {
@@ -309,6 +310,7 @@ namespace SGEA.Janelas.Orcamento
                     campoAlt.Value = alt[x];
                     campoQuant.Text = quant[x].ToString();
                     campoPreco.Value = preco[x];
+                    campoPrecoT.Text = precoT[x].ToString();
                 }
             }
             check = false;
@@ -362,8 +364,8 @@ namespace SGEA.Janelas.Orcamento
                     alt = (double)campoAlt.Value;
                     larg = (double)campoLar.Value;
                     p = (double)campoPreco.Value;
-                    campoPrecoT.Text = (p * quant).ToString();
-                    precoT[x] = double.Parse(campoPrecoT.Text);
+                    precoT[x] = Convert.ToDouble(p * quant);
+                    campoPrecoT.Text = precoT[x].ToString();
                     try
                     {
                         double precoO = 0;

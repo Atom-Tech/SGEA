@@ -77,12 +77,12 @@
                                 <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="181" Margin="20,12,0,0" VerticalAlignment="Top" Width="181" Grid.RowSpan="5" Grid.ColumnSpan="2">
                                     <Image x:Name="campoImagem"/>
                                 </Border>
-                                <Label x:Name="label6" Content="Largura:" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="2" Grid.Column="3" Height="24" Width="53" Margin="0,2,0,1"/>
-                                <xctk:DoubleUpDown x:Name="campoLar" HorizontalAlignment="Center" Height="23" VerticalAlignment="Center" Width="166" Grid.Row="2" Grid.Column="4" ValueChanged="campoLar_ValueChanged"/>
-                                <Label x:Name="label7" Content="Altura:" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="3" Grid.Column="3" Height="24" Width="44" Margin="0,3"/>
-                                <xctk:DoubleUpDown x:Name="campoAlt" HorizontalAlignment="Center" Height="23" VerticalAlignment="Center" Width="166" Grid.Row="3" Grid.Column="4" ValueChanged="campoAlt_ValueChanged"/>
+                                <Label x:Name="label6" Content="Largura (m):" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="2" Grid.Column="3" Height="24" Margin="0,2,0,1"/>
+                                <xctk:DoubleUpDown x:Name="campoLar" HorizontalAlignment="Center" Height="23" IsEnabled="False" VerticalAlignment="Center" Width="166" Grid.Row="2" Grid.Column="4" ValueChanged="campoLar_ValueChanged"/>
+                                <Label x:Name="label7" Content="Altura (m):" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="3" Grid.Column="3" Height="24" Margin="0,3"/>
+                                <xctk:DoubleUpDown x:Name="campoAlt" HorizontalAlignment="Center" Height="23" IsEnabled="False" VerticalAlignment="Center" Width="166" Grid.Row="3" Grid.Column="4" ValueChanged="campoAlt_ValueChanged"/>
                                 <Label x:Name="label8" Content="Quantidade:" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="4" Grid.Column="3" Height="24" Width="75" Margin="0,1"/>
-                                <TextBox x:Name="campoQuant" Style="{DynamicResource TextBoxStyle}" HorizontalAlignment="Center" Height="23" TextWrapping="Wrap" VerticalAlignment="Center" Width="166" TextChanged="campoQuant_TextChanged" Grid.Row="4" Grid.Column="4"/>
+                                <TextBox x:Name="campoQuant" IsEnabled="False" Style="{DynamicResource TextBoxStyle}" HorizontalAlignment="Center" Height="23" TextWrapping="Wrap" VerticalAlignment="Center" Width="166" TextChanged="campoQuant_TextChanged" Grid.Row="4" Grid.Column="4"/>
                                 <Label x:Name="label10" Content="Preço:" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="5" Height="24" Width="42" Margin="16,7,17,7"/>
                                 <xctk:DoubleUpDown x:Name="campoPreco" HorizontalAlignment="Center" Height="24" VerticalAlignment="Center" Width="120" Grid.Row="5" Grid.Column="1" Margin="4,7" IsEnabled="False" ValueChanged="campoPreco_ValueChanged"/>
                                 <Label x:Name="label12" Content="Preço Total: " HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="5" Grid.Column="3"  Height="24" Width="74" Margin="0,7"/>

@@ -103,6 +103,7 @@
     <Content Include="Assets\Problema\tempoPapelada.png" />
     <Content Include="Assets\Site\ICON\facebook.png" />
     <Content Include="Assets\Site\ICON\favicon.ico" />
+    <Content Include="Assets\Site\ICON\Git.png" />
     <Content Include="Assets\Site\ICON\ICAut.png" />
     <Content Include="Assets\Site\ICON\ICEdu.png" />
     <Content Include="Assets\Site\ICON\ICOpo.png" />
@@ -111,6 +112,7 @@
     <Content Include="Assets\Site\ICON\ICSeo.png" />
     <Content Include="Assets\Site\ICON\instagram.png" />
     <Content Include="Assets\Site\ICON\LinksSociais\facebook.png" />
+    <Content Include="Assets\Site\ICON\LinksSociais\git30x30.png" />
     <Content Include="Assets\Site\ICON\LinksSociais\linkedin.png" />
     <Content Include="Assets\Site\ICON\LinksSociais\twitter.png" />
     <Content Include="Assets\Site\ICON\Svg\close-envelope.svg" />

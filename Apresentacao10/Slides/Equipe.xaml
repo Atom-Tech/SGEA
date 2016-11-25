@@ -14,7 +14,7 @@
             <Italic>Uma Partícula da Evolução</Italic>
         </TextBlock>
         <TextBlock FontSize="28" Foreground="Black" HorizontalAlignment="Right" Width="343" Canvas.Left="553.5" Canvas.Top="192">
-            •Equipe: <LineBreak/>
+            Equipe: <LineBreak/>
             •Fernando Martinelli; <LineBreak />
             •Moline Santos; <LineBreak />
             •Raphael dos Anjos; <LineBreak />

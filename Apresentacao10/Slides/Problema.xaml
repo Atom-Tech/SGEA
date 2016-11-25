@@ -11,6 +11,7 @@
         <Image x:Name="image" HorizontalAlignment="Left" Width="277" Source="ms-appx:///Assets/Problema/tempoPapelada.png" Stretch="Fill" Canvas.Left="167" Canvas.Top="176"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" FontSize="28" Canvas.Left="529" Canvas.Top="217">
             •Papelada; <LineBreak />
+            •Bagunça; <LineBreak />
             •Tempo; <LineBreak />
             •Relatórios e orçamentos informais.
         </TextBlock>

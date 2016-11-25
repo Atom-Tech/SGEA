@@ -40,6 +40,7 @@
                         <ColumnDefinition Width="162*"/>
                     </Grid.ColumnDefinitions>
                     <Button x:Name="botaoSalvar" Style="{DynamicResource ButtonStyle}" Content="Salvar" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="75" Click="botaoSalvar_Click" TabIndex="10" Grid.Column="3" Grid.Row="5" Margin="0,0,0,10"/>
+                    <TextBlock Style="{DynamicResource Alert}" Grid.Row="5" Grid.Column="4" VerticalAlignment="Center"/>
                     <GroupBox x:Name="groupTel" Header="Telefone" Style="{DynamicResource GroupBoxStyle}" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="4" Margin="10">
                         <Grid>
                             <Grid.ColumnDefinitions>

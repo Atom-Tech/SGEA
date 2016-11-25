@@ -122,7 +122,7 @@ namespace SGEA.Pages
                     }
                     else if (new EmailAddressAttribute().IsValid(campoEmail.Text))
                     {
-                        dataGrid1.DataContext = Connect.LiteConnection("select cdUsuario from tbUsuario order by cdUsuario desc");
+                        dataGrid1.DataContext = Connect.LiteConnection("SELECT seq FROM sqlite_sequence WHERE name='tbUsuario'");
                         DataRowView row = (DataRowView)dataGrid1.Items[0];
                         int codigo = Convert.ToInt32(row[0]) + 1;
                         Criptografar c = new Criptografar();

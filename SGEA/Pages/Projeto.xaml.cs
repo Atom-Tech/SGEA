@@ -157,7 +157,7 @@ namespace SGEA.Pages
             {
                 DataRowView row = (DataRowView)listaExecucao.Items[index];
                 int cd = (int)row[5];
-                View o = new View(cd);
+                View o = new View(cd,"Projeto");
                 o.ShowDialog();
             }
             else
@@ -173,7 +173,7 @@ namespace SGEA.Pages
             {
                 DataRowView row = (DataRowView)listaAtrasado.Items[index];
                 int cd = (int)row[6];
-                View o = new View(cd);
+                View o = new View(cd,"Projeto");
                 o.ShowDialog();
             }
             else
@@ -189,7 +189,7 @@ namespace SGEA.Pages
             {
                 DataRowView row = (DataRowView)listaConcluido.Items[index];
                 int cd = (int)row[7];
-                View o = new View(cd);
+                View o = new View(cd,"Projeto");
                 o.ShowDialog();
             }
             else

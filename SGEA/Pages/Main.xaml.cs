@@ -193,7 +193,7 @@ namespace SGEA.Pages
             {
                 DataRowView row = (DataRowView)listaProjetos.Items[listaProjetos.SelectedIndex];
                 int cd = Convert.ToInt32(row[5]);
-                View v = new View(cd);
+                View v = new View(cd,"Projeto");
                 v.ShowDialog();
             }
             catch

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
@@ -344,8 +345,8 @@ namespace SGEA
             {
                 campoLogin.Text = u.NovoLogin();
                 nmUsuario = u.NovoLogin();
-                dataGrid4.DataContext = 
-                    Connect.LiteConnection("select * from tbUsuario where login = '"+nmUsuario+"'");
+                dataGrid4.DataContext =
+                    Connect.LiteConnection("select * from tbUsuario where login = '" + nmUsuario + "'");
                 DataRowView row = dataGrid4.SelectFirstRow();
                 nome = row[1].ToString();
                 email = row[4].ToString();
@@ -507,6 +508,22 @@ namespace SGEA
             }
         }
 
+        private void fMain_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            var controle = (Visual)e.OriginalSource;
+            var check = retNote.GetChildren();
+            bool existe = retNote == controle;
+            foreach (var c in check)
+            {
+                if (controle == c)
+                {
+                    existe = true;
+                    break;
+                }
+            }
+            if (!existe && not) MostrarNotificacao();
+        }
+
         private void home_Click(object sender, RoutedEventArgs e)
         {
             if (janela != 0)
@@ -578,7 +595,7 @@ namespace SGEA
             {
                 Border b = new Border()
                 {
-                    Height = 50,
+                    Height = 70,
                     Margin = new Thickness(10, 10, 10, 20),
                     BorderBrush = Brushes.White,
                     BorderThickness = new Thickness(1),
@@ -626,6 +643,14 @@ namespace SGEA
                     Margin = new Thickness(0, 2, 0, 0),
                     Template = (ControlTemplate)FindResource("ButtonTop")
                 };
+                Button con = new Button()
+                {
+                    Content = "Confirmar",
+                    Style = (Style)FindResource("ButtonStyle2"),
+                    Name = "conOrc" + o.Key,
+                    VerticalAlignment = VerticalAlignment.Center,
+                    Template = (ControlTemplate)FindResource("ButtonCenter")
+                };
                 Button del = new Button()
                 {
                     Content = "Deletar",
@@ -636,7 +661,9 @@ namespace SGEA
                 };
                 ver.Click += Ver_Click;
                 del.Click += Del_Click;
+                con.Click += Con_Click;
                 painel2.Children.Add(ver);
+                painel2.Children.Add(con);
                 painel2.Children.Add(del);
                 painel1.Children.Add(notMenu);
                 painel1.Children.Add(r1);
@@ -706,7 +733,7 @@ namespace SGEA
                 };
                 Button con = new Button()
                 {
-                    Content = "Confirmar",
+                    Content = "Concluir",
                     Style = (Style)FindResource("ButtonStyle2"),
                     Name = "conVis" + v.Key,
                     VerticalAlignment = VerticalAlignment.Center,
@@ -891,7 +918,7 @@ namespace SGEA
             {
                 case "Orc":
                     menuOrc.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
-                    orc.Notificacao(nome.Substring(6), vf);
+                    orc.Notificacao(nome.Substring(6), vf, c);
                     break;
                 case "Vis":
                     menuAgenda.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));

@@ -4,9 +4,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@android:style/Theme.Holo.Light.NoActionBar"
-    android:id="@+id/root">
-    <Button 
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-    />
+    android:background="@color/fundo"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minHeight="?android:attr/actionBarSize"
+        android:background="@color/topo"
+        android:minWidth="25px"
+        android:layout_width="match_parent"
+        android:layout_height="70.5dp"
+        android:id="@+id/toolbar1">
+        <ImageView
+            android:src="@drawable/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView1"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp" />
+        <TextView
+            android:text="Notificações"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView1"
+            android:textColor="@android:color/black"
+            android:layout_marginLeft="20dp"
+            android:layout_gravity="center" />
+    </LinearLayout>
+  <ScrollView
+    android:scrollbars="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout android:orientation="vertical"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:id="@+id/root">
+      
+    </LinearLayout>
+  </ScrollView>
 </LinearLayout>

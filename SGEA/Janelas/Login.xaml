@@ -29,7 +29,7 @@
             </StackPanel>
         </Border>
         <Border BorderBrush="#006564" BorderThickness="2,1,2,2" DockPanel.Dock="Bottom">
-            <Grid>
+            <Grid x:Name="grid">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="53*"/>
                     <ColumnDefinition Width="58*"/>

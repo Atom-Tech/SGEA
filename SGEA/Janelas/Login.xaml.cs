@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Data.SQLite;
+using System.Windows.Controls;
 
 namespace SGEA
 {

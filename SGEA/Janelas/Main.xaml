@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:SGEA"
         xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" x:Name="fMain" x:Class="SGEA.Main"
         mc:Ignorable="d"
-        Top="0" Left="0"
+        Top="0" Left="0" PreviewMouseLeftButtonDown="fMain_PreviewMouseLeftButtonDown"
         Title="Sistema de Gerenciamento de Esquadrias de Alumínio" WindowStartupLocation="Manual" Style="{DynamicResource WindowStyle}" Height="726" Width="1024" KeyDown="fMain_KeyDown">
     <Window.Resources>
         <ResourceDictionary>
@@ -164,9 +164,9 @@
                             <Separator/>
                             <TextBlock x:Name="campoGrupo" Text="Administrador"/>
                             <Separator/>
-                            <TextBlock Text="Versão 1.5.0" />
+                            <TextBlock Text="Versão 1.5.1" />
                         </StatusBar>
-                        <Grid>
+                        <Grid x:Name="grid">
                             <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Panel.ZIndex="1"/>
                             <Border x:Name="balNote" BorderBrush="Black" CornerRadius="10" BorderThickness="1" Height="50" Width="150" VerticalAlignment="Top" Margin="0,-75,-768,0" Visibility="Collapsed">
                                 <Border.Background>

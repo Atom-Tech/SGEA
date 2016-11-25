@@ -19,10 +19,6 @@
         </Storyboard>
     </Page.Resources>
 
-    <Page.DataContext>
-        <vm:MainPageViewModel x:Name="ViewModel" />
-    </Page.DataContext>
-
     <RelativePanel>
         <RelativePanel.Background>
             <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/brushedframe4.jpg"/>
@@ -64,12 +60,6 @@
                 </TextBox>
 
             </controls:Resizer>
-
-            <Button x:Name="submitButton"
-                    Click="{x:Bind ViewModel.GotoDetailsPage}"
-                    Content="Submit"
-                    RelativePanel.AlignBottomWith="parameterResizer"
-                    RelativePanel.RightOf="parameterResizer" Visibility="Collapsed"/>
 
             <TextBlock x:Name="stateTextBox"
                        Margin="16,16,0,0"

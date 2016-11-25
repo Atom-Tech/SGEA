@@ -149,7 +149,7 @@ namespace SGEA.Pages
             }
         }
 
-        public void Notificacao(string cd, bool vf)
+        public void Notificacao(string cd, bool vf, bool c)
         {
             int x = -1;
             Wait.Waiting();
@@ -163,8 +163,10 @@ namespace SGEA.Pages
                 }
             }
             listaOrc.SelectedIndex = x;
-            if (vf)
+            if (vf && !c)
                 botaoDel.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+            if (vf && c)
+                botaoConfirmar.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
         }
 
         private void botaoNovo_Click(object sender, RoutedEventArgs e)

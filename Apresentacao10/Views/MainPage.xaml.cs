@@ -1,5 +1,4 @@
 using System;
-using Apresentacao10.ViewModels;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;

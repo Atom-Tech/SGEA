@@ -86,7 +86,13 @@
                     <RotateTransform/>
                     <TranslateTransform/>
                 </TransformGroup>
-            </TextBlock.RenderTransform><Run Text="•Ser a maior produtora de software e games do Brasil,"/><LineBreak /><Run Text="sempre nos lembrando de levar o conhecimento através de nossos produtos."/></TextBlock>
+            </TextBlock.RenderTransform>
+            <Run Text="•Ser a maior produtora de software e games do Brasil,"/>
+            <LineBreak />
+            <Run Text="sempre nos lembrando de levar o conhecimento "/>
+            <LineBreak/>
+            <Run Text="através de nossos produtos."/>
+        </TextBlock>
         <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" TextWrapping="Wrap" Text="VALORES" VerticalAlignment="Top" Height="49" Foreground="Black" FontSize="36" Width="157" Canvas.Left="108" Canvas.Top="230" RenderTransformOrigin="0.5,0.5" Tapped="textBlock3_Tapped">
             <TextBlock.RenderTransform>
                 <TransformGroup>
@@ -106,11 +112,10 @@
                     <TranslateTransform/>
                 </TransformGroup>
             </TextBlock.RenderTransform>
-            <Run Text="•Comprometimento com o trabalho;"/> <LineBreak />
-            <Run Text="•Comprometimento com o cliente;"/> <LineBreak />
-            <Run Text="•Desejo de novos desafios;"/> <LineBreak />
-            <Run Text="•Buscar atualizações do conhecimento sobre novas tecnologias;"/> <LineBreak />
-            <Run Text="•Buscar sempre distribuir conhecimento aos usuários."/>
+            <Run Text="•Comprometimento;"/> <LineBreak />
+            <Run Text="•Novos desafios;"/> <LineBreak />
+            <Run Text="•Atualizar sobre novas tecnologias;"/> <LineBreak />
+            <Run Text="•Distribuir conhecimento aos usuários."/>
         </TextBlock>
     </Canvas>
 </Page>

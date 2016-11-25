@@ -41,6 +41,31 @@ namespace SGEA_Call_N
 			}
 		}
 		
+		public partial class Color
+		{
+			
+			// aapt resource value: 0x7f050003
+			public const int branco = 2131034115;
+			
+			// aapt resource value: 0x7f050001
+			public const int fundo = 2131034113;
+			
+			// aapt resource value: 0x7f050000
+			public const int topo = 2131034112;
+			
+			// aapt resource value: 0x7f050002
+			public const int vermelho = 2131034114;
+			
+			static Color()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Color()
+			{
+			}
+		}
+		
 		public partial class Drawable
 		{
 			
@@ -60,8 +85,17 @@ namespace SGEA_Call_N
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f070000
-			public const int root = 2131165184;
+			// aapt resource value: 0x7f080001
+			public const int imageView1 = 2131230721;
+			
+			// aapt resource value: 0x7f080003
+			public const int root = 2131230723;
+			
+			// aapt resource value: 0x7f080002
+			public const int textView1 = 2131230722;
+			
+			// aapt resource value: 0x7f080000
+			public const int toolbar1 = 2131230720;
 			
 			static Id()
 			{
@@ -92,11 +126,11 @@ namespace SGEA_Call_N
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f050001
-			public const int ApplicationName = 2131034113;
+			// aapt resource value: 0x7f060001
+			public const int ApplicationName = 2131099649;
 			
-			// aapt resource value: 0x7f050000
-			public const int Hello = 2131034112;
+			// aapt resource value: 0x7f060000
+			public const int Hello = 2131099648;
 			
 			static String()
 			{
@@ -111,8 +145,8 @@ namespace SGEA_Call_N
 		public partial class Style
 		{
 			
-			// aapt resource value: 0x7f060000
-			public const int MyTheme = 2131099648;
+			// aapt resource value: 0x7f070000
+			public const int MyTheme = 2131165184;
 			
 			static Style()
 			{

@@ -19,13 +19,11 @@ namespace Apresentacao10.Views
 
         public static Shell Instance { get; set; }
         public static HamburgerMenu Lista => Instance.lista;
-        Services.SettingsServices.SettingsService _settings;
 
         public Shell()
         {
             Instance = this;
             InitializeComponent();
-            _settings = Services.SettingsServices.SettingsService.Instance;
         }
 
         public void SetView(int i)
@@ -81,8 +79,6 @@ namespace Apresentacao10.Views
         public void SetNavigationService(INavigationService navigationService)
         {
             lista.NavigationService = navigationService;
-            Lista.IsFullScreen = _settings.IsFullScreen;
-            Lista.HamburgerButtonVisibility = _settings.ShowHamburgerButton ? Visibility.Visible : Visibility.Collapsed;
         }
 
         private void intro_Selected(object sender, RoutedEventArgs e)
@@ -132,7 +128,7 @@ namespace Apresentacao10.Views
 
         private void call_Selected(object sender, RoutedEventArgs e)
         {
-            m.Navigate(typeof(Sgea));
+            m.Navigate(typeof(Call));
         }
 
         private void conclusao_Selected(object sender, RoutedEventArgs e)

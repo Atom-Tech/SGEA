@@ -1,6 +1,5 @@
 using Windows.UI.Xaml;
 using System.Threading.Tasks;
-using Apresentacao10.Services.SettingsServices;
 using Windows.ApplicationModel.Activation;
 using Template10.Controls;
 using Template10.Common;
@@ -27,11 +26,6 @@ namespace Apresentacao10
             SplashFactory = (e) => new Views.Splash(e);
             #region app settings
 
-            // some settings must be set in app.constructor
-            var settings = SettingsService.Instance;
-            RequestedTheme = settings.AppTheme;
-            CacheMaxDuration = settings.CacheMaxDuration;
-            ShowShellBackButton = settings.UseShellBackButton;
             AutoSuspendAllFrames = true;
             AutoRestoreAfterTerminated = true;
             AutoExtendExecutionSession = true;

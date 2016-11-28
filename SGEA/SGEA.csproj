@@ -527,9 +527,7 @@
     <Resource Include="img\circulohistorico.png" />
     <Resource Include="img\usb.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Logs\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="img\BotaoEstiloRet.png" />
   </ItemGroup>

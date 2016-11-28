@@ -112,10 +112,10 @@
                     <TranslateTransform/>
                 </TransformGroup>
             </TextBlock.RenderTransform>
-            <Run Text="•Comprometimento;"/> <LineBreak />
             <Run Text="•Novos desafios;"/> <LineBreak />
             <Run Text="•Atualizar sobre novas tecnologias;"/> <LineBreak />
-            <Run Text="•Distribuir conhecimento aos usuários."/>
+            <Run Text="•Distribuir conhecimento aos usuários;"/><LineBreak />
+            <Run Text="•Comprometimento."/> 
         </TextBlock>
     </Canvas>
 </Page>

@@ -80,6 +80,8 @@ namespace SGEA.Pages
                 listaRel.ItemsSource = relatorio;
                 listaRel.Columns[0].Header = "Período";
                 listaRel.Columns[1].Header = "Datas";
+                listaRel.Columns[1].Width = new DataGridLength(1,
+                    DataGridLengthUnitType.Star);
                 listaRel.Columns[2].Header = "Preço Total";
                 listaRel.Items.Refresh();
             }
@@ -201,8 +203,8 @@ namespace SGEA.Pages
                     string d2 = DateTime.Parse(d[1]).ToString("yyyy-MM-dd");
                     listaOrc.DataContext = Connect.LiteConnection("select cdOrcamento 'Código', login 'Funcionário', nmCliente 'Cliente', date(dtOrcamento) 'Data de Criação', date(dtModificacao) 'Última Modificação'," +
                         " date(dtValidade) 'Data de Validade', sum(precoU * quant) 'Preço Total', observacoes 'Observações', case when idExecucao = 0 then 'Não' when idExecucao = 1 then 'Sim' end as 'Confirmado?'" +
-                        " from tbOrcamento, tbUsuario, tbItemNota, tbCliente, tbProduto, tbServico" +
-                        " where cdUsuario = idUsuario and cdOrcamento = idOrcamento and cdCliente = idCliente and(cdProduto = idProduto or idProduto is null) and (cdServico = idServico or idServico is null) and " +
+                        " from tbOrcamento, tbUsuario, tbItemNota, tbCliente" +
+                        " where cdUsuario = idUsuario and cdOrcamento = idOrcamento and cdCliente = idCliente and " +
                         " date(dtOrcamento) >= '"+d1+"' and date(dtOrcamento) <= '"+d2+"' group by cdOrcamento");
                 }
                 else

@@ -120,15 +120,15 @@
                 </GroupBox>
                 <TextBox x:Name="campoEmail" MaxLength="200" ToolTip="E-Mail do Fornecedor" Height="22" Margin="10,11,10,8" TextWrapping="Wrap" VerticalAlignment="Center" TabIndex="2" Grid.Column="1" Grid.Row="1"/>
                 <xctk:MaskedTextBox x:Name="campoCep" Mask="#####-###" MaxLength="200" Width="80" ToolTip="Endereço do Fornecedor" Height="24" Margin="10,3,0,0" TextWrapping="Wrap" VerticalAlignment="Center" TabIndex="3" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" TextChanged="campoCep_TextChanged"/>
-                <Label Content="Cidade:" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                <TextBox x:Name="campoCidade" IsEnabled="False" Grid.Row="3" Grid.Column="1" Style="{DynamicResource TextBoxStyle}" VerticalAlignment="Center" Margin="10,3,10,0" Grid.ColumnSpan="2" LostFocus="campoCidade_LostFocus" TabIndex="5"/>
+                <Label Content="Cidade:" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,30,0"/>
+                <TextBox x:Name="campoCidade" IsEnabled="False" Grid.Row="2" Grid.Column="1" Style="{DynamicResource TextBoxStyle}" VerticalAlignment="Center" Width="125" HorizontalAlignment="Right" Margin="10,3,10,0" Grid.ColumnSpan="2" LostFocus="campoCidade_LostFocus" TabIndex="4"/>
                 <Button x:Name="botaoSalvar" Style="{DynamicResource ButtonStyle}" Content="Salvar" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="20" Click="botaoSalvar_Click" TabIndex="12" Grid.Row="5" Grid.Column="3"/>
-                <Label x:Name="label1" Content="Bairro:" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="4"/>
-                <TextBox x:Name="campoBairro" MaxLength="50" Height="22" Margin="10,3,10,0" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" LostFocus="campoBairro_LostFocus" TabIndex="6"/>
-                <Label x:Name="label8" Content="Rua:" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="5"/>
-                <TextBox x:Name="campoRua" Margin="10,3,10,0" TextWrapping="Wrap" Style="{DynamicResource TextBoxStyle}" Grid.Column="1" Grid.Row="5" TabIndex="7" Grid.ColumnSpan="2"/>
-                <Label Content="Número: " Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,20,0"/>
-                <TextBox x:Name="campoNum" Margin="0,3,10,0" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" Style="{DynamicResource TextBoxStyle}" TabIndex="4"/>
+                <Label x:Name="label1" Content="Bairro:" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="3"/>
+                <TextBox x:Name="campoBairro" MaxLength="50" Height="22" Margin="10,3,10,0" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" LostFocus="campoBairro_LostFocus" TabIndex="5"/>
+                <Label x:Name="label8" Content="Rua:" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="4"/>
+                <TextBox x:Name="campoRua" Margin="10,3,10,0" TextWrapping="Wrap" Style="{DynamicResource TextBoxStyle}" Grid.Column="1" Grid.Row="4" TabIndex="6" />
+                <Label Content="Nº: " Grid.Row="4" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,0"/>
+                <TextBox x:Name="campoNum" Margin="30,3,10,0" Grid.Row="4" Grid.Column="2" VerticalAlignment="Center" Style="{DynamicResource TextBoxStyle}" TabIndex="7"/>
             </Grid>
         </GroupBox>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1" Grid.ColumnSpan="5" VerticalAlignment="Top" Margin="0,10,0,0">

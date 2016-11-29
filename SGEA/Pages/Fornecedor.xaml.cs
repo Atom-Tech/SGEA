@@ -109,7 +109,7 @@ namespace SGEA.Pages
                 campoRua.Text = row[7].ToString();
                 campoNum.Text = row[8].ToString();
                 campoEmail.Text = row[4].ToString();
-                campoCNPJ.Text = row[1].ToString().Replace('.',',');
+                campoCNPJ.Text = row[1].ToString();
                 campoRS.Text = row[3].ToString();
                 telCel.Text = row[10].ToString();
                 telFixo.Text = row[9].ToString();
@@ -164,7 +164,7 @@ namespace SGEA.Pages
                 {
                     if (!telFixo.IsMaskFull) telFixo.Text = "(00)0000-0000";
                     if (!telCel.IsMaskFull) telCel.Text = "(00)00000-0000";
-                    string cnpj = campoCNPJ.Text.Replace(',','.');
+                    string cnpj = campoCNPJ.Text;
                     ClasseFornecedor p = new ClasseFornecedor(cdUsuario);
                     if (op == 0)
                     {
@@ -193,7 +193,7 @@ namespace SGEA.Pages
                 if (campoNome.Text != "")
                     pesquisa.Add("nmFornecedor", campoNome.Text);
                 if (campoCNPJ.IsMaskFull)
-                    pesquisa.Add("cnpj", campoCNPJ.Text.Replace(',','.'));
+                    pesquisa.Add("cnpj", campoCNPJ.Text);
                 if (campoEmail.Text != "")
                     pesquisa.Add("email", campoEmail.Text);
                 if (campoBairro.Text != "")

@@ -46,7 +46,7 @@
                 <DataGrid x:Name="listaAgenda" Style="{DynamicResource DataGridStyle}" ToolTip="Visitas Agendadas para Hoje" Margin="0,30,0,0" />
             </Grid>
         </GroupBox>
-        <GroupBox x:Name="groupBox1" Style="{DynamicResource GroupBoxStyle}" Header="Projetos em Execução" Margin="10">
+        <GroupBox x:Name="groupBoxProjeto" Style="{DynamicResource GroupBoxStyle}" Header="Projetos em Execução" Margin="10">
             <Grid>
                 <TextBlock Margin="10" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left">
                     <StackPanel Orientation="Horizontal">
@@ -67,7 +67,7 @@
                 <DataGrid x:Name="listaProjetos" ToolTip="Clique em um projeto para verificar" MouseDoubleClick="listaProjetos_MouseDoubleClick" Style="{DynamicResource DataGridStyle}" ColumnWidth="Auto" Margin="0,30,0,0"/>
             </Grid>
         </GroupBox>
-        <GroupBox x:Name="groupBox" Header="Histórico de Hoje" Style="{DynamicResource GroupBoxStyle}" Margin="10" Grid.Column="1">
+        <GroupBox x:Name="groupBoxHistorico" Header="Histórico de Hoje" Style="{DynamicResource GroupBoxStyle}" Margin="10" Grid.Column="1">
             <DataGrid x:Name="listaHistorico" Style="{DynamicResource DataGridStyle}" Margin="0,0,0,0"/>
         </GroupBox>
     </Grid>

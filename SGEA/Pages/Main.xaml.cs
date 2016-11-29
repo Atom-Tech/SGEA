@@ -45,7 +45,10 @@ namespace SGEA.Pages
         private void Main_Loaded(object sender, RoutedEventArgs e)
         {
             if (grupo == "Funcionário")
-                listaHistorico.Visibility = Visibility.Collapsed;
+            {
+                groupBoxHistorico.Visibility = Visibility.Collapsed;
+                groupBoxProjeto.SetValue(Grid.ColumnSpanProperty,2);
+            }
             AtualizarAgenda();
             AtualizarHistorico();
             VerificarProjeto();

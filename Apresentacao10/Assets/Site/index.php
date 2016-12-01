@@ -121,6 +121,24 @@
               <p>Queremos da a você a oportunidade de automatizar todos seus serviços para os torna mais fáceis.</p>
             </div>
       	</div>
+        <div class="row">
+            <div class="col-sm-4 center-block">
+              <!--aqui entra uma ilustração do trabalho-->
+              <h4><!--aqui entra o titulo do trabalho--></h4>
+              <p><!--aqui entra uma descrição do trabalho--></p>
+            </div>
+            <div class="col-sm-4 center-block">
+              <img src="ICON/6_cross-platform.png" class="IconesSVGOF"/>
+              <h4>Cross-Platform</h4>
+              <p>Desenvolvemos para diversas plataformas com apenas um código, incluindo para iOS, Android, WinPhone, Win8.1 e Win10.</p>
+            </div>
+            <div class="col-sm-4 center-block">
+              <!--aqui entra uma ilustração do trabalho-->
+              <h4><!--aqui entra o titulo do trabalho--></h4>
+              <p><!--aqui entra uma descrição do trabalho--></p>
+            </div>
+            
+      	</div>
     </div>
 <!--Equipe-->
 

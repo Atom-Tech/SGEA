@@ -363,8 +363,10 @@ namespace SGEA
 
         private void backupG_Click(object sender, RoutedEventArgs e)
         {
-            var dialog = new System.Windows.Forms.FolderBrowserDialog();
-            dialog.SelectedPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            var dialog = new System.Windows.Forms.FolderBrowserDialog
+            {
+                SelectedPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+            };
             System.Windows.Forms.DialogResult result = dialog.ShowDialog();
             if (result == System.Windows.Forms.DialogResult.OK)
             {
@@ -512,7 +514,9 @@ namespace SGEA
         {
             var controle = (Visual)e.OriginalSource;
             var check = retNote.GetChildren();
+            var check2 = border.GetChildren();
             bool existe = retNote == controle;
+            bool existe2 = border == controle;
             foreach (var c in check)
             {
                 if (controle == c)
@@ -521,7 +525,15 @@ namespace SGEA
                     break;
                 }
             }
-            if (!existe && not) MostrarNotificacao();
+            foreach (var c in check2)
+            {
+                if (controle == c)
+                {
+                    existe2 = true;
+                    break;
+                }
+            }
+            if (!existe && not && !existe2) MostrarNotificacao();
         }
 
         private void home_Click(object sender, RoutedEventArgs e)

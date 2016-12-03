@@ -42,22 +42,24 @@
 	<div class="jumbotron text-center parallax div1" data-divisor="2" id="minhapag">
     	<img src="IMG/Logo.png" class="TamanhoLogo">
 		<h1 class="SombraATOM">Atom Technology Company</h1>
-		<h2 class="SombraATOM">Uma partícula da evolução!</h2>
+		<h2 class="SombraATOM">Uma Partícula da Evolução!</h2>
         <form class="form-inline">
     		<input type="email" class="form-control " size="50" placeholder="Endereço de E-Mail"  data-toggle="tooltip"
             title="Coloque seu e-mail para receber todas novidades da ATC">
-    		<button type="button" class="btn" id="BtnCor">inscrever-se</button>
+    		<button type="button" class="btn" id="BtnCor">Inscrever-se</button>
   		</form>
 	</div>
 <!--Sobre a ATOM-->
     <div id="SOBRE" class="container-fluid">
     	<div class="row">
     		<div class="col-sm-8">
-              <h2>Sobre Empresa </h2>
+              <h2>Sobre Empresa</h2>
               <h4>Quem somos</h4>
-              <p>A Atom Technology Company é uma pequena empresa composta por 5 membros cujo objetivo é o desenvolvimento de sistemas para solucionar o problema de nossos clientes.</p>
+              <p>A Atom Technology Company surgiu na Etec Adolpho Berezin, no curso de Informática (Programação), onde um grupo de cinco pessoas se reuniu para fazer o projeto de TCC, o Projeto SGEA (Sistema de Gerenciamento de Esquadria de Alumínio).
+              O desejo da Atom é desenvolver sistemas para solucionar os problemas de nossos clientes, e da mesma forma ajudar a sociedade em geral.
+              </p>
               <h4>Objetivo</h4>
-              <p>Além do desenvolvimento de Softwares e sites queremos entrar no ramo de games, pois ele será a chave para levar conhecimento em forma de entretenimento para as pessoas.</p>
+              <p>Além de desenvolver softwares e sites, queremos entrar, também, no ramo de games, pois assim, poderemos levar o conhecimento em forma de entretenimento para as pessoas, que é a nossa missão.</p>
             </div>
     <div class="col-sm-4">
       <img src="ICON/tablet-1.svg" class="logo">
@@ -72,30 +74,29 @@
     		</div>
         <div class="col-sm-8">
         	<h2>Missão, Visão e Valores</h2>
-           	<p><strong>MISSÃO:</strong> Trazer aos seus clientes os produtos com qualidade e garantia, e levar o conhecimento em forma de entretenimento aos seus clientes.
+           	<p><strong>MISSÃO:</strong> Trazer aos nossos clientes os produtos com qualidade e garantia, e levar o conhecimento em forma de entretenimento aos clientes.
             </p>
-            <p><strong>VISÃO:</strong> Ser a maior produtora de software e games do Brasil, sempre se lembrando de levar o conhecimento através de nossos produtos.
+            <p><strong>VISÃO:</strong> Ser a maior produtora de software e games do Brasil, sempre nos lembrando de levar o conhecimento através de nossos produtos.
             </p>
-            <p><strong>VALORES:</strong> Comprometimento com o trabalho e Cliente, o desejo de novos desafios e a busca por atualizaçoes do conhecimento sobre novas tecnologia alem de sempre tentar distribuir conhecimento aos usuários.
-            </p>
+            <p><strong>VALORES:</strong> Desejamos sempre ter <b>novos desafios</b>, por isso buscamos <b>nos atualizar sobre novas tecnologias</b> e buscamos levar o <b>conhecimento em forma de entretenimento aos nossos clientes</b>, e por fim, nosso maior valor é o nosso <b>comprometimento com o trabalho e com os nossos clientes</b></p>
    		</div>
         </div>
     </div>
 <!--Serviços-->
     <div id="SERVIÇOS" class="container-fluid text-center">
       <h2>SERVIÇOS</h2>
-      <h4>O que nós oferecemos com nossos serviços</h4>
+      <h4>O que nós oferecemos em nossos serviços</h4>
       <br>
       	<div class="row">
         	<div class="col-sm-4">
           		<img src="ICON/ICRes.png" class="IconesSVGOF"/>
           		<h4>Responsividade</h4>
-          		<p>Todos os sites criados serão responsivos para dispositivos moveis.</p>
+          		<p>Todos os sites criados serão responsivos para dispositivos móveis.</p>
        		</div>
             <div class="col-sm-4">
                     <img src="ICON/ICSeo.png" class="IconesSVGOF"/>
-            	<h4>Tecnicas SEO</h4>
-            	<p>Automatização de um site para ser facilmente encontrado pelos robos de busca do Google.</p>
+            	<h4>Técnicas SEO</h4>
+            	<p>Automatização de um site para ser facilmente encontrado pelos robôs de busca do Google.</p>
             </div>
             <div class="col-sm-4">
               <img src="ICON/ICQual.png" class="IconesSVGOF"/>
@@ -108,17 +109,17 @@
             <div class="col-sm-4">
               <img src="ICON/ICEdu.png" class="IconesSVGOF"/>
               <h4>Ensino</h4>
-              <p>Em muitos projetos pretendemos trazer conhecimento de alguma forma para você</p>
+              <p>Em muitos projetos iremos trazer conhecimento de alguma forma para você.</p>
             </div>
             <div class="col-sm-4">
               <img src="ICON/ICOpo.png" class="IconesSVGOF"/>
               <h4>Oportunidade</h4>
-              <p>A oportunidade de aprender se divertindo e ter um otimo futuro.</p>
+              <p>A oportunidade de aprender se divertindo e ter um ótimo futuro.</p>
             </div>
             <div class="col-sm-4">
               <img src="ICON/ICAut.png" class="IconesSVGOF"/>
               <h4>Automatização</h4>
-              <p>Queremos da a você a oportunidade de automatizar todos seus serviços para os torna mais fáceis.</p>
+              <p>Queremos dar a você a oportunidade de automatizar todos os seus serviços para os tornar mais fáceis.</p>
             </div>
       	</div>
         <div class="row">
@@ -130,7 +131,7 @@
             <div class="col-sm-4 center-block">
               <img src="ICON/6_cross-platform.png" class="IconesSVGOF"/>
               <h4>Cross-Platform</h4>
-              <p>Desenvolvemos para diversas plataformas com apenas um código, incluindo para iOS, Android, WinPhone, Win8.1 e Win10.</p>
+              <p>Desenvolvemos para diversas plataformas com apenas um código, incluindo para iOS, Android, Windows Phone, Windows 8.1 e Windows 10.</p>
             </div>
             <div class="col-sm-4 center-block">
               <!--aqui entra uma ilustração do trabalho-->
@@ -164,7 +165,7 @@
                  
                 <tr>
                     <th> <img class="perfil center-block" src="IMG/Fotos/Fernando.jpg"></th>
-                    <th><br><br><br><h4>FERNANDO MARTINELLI<BR>LIDER DO PROJETO<BR>DBA</h4></th> 
+                    <th><br><br><br><h4>FERNANDO MARTINELLI<BR>LÍDER DO PROJETO<BR>DBA</h4></th> 
                     <th class="AlingRight"><br>
                         <a href="https://www.facebook.com/fernando.martinelli.1004" target="Blank" style="text-decoration:none;">Fernando Martinelli&ensp;</a><br><br><br>
                         <a href="https://www.linkedin.com/in/fernando-martinelli-b0691312a?authType=name&authToken=Lljy&trk=prof-sb-browse_map-name" target="Blank" style="text-decoration:none;">Fernando Martinelli&ensp;</a><br><br><br>
@@ -240,8 +241,8 @@
             <img class="PortfolioIMG" src="IMG/Portfolio/LG_SGEA.png" alt="SGEA"/>
             <p><strong>SGEA</strong></p>
             <div class="Arrendodamento bg-grey">
-            	<p class="Formatacao">O SGEA ou Sistema de Gerenciamento de Esquadrias de Alumínio é um software que tem como função gerenciar os 									produtos e serviços de nosso cliente, além disso ele tem uma agenda integrada que o lembra dos serviços cadastrados para a semana.</p>
-                <p class="Formatacao">O SGEA vem acompanhado de um aplicativo mobile que sincroniza a Agenda via USB caso o nosso usuário não tenha internet no momento.</p>
+            	<p class="Formatacao">O SGEA (Sistema de Gerenciamento de Esquadria de Alumínio) é um software que tem por função gerenciar os uma serralheria de alumínio.<a data-toggle="modal" data-target="#ModalSGEA"> Ler Mais</a></p>
+                
           	</div>
           </div>
         </div>
@@ -250,7 +251,7 @@
             <img class="PortfolioIMG Arredondamento" src="IMG/Portfolio/LG_Ari.jpg" alt="Arittanas"/>
             <p><strong>Site Arittana's</strong></p>
             <div class="Arrendodamento bg-grey">
-            	<p class="Formatacao">Esse projeto foi um site de um cliente que fornece serviços de reforma em geral. Seu pedido foi um site “one pag” com informações de seus serviços e uma galeria de Fotos para divulgar seu trabalho.</p>
+            	<p class="Formatacao">Este projeto foi feito para um cliente que fornece serviços de reforma em geral. Seu pedido foi um site “one page” com informações de seus serviços e uma galeria de fotos para divulgar seu trabalho.</p>
             </div>
           </div>
         </div>
@@ -259,13 +260,66 @@
             <img class="PortfolioIMG Arredondamento" src="IMG/Portfolio/LG_RL.jpg" alt="Reality Lapse"/>
             <p><strong>Reality Lapse</strong></p>
             <div class="Arrendodamento bg-grey">
-                <p class="Formatacao">O Reality Lapse é um projeto que está sendo desenvolvido a mais de 2 anos, ele se trata de um universo de Roller Play Games com uma temática Sci-fi e Fantasia, nosso objetivo com esse projeto é levar aos jogadores conhecimento sobre nosso universo enquanto ele se diverte em suas aventuras.</p>
+                <p class="Formatacao">O Reality Lapse é um projeto de RPG (Role Playing Game) de mesa com a temática fantasia cientifica.<a data-toggle="modal" data-target="#ModalLapse"> Ler Mais</a></p>
             </div>
           </div>
         </div>
 
     </div>
     </div>
+
+    <!-- Modal -->
+    <!--Modal do SGEA-->
+    <div id="ModalSGEA" class="modal fade bordaModal" role="dialog">
+        <div class="modal-dialog">
+            
+                <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Sistema de Gerenciamento de Esquadria de Alumínio</h4>
+                </div>
+                <div class="modal-body">
+                	<p class="Formatacao">O SGEA (Sistema de Gerenciamento de Esquadria de Alumínio) é um software que tem por função gerenciar os uma serralheria de alumínio, podendo cadastrar usuários, clientes, fornecedores, perfis de alumínio, produtos e serviços. Nele, o usuário pode, também, gerar orçamento, iniciar um projeto, agendar uma visita e ver todas as notificações disponibilizadas pelo sistema.</p>
+                	<p class="Formatacao">O SGEA tem um aplicativo Android que sincroniza todas as informações do sistema USB caso o nosso usuário não tenha acesso a internet</p>
+                </div>
+                <div class="modal-footer">
+                	<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Fim Modal-->
+    
+	<!--Modal do Reality Lapse-->
+    <div id="ModalLapse" class="modal fade bordaModal" role="dialog">
+        <div class="modal-dialog">
+            
+                <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Reality Lapse</h4>
+                </div>
+                <div class="modal-body">
+                	<p class="Formatacao">O Reality Lapse é um projeto de RPG (Role Playing Game) de mesa com a temática fantasia cientifica, esse universo utiliza das adaptações do sistema de RPG Storyteller. A nossa adaptação está sendo criada sem fins lucrativos e sim por puro prazer.</p>
+                	<p class="Formatacao">Nesse RPG existem algumas raças e classes. Cada raça tem seu próprio sistema planetário, habilidade, história, arma e muitas outras coisas</p>
+                    <p class="Formatacao">O Reality Lapse se passa em um universo em constante guerra, onde foi formado uma equipe para resolver alguns problemas ligados a raça humana, porem muitas coisas acontecem mudando o rumo da história.</p>
+                    <p class="Formatacao">Vamos falar um pouco das coisas que ocorreram no universo para saber o porquê do nome Reality Lapse. No início de toda criação existia dois seres, o Criador (Deus) e a Realidade, onde ambos trabalhavam juntos para desenvolver o universo, Deus trabalhava na matéria e a realidade na física, os dois tinham os mesmos poderes mas assumiam papeis diferentes. </p>
+                    <p class="Formatacao">E então surgiu o Big Bang formando todo o universo que conhecemos hoje, então Deus fez os anjos e a Realidade fez Meri-Waru, ele foi o ser responsável por criar os buger’s e torna-los indetectáveis por deus e a realidade.</p>
+                    <p class="Formatacao">O resto da história do universo vai se passar em uma saga que está sendo escrita pela nossa equipe, lá vocês vão saber mais sobre muitas coisas do Reality Lapse. Nesse universo está sendo criado constantemente novas raças, objetos, mistérios e muitas outras coisas.</p>
+                    <p class="Formatacao">Além disso queremos que vocês joguem em nosso RPG criem seus arcos históricos e se divirtam, qualquer crítica ou sugestão adoraríamos ouvir então entre em contato conosco, no Reality Lapse também damos a você narrador ou jogador a criação de uma raça (Logico seguindo algumas regras básicas) pois o universo é muito grande, ter três, cinco, dez raças são muito pouco.</p>
+                    <p class="Formatacao">Uma outra consideração importante é que no Reality Lapse não utilizamos constelações conhecidas, pois queremos dar ao jogador ou narrador a oportunidade de criar seus sistemas, mas em nossas explicações usamos exemplos existentes da nossa realidade.</p>
+                    <p class="Formatacao">O que é o sistema Storytaler? Todo RPG de mesa utiliza de um sistema que é nada mais nada menos que regras a serem seguidas para tornar a brincadeira divertida, pois se não pode virar uma bagunça, são esses sistemas que definem suas habilidades, sua ficha entre outras coisas, o Sistema Storytaller foi criado por Mark Rein Hagen da editora estadunidense White Wolf, esse sistema utiliza os dados D10 sendo um sistema extremamente interpretativo, onde cada player deve interpretar as ações de seus personagens, e o principal objetivo desse sistema é a geração de crônicas (historias).</p>
+                    <p class="Formatacao">Por que usar o sistema Storytaller? Além de jogar o storytaller a bastante tempo e ter sido o primeiro sistema em que minha equipe teve contato, achamos </p>
+                </div>
+                <div class="modal-footer">
+                	<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Fim Modal-->    
 <!--Contato-->
 
     <div id="CONTATO" class="container-fluid bg-grey">

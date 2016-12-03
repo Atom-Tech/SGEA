@@ -163,7 +163,9 @@ th .AlingLeft{     /*"Arrumar os icones da apresentação da equipe"*/
 .AlingRight{
 	text-align: right;
 }
-
+.bordaModal{
+	margin-top:50px;	
+}
 @media screen and (max-width: 768px) {
    
  .col-sm-4 {

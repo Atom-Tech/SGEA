@@ -943,5 +943,11 @@ namespace SGEA
             }
 
         }
+
+        private void Help_OnClick(object sender, RoutedEventArgs e)
+        {
+            Contato c = new Contato();
+            c.ShowDialog();
+        }
     }
 }

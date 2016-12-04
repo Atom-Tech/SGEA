@@ -271,6 +271,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Janelas\Contato.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Janelas\Main.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -288,6 +292,9 @@
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Janelas\Backup.xaml.cs">
       <DependentUpon>Backup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Janelas\Contato.xaml.cs">
+      <DependentUpon>Contato.xaml</DependentUpon>
     </Compile>
     <Compile Include="Janelas\Main.xaml.cs">
       <DependentUpon>Main.xaml</DependentUpon>

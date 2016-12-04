@@ -54,6 +54,9 @@
                     <Label x:Name="titulo" Style="{DynamicResource labelTop}" Content="Sistema de Gerenciamento de Esquadria de Aluminio" Foreground="White" VerticalAlignment="Center" Margin="0,2" Width="475"/>
                 </StackPanel>
                 <StackPanel x:Name="stack" DockPanel.Dock="Right" HorizontalAlignment="Right" Orientation="Horizontal">
+                    <Button x:Name="help" Click="Help_OnClick" VerticalContentAlignment="Center" Foreground="White" Width="24" Style="{DynamicResource TopButton}">
+                        <TextBlock Text="?" FontWeight="Bold" FontSize="16" VerticalAlignment="Center" TextAlignment="Center"/>
+                    </Button>
                     <Button x:Name="border" BorderBrush="White" BorderThickness="1" Template="{DynamicResource ButtonOnly}" Content="0" Foreground="White" Width="Auto" MinWidth="24" Height="24" Click="border_Click" Cursor="Hand" ToolTip="Notificações">
                         <Button.Background>
                             <SolidColorBrush x:Name="corFundo" Color="#6058FF" Opacity="0"/>
@@ -164,7 +167,7 @@
                             <Separator/>
                             <TextBlock x:Name="campoGrupo" Text="Administrador"/>
                             <Separator/>
-                            <TextBlock Text="Versão 1.5.3" />
+                            <TextBlock Text="Versão 1.6.0" />
                         </StatusBar>
                         <Grid x:Name="grid">
                             <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Panel.ZIndex="1"/>

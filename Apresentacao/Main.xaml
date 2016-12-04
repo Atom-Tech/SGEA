@@ -6,21 +6,58 @@
         xmlns:local="clr-namespace:Apresentacao"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
-		xmlns:pageTransitions="clr-namespace:WpfPageTransitions;assembly=WpfPageTransitions"
+        xmlns:hb="clr-namespace:HamburgerMenu;assembly=HamburgerMenu"
         mc:Ignorable="d"
         Title="Apresentação"
         WindowStyle="None" ResizeMode="NoResize"
-        WindowStartupLocation="CenterScreen" 
-        Width="1024" Height="768"
-        Background="Transparent"
-        WindowState="Maximized" Topmost="True" KeyDown="Window_KeyDown"  AllowsTransparency="True">
+    WindowStartupLocation="CenterScreen" 
+    Width="1024" Height="768"
+    WindowState="Maximized" AllowsTransparency="True" KeyDown="Window_KeyDown">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ControlTemplate x:Key="ButtonBaseControlTemplate1" TargetType="{x:Type ButtonBase}">
+                <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                    <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                </Border>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="Button.IsDefaulted" Value="True">
+                        <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                    </Trigger>
+                    <Trigger Property="ToggleButton.IsChecked" Value="True">
+                        <Setter Property="Background" TargetName="border" Value="#FFBCDDEE"/>
+                        <Setter Property="BorderBrush" TargetName="border" Value="#FF245A83"/>
+                    </Trigger>
+                    <Trigger Property="IsEnabled" Value="False">
+                        <Setter Property="Background" TargetName="border" Value="#FFF4F4F4"/>
+                        <Setter Property="BorderBrush" TargetName="border" Value="#FFADB2B5"/>
+                        <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="#FF838383"/>
+                    </Trigger>
+                </ControlTemplate.Triggers>
+            </ControlTemplate>
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid>
-        <Border BorderThickness="315,50,355,50" Height="768" Width="1024" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Border.BorderBrush>
-                <ImageBrush ImageSource="/Apresentacao;component/brushedframe4.jpg"/>
-            </Border.BorderBrush>
-            <Image Source="Slide/Mobile/Mobile.png" Stretch="Fill" Margin="-12,-59,-25,-50"/>
-        </Border>
-        <Button Margin="62,348,732,358" BorderThickness="0" Background="Transparent" Style="{DynamicResource ButtonStyle1}"/>
+        <Frame Name="slide" Margin="50,0,0,0" NavigationUIVisibility="Hidden">
+            <Frame.Background>
+                <ImageBrush ImageSource="brushedframe4.jpg"/>
+            </Frame.Background>
+        </Frame>
+        <hb:HamburgerMenu x:Name="barra"
+                          Background="SteelBlue"
+                          HorizontalAlignment="Left"
+                          SelectionIndicatorColor="White"
+                          Width="50"
+                          MenuIconColor="White"
+                          MenuItemForeground="Black">
+            <hb:HamburgerMenuItem x:Name="intro" Text="Introdução" Selected="intro_Selected" Icon="Barra/Home.png"/>
+            <hb:HamburgerMenuItem x:Name="equipe" Text="Nossa Equipe" Selected="equipe_Selected" Icon="Slide/Slide8/Atom.png"/>
+            <hb:HamburgerMenuItem x:Name="mvv" Text="MVV" Selected="mvv_Selected" Icon="Barra/Mvv.png"/>
+            <hb:HamburgerMenuItem x:Name="cliente" Text="Nosso Cliente" Selected="cliente_Selected" Icon="Barra/Cliente.png"/>
+            <hb:HamburgerMenuItem x:Name="trabalha" Text="Como trabalha" Selected="trabalha_Selected" Icon="Barra/Perfil.png"/>
+            <hb:HamburgerMenuItem x:Name="problema" Text="Problema" Selected="problema_Selected" Icon="Barra/Problema.png"/>
+            <hb:HamburgerMenuItem x:Name="solucao" Text="Solução" Selected="solucao_Selected" Icon="Slide/Slide7/LogoPrograma.png"/>
+            <hb:HamburgerMenuItem x:Name="menuSite" Text="Site" Selected="menuSite_Selected" Icon="Barra/Google-Chrome-icon.png"/>
+            <hb:HamburgerMenuItem x:Name="conclusao" Text="Conclusão" Selected="conclusao_Selected" Icon="Barra/Conclusao.png"/>
+        </hb:HamburgerMenu>
     </Grid>
 </Window>

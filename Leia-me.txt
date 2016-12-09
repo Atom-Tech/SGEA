@@ -1,0 +1,4 @@
+- O executável da apresentação está na pasta Apresentacao/bin/x86/Debug/Apresentacao.exe
+- O executável do programa está na pasta SGEA/bin/x86/Debug/SGEA.exe
+- O instalador do programa está na pasta Setup/Debug/SGEA.msi
+- Transfira para o seu celular SGEA_SGEA.SGEA.apk e execute-o.

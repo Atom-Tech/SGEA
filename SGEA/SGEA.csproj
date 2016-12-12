@@ -303,6 +303,10 @@
       <DependentUpon>Login.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Janelas\Mobile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Janelas\Orcamento\Gerar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -385,6 +389,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Janelas\Mobile.xaml.cs">
+      <DependentUpon>Mobile.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Janelas\Orcamento\Gerar.xaml.cs">
       <DependentUpon>Gerar.xaml</DependentUpon>
     </Compile>
@@ -534,7 +541,13 @@
     <Resource Include="img\circulohistorico.png" />
     <Resource Include="img\usb.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="img\Depuracao.png" />
+    <Resource Include="img\FontesDesconhecidas.png" />
+    <Resource Include="img\Programador.png" />
+    <Resource Include="img\Seguranca.png" />
+    <Resource Include="img\Sobre.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="img\BotaoEstiloRet.png" />
   </ItemGroup>

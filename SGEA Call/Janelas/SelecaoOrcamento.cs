@@ -14,7 +14,7 @@ using SQLite;
 
 namespace SGEA_Call.Janelas
 {
-    [Activity(Label = "SelecaoOrcamento", Theme = "@style/MyTheme")]
+    [Activity(Label = "SelecaoOrcamento", Theme = "@style/MyTheme", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class SelecaoOrcamento : Activity
     {
         string codigo;

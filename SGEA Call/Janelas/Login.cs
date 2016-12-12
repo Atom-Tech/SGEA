@@ -16,7 +16,7 @@ using SGEA_Call.Janelas;
 namespace SGEA_Call
 {
     [Activity(Label = "SGEA_Call", MainLauncher = true, Icon = "@drawable/icon",
-        Theme = "@style/MyTheme")]
+        Theme = "@style/MyTheme", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class Login : Activity
     {
 

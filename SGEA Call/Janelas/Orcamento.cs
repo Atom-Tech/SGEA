@@ -15,7 +15,7 @@ using SQLite;
 
 namespace SGEA_Call.Janelas
 {
-    [Activity(Label = "Orcamento", Theme = "@style/MyTheme")]
+    [Activity(Label = "Orcamento", Theme = "@style/MyTheme", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class Orcamento : ListActivity
     {
         int[] cd;

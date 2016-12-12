@@ -16,7 +16,7 @@ using SGEA_Call.Classes;
 
 namespace SGEA_Call.Janelas
 {
-    [Activity(Label = "Cliente", Theme = "@style/MyTheme")]
+    [Activity(Label = "Cliente", Theme = "@style/MyTheme", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class Cliente : ListActivity
     {
         int[] codigo;

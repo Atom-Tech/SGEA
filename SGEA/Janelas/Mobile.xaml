@@ -1,0 +1,140 @@
+﻿<Window x:Class="SGEA.Janelas.Mobile"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SGEA.Janelas"
+        mc:Ignorable="d"
+        Title="Mobile" Height="600" Width="600" Style="{DynamicResource WindowStyle}">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/WindowStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <Style x:Key="FocusVisual">
+                <Setter Property="Control.Template">
+                    <Setter.Value>
+                        <ControlTemplate>
+                            <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+            <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+            <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+            <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+            <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+            <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+            <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+            <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+            <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+            <Style TargetType="{x:Type Button}">
+                <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="BorderBrush" Value="Transparent"/>
+                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="Padding" Value="1"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="true">
+                                    <Setter Property="FontWeight" Value="Bold" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <SolidColorBrush x:Key="RadioButton.Static.Background" Color="#FFFFFFFF"/>
+            <SolidColorBrush x:Key="RadioButton.Static.Border" Color="#FF707070"/>
+            <Style x:Key="OptionMarkFocusVisual">
+                <Setter Property="Control.Template">
+                    <Setter.Value>
+                        <ControlTemplate>
+                            <Rectangle Margin="14,0,0,0" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <SolidColorBrush x:Key="RadioButton.MouseOver.Background" Color="#FFF3F9FF"/>
+            <SolidColorBrush x:Key="RadioButton.MouseOver.Border" Color="#FF5593FF"/>
+            <SolidColorBrush x:Key="RadioButton.MouseOver.Glyph" Color="#FF212121"/>
+            <SolidColorBrush x:Key="RadioButton.Disabled.Background" Color="#FFE6E6E6"/>
+            <SolidColorBrush x:Key="RadioButton.Disabled.Border" Color="#FFBCBCBC"/>
+            <SolidColorBrush x:Key="RadioButton.Disabled.Glyph" Color="#FF707070"/>
+            <SolidColorBrush x:Key="RadioButton.Pressed.Background" Color="#FFD9ECFF"/>
+            <SolidColorBrush x:Key="RadioButton.Pressed.Border" Color="#FF3C77DD"/>
+            <SolidColorBrush x:Key="RadioButton.Pressed.Glyph" Color="#FF212121"/>
+            <SolidColorBrush x:Key="RadioButton.Static.Glyph" Color="#FF212121"/>
+            <Storyboard x:Key="fadeOut">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="galeria">
+                    <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="fadeIn">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="galeria">
+                    <EasingDoubleKeyFrame KeyTime="0:0:0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+        </ResourceDictionary>
+    </Window.Resources>
+    <DockPanel Style="{DynamicResource DockStyle}">
+        <Border x:Name="TitleBar" Style="{DynamicResource BorderStyle}"  MouseLeftButtonUp="TitleBar_MouseLeftButtonUp" MouseLeftButtonDown="TitleBar_MouseLeftButtonDown" MouseMove="TitleBar_MouseMove" >
+            <StackPanel Orientation="Horizontal" Height="28">
+                <Image Style="{DynamicResource ImageStyle}"/>
+                <Label Content="Exportar para o Celular" Style="{DynamicResource labelTop}" Width="511" Foreground="White" VerticalAlignment="Center" Margin="0,2"/>
+                <Button x:Name="minimizar" Style="{DynamicResource TopButton_}" Click="minimizar_Click" >
+                    <Image Source="/SGEA;component/img/_.png"/>
+                </Button>
+                <Button x:Name="fechar" Style="{DynamicResource TopButtonX}" Click="fechar_Click" >
+                    <Image Source="/SGEA;component/img/X.png"/>
+                </Button>
+            </StackPanel>
+        </Border>
+        <Border BorderBrush="#006564" BorderThickness="2,1,2,2" DockPanel.Dock="Bottom">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock TextWrapping="Wrap" Margin="10" Foreground="Black">
+                        <Run Text="      "/> Você deve habilitar <Italic>"Fontes Desconhecidas"</Italic> no seu celular Android para poder instalar o nosso aplicativo Android. <LineBreak />
+                        <Run Text="      "/> Para isso, vá na tela de configurações do seu celular e entre nas opções de Segurança <Bold>(Imagem 1)</Bold>. <LineBreak />
+                        <Run Text="      "/> Após isso, procure a opção de <Italic>"Fontes Desconhecidas"</Italic> e deixe-a marcada <Bold>(Imagem 2)</Bold>. <LineBreak />
+                        <Run Text="      "/> Além disso, você deve habilitar a opção de <Italic>"Depuração USB"</Italic>, essa opção está dentro das opções de Programador/Desenvolvedor <Bold>(Imagem 4)</Bold>. <LineBreak />
+                        <Run Text="      "/> Se a opção de Programador/Desenvolvedor não aparecer no seu celular, vá nas opções de <Italic>"Sobre o telefone"</Italic> <Bold>(Imagem 4)</Bold>, 
+                        e então toque no <Italic>"Número da Versão"</Italic> várias vezes até aparecer a mensagem: <Italic>"Você agora é um desenvolvedor"</Italic> <Bold>(Imagem 3)</Bold>. <LineBreak />
+                        <Run Text="      "/> Com a opção de Programador/Desenvolvedor aparecendo, clique nessa opção e procure a opção de <Italic>"Depuração USB"</Italic> <Bold>(Imagem 5)</Bold> e ative-a,
+                        lembrando que para ativar essa opção você deve ativar o modo desenvolvedor. <LineBreak />
+                        <Run Text="      "/> Após isso, basta conectar seu celular Android ao computador USB e clicar em um dos botões abaixo.
+                </TextBlock>
+                <Button x:Name="apk" Content="Instalar Aplicativo" Height="25" Width="110" Grid.Row="1" Style="{DynamicResource ButtonStyle}" Margin="10" HorizontalAlignment="Center" Click="apk_Click"/>
+                <Button x:Name="bd" Content="Exportar Banco de Dados" Height="25" Width="150" Grid.Row="2" Style="{DynamicResource ButtonStyle}" Margin="10" HorizontalAlignment="Center" Click="bd_Click"/>
+                <Image x:Name="galeria" Grid.Column="1" Grid.RowSpan="3" Margin="30,10,30,25" Source="/SGEA;component/img/Seguranca.png" Stretch="Fill"/>
+                <Button x:Name="voltar" Content="&lt;" Grid.Column="1" Grid.RowSpan="3" FontSize="36" Foreground="White" HorizontalAlignment="Left" Click="voltar_Click" Cursor="Hand"/>
+                <Button x:Name="avancar" Content="&gt;" Grid.Column="1" Grid.RowSpan="3" FontSize="36" Foreground="White" HorizontalAlignment="Right" Click="avancar_Click" Cursor="Hand"/>
+                <StackPanel Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" Margin="0,0,0,5" VerticalAlignment="Bottom" Orientation="Horizontal">
+                    <RadioButton x:Name="radio1" IsChecked="True" Checked="radio1_Checked" Style="{DynamicResource RadioTemplate}" IsEnabled="False"/>
+                    <RadioButton x:Name="radio2" Checked="radio2_Checked" Style="{DynamicResource RadioTemplate}" IsEnabled="False"/>
+                    <RadioButton x:Name="radio3" Checked="radio3_Checked" Style="{DynamicResource RadioTemplate}" IsEnabled="False"/>
+                    <RadioButton x:Name="radio4" Checked="radio4_Checked" Style="{DynamicResource RadioTemplate}" IsEnabled="False"/>
+                    <RadioButton x:Name="radio5" Checked="radio5_Checked" Style="{DynamicResource RadioTemplate}" IsEnabled="False"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </DockPanel>
+</Window>

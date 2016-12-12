@@ -8,7 +8,6 @@
         Title="Tipos" Style="{DynamicResource WindowStyle}" Height="374.67" Width="500.24" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <ResourceDictionary>
-            <Style TargetType="{x:Type Rectangle}" />
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Styles/WindowStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
@@ -18,7 +17,7 @@
         <Border x:Name="TitleBar"  Style="{DynamicResource BorderStyle}"  MouseLeftButtonUp="TitleBar_MouseLeftButtonUp" MouseLeftButtonDown="TitleBar_MouseLeftButtonDown" MouseMove="TitleBar_MouseMove" >
             <StackPanel Orientation="Horizontal" Height="28">
                 <Image Style="{DynamicResource ImageStyle}"/>
-                <Label Content="Tipos" Style="{DynamicResource labelTop}" Width="423" Foreground="White" VerticalAlignment="Center" Margin="0,2"/>
+                <Label Content="Tipos" Style="{DynamicResource labelTop}" Width="415" Foreground="White" VerticalAlignment="Center" Margin="0,2"/>
                 <Button x:Name="minimizar" Style="{DynamicResource TopButton_}" Click="minimizar_Click" >
                     <Image Source="/SGEA;component/img/_.png"/>
                 </Button>

@@ -15,7 +15,7 @@ using Android.Views.Animations;
 
 namespace SGEA_Call.Janelas
 {
-    [Activity(Label = "Servicos", Theme = "@style/MyTheme")]
+    [Activity(Label = "Servicos", Theme = "@style/MyTheme", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class Servicos : Activity
     {
         private float x;

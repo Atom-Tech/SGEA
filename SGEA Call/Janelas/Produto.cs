@@ -15,7 +15,7 @@ using Android.Views.Animations;
 
 namespace SGEA_Call.Janelas
 {
-    [Activity(Label = "Produto", Theme = "@style/MyTheme")]
+    [Activity(Label = "Produto", Theme = "@style/MyTheme", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class Produto : Activity
     {
         private float x;

@@ -14,7 +14,7 @@ using SGEA_Call.Classes;
 
 namespace SGEA_Call.Janelas
 {
-    [Activity(Label = "DadosFornecedor", Theme = "@style/MyTheme")]
+    [Activity(Label = "DadosFornecedor", Theme = "@style/MyTheme", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class DadosFornecedor : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

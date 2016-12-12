@@ -296,44 +296,8 @@ namespace SGEA
 
         private void cel_Click(object sender, RoutedEventArgs e)
         {
-            string c = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\SGEA\\sgea.db";
-            string imagens = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\SGEA\\Imagens";
-            if (File.Exists(c))
-            {
-                Xceed.Wpf.Toolkit.MessageBox.Show("Certifique-se que o seu celular está com o modo depuração ligado!");
-                AndroidController a = AndroidController.Instance;
-                if (a.HasConnectedDevices)
-                {
-                    c = "\"" + c + "\"";
-                    imagens = "\"" + imagens + "\"";
-                    Device d = a.GetConnectedDevice(a.ConnectedDevices[0]);
-                    for (int i = 0; i < a.ConnectedDevices.Count; i++)
-                    {
-                        d = a.GetConnectedDevice(a.ConnectedDevices[i]);
-                        if (!d.SerialNumber.Contains("emulator")) break;
-                    }
-                    var ad = Adb.FormAdbShellCommand(d, false, "rmdir -r sdcard/SGEA");
-                    Adb.ExecuteAdbCommand(ad);
-                    ad = Adb.FormAdbShellCommand(d, false, "mkdir sdcard/SGEA");
-                    Adb.ExecuteAdbCommand(ad);
-                    ad = Adb.FormAdbShellCommand(d, false, "mkdir sdcard/SGEA/Imagens");
-                    Adb.ExecuteAdbCommand(ad);
-                    bool b = d.PushFile(c, "sdcard/SGEA", 100000);
-                    bool f = d.PushFile(imagens, "sdcard/SGEA/Imagens/", 100000);
-                    if (b && f)
-                        Xceed.Wpf.Toolkit.MessageBox.Show("Banco de Dados foi transferido com sucesso");
-                    else
-                        Xceed.Wpf.Toolkit.MessageBox.Show("Banco de Dados não foi transferido");
-                }
-                else
-                {
-                    Xceed.Wpf.Toolkit.MessageBox.Show("Não há um celular Android conectado por USB");
-                }
-            }
-            else
-            {
-                Xceed.Wpf.Toolkit.MessageBox.Show("O banco de dados não existe. \nPor favor, entre em contato conosco");
-            }
+            Mobile m = new Mobile();
+            m.ShowDialog();
         }
 
         private void config_Click(object sender, RoutedEventArgs e)

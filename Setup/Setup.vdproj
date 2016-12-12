@@ -15,12 +15,6 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_06BE848D16AC487B839384A37980EC8D"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_08CB4D59786AD5CC20E4832040F36523"
         "OwnerKey" = "8:_CA1DF0B8AEB04D0CA67A9A77C4DF6525"
         "MsmSig" = "8:_UNDEFINED"
@@ -47,6 +41,12 @@
         {
         "MsmKey" = "8:_0F86BC1607FEFF31A91B804F807D1BC3"
         "OwnerKey" = "8:_3784A050DA578131A2791B1E0B73FC87"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_13C2486E7A0A4F038431959D4D15A935"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -197,6 +197,12 @@
         {
         "MsmKey" = "8:_64C87DA69C9649BFBA1CD8CCDC4C0835"
         "OwnerKey" = "8:_CA1DF0B8AEB04D0CA67A9A77C4DF6525"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_662671E806A24B15A8C4100F59451472"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -780,26 +786,6 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_06BE848D16AC487B839384A37980EC8D"
-            {
-            "SourcePath" = "8:..\\SGEA\\bin\\Debug\\sgea.db"
-            "TargetName" = "8:sgea.db"
-            "Tag" = "8:"
-            "Folder" = "8:_0468DD6648154451AB272D3522EC6EF6"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:TRUE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_08CB4D59786AD5CC20E4832040F36523"
             {
             "AssemblyRegister" = "3:1"
@@ -902,6 +888,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_13C2486E7A0A4F038431959D4D15A935"
+            {
+            "SourcePath" = "8:..\\..\\..\\..\\..\\..\\..\\AppData\\Roaming\\SGEA\\SGEA.SGEA.apk"
+            "TargetName" = "8:SGEA.SGEA.apk"
+            "Tag" = "8:"
+            "Folder" = "8:_0468DD6648154451AB272D3522EC6EF6"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_19147652BD4CAF08C0D09D5D30C67279"
@@ -1311,6 +1317,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_662671E806A24B15A8C4100F59451472"
+            {
+            "SourcePath" = "8:..\\..\\..\\..\\..\\..\\..\\AppData\\Roaming\\SGEA\\sgea.db"
+            "TargetName" = "8:sgea.db"
+            "Tag" = "8:"
+            "Folder" = "8:_0468DD6648154451AB272D3522EC6EF6"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_78775C99412E2DEABB267898FE80FBDB"
@@ -2050,15 +2076,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:SGEA"
-        "ProductCode" = "8:{55E948AD-8B13-4F91-9B4F-20B58BF3EF02}"
-        "PackageCode" = "8:{A3E787BC-DBBB-45DA-87E3-1EE651AA9048}"
+        "ProductCode" = "8:{83ADC532-B82E-483B-B461-69CBD948545D}"
+        "PackageCode" = "8:{9D60AC64-49AE-4D93-9C70-123CADCE2B5E}"
         "UpgradeCode" = "8:{8483E5C5-C2F9-4172-8AF1-97C74F5858AB}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.5.3"
+        "ProductVersion" = "8:1.7.0"
         "Manufacturer" = "8:AtomTech"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:atomtech.me"

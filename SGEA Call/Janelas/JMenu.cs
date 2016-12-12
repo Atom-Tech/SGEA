@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace SGEA_Call.Janelas
 {
-    [Activity(Label = "JMenu")]
+    [Activity(Label = "JMenu", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class JMenu : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

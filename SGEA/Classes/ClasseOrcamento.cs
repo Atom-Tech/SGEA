@@ -190,10 +190,17 @@ namespace SGEA
                     }
                     else
                     {
-                        System.Drawing.Image sdi = System.Drawing.Image.FromFile(produtos[i].Imagem);
-                        Image img = Image.GetInstance(sdi, ImageFormat.Jpeg);
-                        img.ScaleAbsolute(64, 64);
-                        pP.AddElement(img);
+                        try
+                        {
+                            System.Drawing.Image sdi = System.Drawing.Image.FromFile(produtos[i].Imagem);
+                            Image img = Image.GetInstance(sdi, ImageFormat.Jpeg);
+                            img.ScaleAbsolute(64, 64);
+                            pP.AddElement(img);
+                        }
+                        catch
+                        {
+                            pP.AddElement(new Paragraph("Sem Imagem"));
+                        }
                     }
                     pP.AddElement(new Paragraph(""));
                     pP.AddElement(new Paragraph(produtos[i].Nome));
